@@ -1,9 +1,11 @@
 export function Task() {
   return {
+    id: 0,
     title: "",
     description: "",
     dueDate: "",
-    priority: "low",
+    dateCreated: "",
+    priority: "",
 
     info: function () {
       return [this.title,
