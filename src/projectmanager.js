@@ -1,7 +1,7 @@
 import { ProjectCollection } from "./projectcollection";
 import { Project } from "./project";
 
-export let manageProject = function() {
+export let projectManager = function() {
 
   function addProject(name) {
     let newProject = Project();

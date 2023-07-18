@@ -2,7 +2,7 @@ import { format } from "date-fns";
 import { ProjectCollection } from "./projectcollection";
 import { Task } from "./task";
 
-export let manageTask = function() {
+export let taskManager= function() {
 
   let addTask = function(projectId, title, desc, dueDate, priority) {
     let newTask = Task();
