@@ -1,17 +1,15 @@
 export function Task() {
-  let task = {
+  return {
     title: "",
     description: "",
     dueDate: "",
     priority: "low",
 
     info: function () {
-      return [task.title,
-      task.description,
-      task.dueDate,
-      task.priority];
+      return [this.title,
+      this.description,
+      this.dueDate,
+      this.priority];
     }
   }
-
-  return task;
 }
