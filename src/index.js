@@ -1,7 +1,15 @@
-import { Project } from "./project";
+import { ProjectCollection } from "./projectcollection";
+import { manageProject } from "./projectmanager";
+import { manageTask } from "./taskmanager";
 
-let newProject = Project();
-newProject.name = "My first project";
-newProject.addTask('Jog', 'do some running', Date.now(), 'low');
-newProject.addTask('eat', 'eating', new Date(2023, 10, 23, 12), 'high');
-console.log(newProject.tasks);
+manageProject.addProject('My First Project');
+manageProject.addProject('Work Project');
+console.log('Current Projects:')
+console.log(ProjectCollection.projects);
+
+manageTask.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
+
+console.group('Projects after adding a task');
+console.log(ProjectCollection.projects);
+
+
