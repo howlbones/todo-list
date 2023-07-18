@@ -1,0 +1,1 @@
+(()=>{"use strict";function t(){let t={title:"",description:"",dueDate:"",priority:"low",info:function(){return[t.title,t.description,t.dueDate,t.priority]}};return t}t(),t()})();
