@@ -10,6 +10,5 @@ export function Project() {
   let deleteTask = function(id) {
     taskManager.deleteTask(id);
   }
-
   return {name, tasks, addTask, deleteTask};
 }
