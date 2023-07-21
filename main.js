@@ -2787,7 +2787,6 @@ function Project() {
   let deleteTask = function(id) {
     _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.deleteTask(id);
   }
-
   return {name, tasks, addTask, deleteTask};
 }
 
@@ -2830,12 +2829,42 @@ let projectManager = function() {
 
   function addProject(name) {
     let newProject = (0,_project__WEBPACK_IMPORTED_MODULE_1__.Project)();
-    newProject.id = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.length;
+    const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+
+    // Finding a unique index for a project
+    if (projects.length === 0) {
+      newProject.id = 0;
+    }
+    else {
+      let lastID = Number(projects[projects.length - 1].id);
+      newProject.id = lastID + 1;
+    }
+
     newProject.name = name;
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.push(newProject);
+
+    // Console debug
+    console.log('New Project added. ID - ', newProject.id);
+    console.log('Updated Project list:');
+    console.table(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
+    console.log('\n');
   }
+  
+
   function deleteProject(id) {
-    _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.split(id, 1);
+    let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+    
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].id === id) {
+        projects.splice(i, 1);
+      }
+    }
+
+    // Console debug
+    console.log("Project", id, "deleted");
+    console.log("Updated project list:");
+    console.table(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
+    console.log('\n');
   }
   return {addProject, deleteProject}
 }();
@@ -2889,24 +2918,83 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let taskManager= function() {
+let taskManager = function () {
 
-  let addTask = function(projectId, title, desc, dueDate, priority) {
+  let addTask = function (projectId, title, desc, dueDate, priority) {
     let newTask = (0,_task__WEBPACK_IMPORTED_MODULE_1__.Task)();
-    let project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId];
-    newTask.id = project.tasks.length;
+    let project;
+
+    // Find the correct project object that the task will reside in
+    for (let i = 0; i < _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.length; i++) {
+      if (_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i].id == projectId) {
+        project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId];
+      }
+    }
+    if (!project) {
+      console.log('Incorrect Project ID given. Need an existing ID')
+      return;
+    }
+
+    // Making the new task id unique
+    if (project.tasks.length === 0) {
+      newTask.id = 0;
+    }
+    else {
+      let lastID = Number(project.tasks[project.tasks.length - 1].id);
+      newTask.id = lastID + 1;
+    }
+
     newTask.title = title;
     newTask.description = desc;
     newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
     newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.push(newTask);
-  }
-  let deleteTask = function(projectId, taskId) {
-    _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.split(taskId, 1);
+
+    // Console debug
+    console.log(`New task added to ${project.name}`);
+    console.log(`New task ID - ${newTask.id}`);
+    console.log(`${project.name} updated task list:`)
+    console.table(project.tasks);
+    console.log('\n');
   }
 
-  return {addTask, deleteTask};
+  let deleteTask = function (projectId, taskId) {
+    let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+    let project;
+
+    // Searching for the project by ID
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].id === projectId) {
+        project = projects[i];
+      }
+    }
+    if (!project) {
+      console.log("Can't delete task. Project with this id not found");
+      return
+    }
+
+    // Searching for the task by ID
+    let found = false;
+    for (let i = 0; i < project.tasks.length; i++) {
+      if (project.tasks[i].id === taskId) {
+        project.tasks.splice(i, 1);
+        found = true;
+      }
+    }
+    if (!found) {
+      console.log('No task with this ID found.')
+      return
+    }
+
+    // Console debug
+    console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
+    console.log(`Updated task list:`)
+    console.table(project.tasks);
+    console.log('\n');
+  }
+
+  return { addTask, deleteTask };
 }();
 
 /***/ }),
@@ -3003,22 +3091,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// Main app function exports API functions to the window, so
+// API can be accessed in the browser
 window.app = function() {
+
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My First Project');
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Work Project');
-  console.log('Current Projects:')
-  console.log(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Second Project');
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project');
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project');
 
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
+  
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.deleteTask(0,0);
 
-  console.group('Projects after adding a task');
-  console.log(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
 
   return {projectManager: _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager, taskManager: _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager, ProjectCollection: _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection};
 }();
-
 
 
 })();
