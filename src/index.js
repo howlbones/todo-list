@@ -1,6 +1,7 @@
 import { ProjectCollection } from "./projectcollection";
 import { projectManager } from "./projectmanager";
 import { taskManager } from "./taskmanager";
+import "./main.css";
 
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser

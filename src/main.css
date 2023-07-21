@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: 'Inter', sans-serif;
+  padding: 0px;
+}
+
+header {
+  width: 100vw;
+  height: 66px;
+  background-color: #CC5546;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 50px;
+}
+
+header button.new-task {
+  background-color: #CC5546;
+  color: #FFF;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-style: none;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+header button.new-task img {
+  width: 20px;
+}
+
+header button.new-task:hover {
+  background-color: #cc6d61;
+}
+
+.content {
+  min-height: calc(100vh - 66px);
+  display: grid;
+  grid-template-columns: 465px 1fr;
+  grid-template-rows: auto;
+}
+
+.side-bar {
+  height: 100%;
+  background-color: #F5F5F5;
+  padding: 50px 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.side-bar button {
+  height: 58px;
+  display: grid;
+  grid-template-columns: 78px 1fr;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  border-style: none;
+}
+
+.side-bar button:hover {
+  background-color: #ECECEC;
+}
+
+.side-bar button img {
+  justify-self: center;
+}
+
+.side-bar p {
+  justify-self: start;
+  font-size: 24px;
+  font-weight: 400;;
+  color: #2B2B2B;
+}
+
+.side-bar h4 {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  color: #2B2B2B;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.side-bar button.add-project {
+  margin-top: auto;
+}
+
+.side-bar .add-project p{
+  color: #7E7E7E;
+}
+ 
