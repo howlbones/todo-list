@@ -1,5 +1,6 @@
 import { ProjectCollection } from "./projectcollection";
 import { Project } from "./project";
+import { editProject } from "./projecteditor";
 
 export let projectManager = function() {
 
@@ -42,5 +43,11 @@ export let projectManager = function() {
     console.table(ProjectCollection.projects);
     console.log('\n');
   }
-  return {addProject, deleteProject}
+
+
+  function renameProject(projectId, newName) {
+    editProject.changeName(projectId, newName);
+  }
+
+  return {addProject, deleteProject, renameProject}
 }();

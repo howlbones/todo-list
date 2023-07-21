@@ -2810,6 +2810,52 @@ let ProjectCollection = function() {
 
 /***/ }),
 
+/***/ "./src/projecteditor.js":
+/*!******************************!*\
+  !*** ./src/projecteditor.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   editProject: () => (/* binding */ editProject)
+/* harmony export */ });
+/* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
+
+
+let editProject = function () {
+  let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+
+  let changeName = function (projectId, newName) {
+
+    let project;
+    let oldName;
+
+    // Search for the needed project by ID
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].id === projectId) {
+        project = projects[i];
+        oldName = project.name;
+        project.name = newName;
+      }
+    }
+    if (!project) {
+      console.log('Project with this id isn\'t found');
+      console.log('\n');
+      return
+    }
+
+    // Console debug
+    console.log(`Changed projects name "${oldName}" to "${project.name}"`);
+    console.log('\n');
+
+  }
+
+  return { changeName }
+}();
+
+/***/ }),
+
 /***/ "./src/projectmanager.js":
 /*!*******************************!*\
   !*** ./src/projectmanager.js ***!
@@ -2822,6 +2868,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ "./src/project.js");
+/* harmony import */ var _projecteditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projecteditor */ "./src/projecteditor.js");
+
 
 
 
@@ -2866,7 +2914,13 @@ let projectManager = function() {
     console.table(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
     console.log('\n');
   }
-  return {addProject, deleteProject}
+
+
+  function renameProject(projectId, newName) {
+    _projecteditor__WEBPACK_IMPORTED_MODULE_2__.editProject.changeName(projectId, newName);
+  }
+
+  return {addProject, deleteProject, renameProject}
 }();
 
 /***/ }),
@@ -3100,11 +3154,11 @@ window.app = function() {
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project');
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project');
 
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
+  // taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
+  // taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
+  // taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
   
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.deleteTask(0,0);
+  // taskManager.deleteTask(0,0);
 
 
   return {projectManager: _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager, taskManager: _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager, ProjectCollection: _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection};
