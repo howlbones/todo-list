@@ -2955,6 +2955,126 @@ function Task() {
 
 /***/ }),
 
+/***/ "./src/taskeditor.js":
+/*!***************************!*\
+  !*** ./src/taskeditor.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   editTask: () => (/* binding */ editTask)
+/* harmony export */ });
+/* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
+
+
+let editTask = function () {
+
+  let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+
+  let _findTask = function (projectId, taskId) {
+    let project;
+
+    for (let i = 0; i < projects.length; i++) {
+      if (projects[i].id === projectId) {
+        project = projects[i];
+        break;
+      }
+    }
+    if (!project) {
+      console.log('Project with given ID not found');
+    }
+
+    let found = false;
+    for (let i = 0; i < project.tasks.length; i++) {
+      if (project.tasks[i].id === taskId) {
+        found = true;
+        return project.tasks[i];
+      }
+    }
+    if (!found) {
+      console.group('Task with this ID not found');
+      return null;
+    }
+  }
+
+
+  let changeTitle = function (projectId, taskId, newTitle) {
+    let task = _findTask(projectId, taskId);
+
+    if (!task) { return };
+
+    let oldTitle = task.title;
+    task.title = newTitle;
+
+    // Console debug
+
+    console.log(`Task ID - ${task.id}`);
+    console.log(`Title changed from "${oldTitle}" to "${task.title}"`);
+    console.log('Updated projects:');
+    console.table(projects);
+    console.log(`\n`);
+  }
+
+
+  let changeDescription = function (projectId, taskId, newDesc) {
+    let task = _findTask(projectId, taskId);
+
+    if (!task) { return };
+
+    let oldDesc = task.description;
+    task.description = newDesc;
+
+    // Console debug
+
+    console.log(`Task ID - ${task.id}`);
+    console.log(`Description changed from "${oldDesc}" to "${task.description}"`);
+    console.log('Updated projects:');
+    console.table(projects);
+    console.log(`\n`);
+  }
+
+
+  let changeDueDate = function (projectId, taskId, newDate) {
+    let task = _findTask(projectId, taskId);
+
+    if (!task) { return };
+
+    let oldDate = task.dueDate;
+    task.dueDate = newDate;
+
+    // Console debug
+
+    console.log(`Task ID - ${task.id}`);
+    console.log(`Date changed from "${oldDate}" to "${task.dueDate}"`);
+    console.log('Updated projects:');
+    console.table(projects);
+    console.log(`\n`);
+  }
+
+
+  let changePriority = function (projectId, taskId, newPriority) {
+    let task = _findTask(projectId, taskId);
+
+    if (!task) { return };
+
+    let oldPriority= task.priority;
+    task.pritority = newPriority;
+
+    // Console debug
+
+    console.log(`Task ID - ${task.id}`);
+    console.log(`Priority changed from "${oldPriority}" to "${task.priority}"`);
+    console.log('Updated projects:');
+    console.table(projects);
+    console.log(`\n`);
+  }
+
+  return { changeTitle, changeDescription, changeDueDate, changePriority }
+}();
+
+/***/ }),
+
 /***/ "./src/taskmanager.js":
 /*!****************************!*\
   !*** ./src/taskmanager.js ***!
@@ -2965,9 +3085,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   taskManager: () => (/* binding */ taskManager)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./task */ "./src/task.js");
+/* harmony import */ var _taskeditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskeditor */ "./src/taskeditor.js");
+
 
 
 
@@ -3000,8 +3122,8 @@ let taskManager = function () {
 
     newTask.title = title;
     newTask.description = desc;
-    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
-    newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(dueDate, 'dd MMMM yyyy');
+    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
+    newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.push(newTask);
 
@@ -3048,7 +3170,24 @@ let taskManager = function () {
     console.log('\n');
   }
 
-  return { addTask, deleteTask };
+
+  let changeTitle = function (projectId, taskId, newTitle) {
+    _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changeTitle(projectId, taskId, newTitle);
+  }
+
+  let changeDescription = function (projectId, taskId, newDesc) {
+    _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changeDescription(projectId, taskId, newDesc);
+  }
+
+  let changeDate = function (projectId, taskId, newDate) {
+    _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changeDueDate(projectId, taskId, newDate);
+  }
+
+  let changePriority = function (projectId, taskId, newPriority) {
+    _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changePriority(projectId, taskId, newPriority);
+  }
+
+  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription};
 }();
 
 /***/ }),
@@ -3154,9 +3293,9 @@ window.app = function() {
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project');
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project');
 
-  // taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
-  // taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
-  // taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
   
   // taskManager.deleteTask(0,0);
 

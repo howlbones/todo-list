@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { ProjectCollection } from "./projectcollection";
 import { Task } from "./task";
+import { editTask } from "./taskeditor";
 
 export let taskManager = function () {
 
@@ -78,5 +79,22 @@ export let taskManager = function () {
     console.log('\n');
   }
 
-  return { addTask, deleteTask };
+
+  let changeTitle = function (projectId, taskId, newTitle) {
+    editTask.changeTitle(projectId, taskId, newTitle);
+  }
+
+  let changeDescription = function (projectId, taskId, newDesc) {
+    editTask.changeDescription(projectId, taskId, newDesc);
+  }
+
+  let changeDate = function (projectId, taskId, newDate) {
+    editTask.changeDueDate(projectId, taskId, newDate);
+  }
+
+  let changePriority = function (projectId, taskId, newPriority) {
+    editTask.changePriority(projectId, taskId, newPriority);
+  }
+
+  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription};
 }();
