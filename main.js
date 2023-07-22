@@ -119,7 +119,10 @@ header button.new-task:hover {
   color: #7E7E7E;
 }
  
-`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n"],"sourceRoot":""}]);
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3328,6 +3331,88 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/domcache.js":
+/*!*************************!*\
+  !*** ./src/domcache.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   dom: () => (/* binding */ dom)
+/* harmony export */ });
+let dom = function() {
+  const projectContainer = document.querySelector('.projects-container');
+  const projects = document.querySelectorAll('.project');
+
+  return {
+    projectContainer,
+    projects
+  }
+}();
+
+/***/ }),
+
+/***/ "./src/iconpack.js":
+/*!*************************!*\
+  !*** ./src/iconpack.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   IconPack: () => (/* binding */ IconPack)
+/* harmony export */ });
+/* harmony import */ var _img_iconpack_blackcircle_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/iconpack/blackcircle.png */ "./src/img/iconpack/blackcircle.png");
+/* harmony import */ var _img_iconpack_bluecircle_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/iconpack/bluecircle.png */ "./src/img/iconpack/bluecircle.png");
+/* harmony import */ var _img_iconpack_greencircle_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/iconpack/greencircle.png */ "./src/img/iconpack/greencircle.png");
+/* harmony import */ var _img_iconpack_redcircle_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/iconpack/redcircle.png */ "./src/img/iconpack/redcircle.png");
+/* harmony import */ var _img_iconpack_yellowcircle_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/iconpack/yellowcircle.png */ "./src/img/iconpack/yellowcircle.png");
+/* harmony import */ var _img_iconpack_bookmark_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./img/iconpack/bookmark.png */ "./src/img/iconpack/bookmark.png");
+/* harmony import */ var _img_iconpack_clock_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./img/iconpack/clock.png */ "./src/img/iconpack/clock.png");
+/* harmony import */ var _img_iconpack_important_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./img/iconpack/important.png */ "./src/img/iconpack/important.png");
+/* harmony import */ var _img_iconpack_person_png__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./img/iconpack/person.png */ "./src/img/iconpack/person.png");
+/* harmony import */ var _img_iconpack_personcheckmark_png__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/iconpack/personcheckmark.png */ "./src/img/iconpack/personcheckmark.png");
+
+
+
+
+
+
+
+
+
+
+
+let IconPack = function () {
+  const BlackCircle = _img_iconpack_blackcircle_png__WEBPACK_IMPORTED_MODULE_0__;
+  const BlueCircle = _img_iconpack_bluecircle_png__WEBPACK_IMPORTED_MODULE_1__;
+  const GreenCircle = _img_iconpack_greencircle_png__WEBPACK_IMPORTED_MODULE_2__;
+  const RedCircle = _img_iconpack_redcircle_png__WEBPACK_IMPORTED_MODULE_3__;
+  const YellowCircle = _img_iconpack_yellowcircle_png__WEBPACK_IMPORTED_MODULE_4__;
+  const BookmarkIcon = _img_iconpack_bookmark_png__WEBPACK_IMPORTED_MODULE_5__;
+  const ClockIcon = _img_iconpack_clock_png__WEBPACK_IMPORTED_MODULE_6__;
+  const ImportantIcon = _img_iconpack_important_png__WEBPACK_IMPORTED_MODULE_7__;
+  const PersonCheckLogo = _img_iconpack_personcheckmark_png__WEBPACK_IMPORTED_MODULE_9__;
+  const PersonLogo = _img_iconpack_person_png__WEBPACK_IMPORTED_MODULE_8__; 
+
+  return [ 
+    BlackCircle,
+    BlueCircle,
+    GreenCircle,
+    RedCircle,
+    YellowCircle,
+    BookmarkIcon,
+    ClockIcon,
+    ImportantIcon,
+    PersonCheckLogo,
+    PersonLogo
+  ]
+  
+}();
+
+/***/ }),
+
 /***/ "./src/project.js":
 /*!************************!*\
   !*** ./src/project.js ***!
@@ -3345,13 +3430,14 @@ function Project() {
   let id = "";
   let name = "";
   let tasks = [];
+  let icon;
   let addTask = function(title, desc, dueDate, priority) {
     _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.addTask(title, desc, dueDate, priority);
   }
   let deleteTask = function(id) {
     _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.deleteTask(id);
   }
-  return {name, tasks, addTask, deleteTask};
+  return {name, tasks, icon, addTask, deleteTask};
 }
 
 /***/ }),
@@ -3433,13 +3519,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ "./src/project.js");
 /* harmony import */ var _projecteditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projecteditor */ "./src/projecteditor.js");
+/* harmony import */ var _iconpack__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./iconpack */ "./src/iconpack.js");
+/* harmony import */ var _projectrender__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectrender */ "./src/projectrender.js");
+
+
 
 
 
 
 let projectManager = function() {
 
-  function addProject(name) {
+  function addProject(name, iconId) {
     let newProject = (0,_project__WEBPACK_IMPORTED_MODULE_1__.Project)();
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
 
@@ -3453,7 +3543,10 @@ let projectManager = function() {
     }
 
     newProject.name = name;
+    newProject.icon = _iconpack__WEBPACK_IMPORTED_MODULE_3__.IconPack[iconId];
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.push(newProject);
+
+    (0,_projectrender__WEBPACK_IMPORTED_MODULE_4__.renderProjects)();
 
     // Console debug
     console.log('New Project added. ID - ', newProject.id);
@@ -3486,6 +3579,52 @@ let projectManager = function() {
 
   return {addProject, deleteProject, renameProject}
 }();
+
+/***/ }),
+
+/***/ "./src/projectrender.js":
+/*!******************************!*\
+  !*** ./src/projectrender.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   renderProjects: () => (/* binding */ renderProjects)
+/* harmony export */ });
+/* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
+/* harmony import */ var _domcache__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./domcache */ "./src/domcache.js");
+
+
+
+function renderProjects() {
+  let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+  const projectContainer = document.querySelector('.projects-container');
+  const renderedProjects = document.querySelectorAll('.project');
+
+  if (renderedProjects) {
+    for (let i = 0; i < renderedProjects.length; i++) {
+      renderedProjects[i].remove();
+    }
+  }
+
+  for (let i = 0; i < projects.length; i++) {
+    const button = document.createElement('button');
+    const icon = document.createElement('img');
+    const name = document.createElement('p');
+    let id = String(projects[i].id);
+    button.classList.add(`project`);
+    button.classList.add(id);
+    icon.src = projects[i].icon;
+    name.textContent = projects[i].name;
+
+    button.appendChild(icon);
+    button.appendChild(name);
+    projectContainer.appendChild(button);
+  }
+}
+
+
 
 /***/ }),
 
@@ -3756,6 +3895,106 @@ let taskManager = function () {
 
 /***/ }),
 
+/***/ "./src/img/iconpack/blackcircle.png":
+/*!******************************************!*\
+  !*** ./src/img/iconpack/blackcircle.png ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "3a72f9064bf2d16a35a6.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/bluecircle.png":
+/*!*****************************************!*\
+  !*** ./src/img/iconpack/bluecircle.png ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "6f7d7aeb061aef8ae2a2.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/bookmark.png":
+/*!***************************************!*\
+  !*** ./src/img/iconpack/bookmark.png ***!
+  \***************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "f3b75c4b1229e29ddd13.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/clock.png":
+/*!************************************!*\
+  !*** ./src/img/iconpack/clock.png ***!
+  \************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "c8a3ee4835dd26d8a863.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/greencircle.png":
+/*!******************************************!*\
+  !*** ./src/img/iconpack/greencircle.png ***!
+  \******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "8fde58366d85eb8c193f.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/important.png":
+/*!****************************************!*\
+  !*** ./src/img/iconpack/important.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "f522237425b73c9ad7d5.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/person.png":
+/*!*************************************!*\
+  !*** ./src/img/iconpack/person.png ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "d3ae65e7365cc723682c.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/personcheckmark.png":
+/*!**********************************************!*\
+  !*** ./src/img/iconpack/personcheckmark.png ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "640b953a3b3d622c8de6.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/redcircle.png":
+/*!****************************************!*\
+  !*** ./src/img/iconpack/redcircle.png ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "dc781a15de9e7679ecd8.png";
+
+/***/ }),
+
+/***/ "./src/img/iconpack/yellowcircle.png":
+/*!*******************************************!*\
+  !*** ./src/img/iconpack/yellowcircle.png ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "d0f606119a2a66e025f7.png";
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
@@ -3829,6 +4068,18 @@ function _typeof(obj) {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -3843,6 +4094,29 @@ function _typeof(obj) {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && !scriptUrl) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -3861,7 +4135,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _projectmanager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectmanager */ "./src/projectmanager.js");
 /* harmony import */ var _taskmanager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskmanager */ "./src/taskmanager.js");
-/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
+/* harmony import */ var _projectrender__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectrender */ "./src/projectrender.js");
+/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
+
 
 
 
@@ -3871,15 +4147,15 @@ __webpack_require__.r(__webpack_exports__);
 // API can be accessed in the browser
 window.app = function() {
 
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My First Project');
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Second Project');
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project');
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project');
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My First Project', 1);
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Second Project', 2);
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project', 1);
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project', 3);
 
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
-  
+
   // taskManager.deleteTask(0,0);
 
 
