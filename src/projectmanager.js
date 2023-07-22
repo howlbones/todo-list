@@ -1,10 +1,12 @@
 import { ProjectCollection } from "./projectcollection";
 import { Project } from "./project";
 import { editProject } from "./projecteditor";
+import { IconPack } from "./iconpack";
+import { renderProjects } from "./projectrender";
 
 export let projectManager = function() {
 
-  function addProject(name) {
+  function addProject(name, iconId) {
     let newProject = Project();
     const projects = ProjectCollection.projects;
 
@@ -18,7 +20,10 @@ export let projectManager = function() {
     }
 
     newProject.name = name;
+    newProject.icon = IconPack[iconId];
     ProjectCollection.projects.push(newProject);
+
+    renderProjects();
 
     // Console debug
     console.log('New Project added. ID - ', newProject.id);

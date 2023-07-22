@@ -97,3 +97,7 @@ header button.new-task:hover {
   color: #7E7E7E;
 }
  
+.projects-container {
+  display: flex;
+  flex-direction: column;
+}
