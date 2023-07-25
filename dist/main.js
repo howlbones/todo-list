@@ -126,10 +126,12 @@ header button.new-task:hover {
 
 div.project-add-prompt {
   margin-top: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: auto 50px;
   align-items: center;
-  gap: 15px;
-  justify-content: space-between;
+  row-gap: 5px;
+  column-gap: 15px;
   padding: 20px 0px;
 }
 
@@ -150,6 +152,7 @@ div.project-add-prompt {
   font-size: 28px;
   color: #2B2B2B;
   padding: 0px 15px;
+  border: solid 2px #ECECEC;
 }
 
 .project-add-prompt input:focus {
@@ -165,9 +168,26 @@ div.project-add-prompt {
   font-size: 35px;
 } 
 
+.project-add-prompt .icon-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  grid-column: 1 / -1;
+}
+
+.project-add-prompt .icon-container button {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+
 button.active {
   background-color: #ECECEC;
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,cAAc;EACd,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,yBAAyB;AAC3B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: flex;\n  align-items: center;\n  gap: 15px;\n  justify-content: space-between;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form{\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n} \n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n} \n\nbutton.active {\n  background-color: #ECECEC;\n}"],"sourceRoot":""}]);
+}
+
+
+`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,+BAA+B;EAC/B,6BAA6B;EAC7B,mBAAmB;EACnB,YAAY;EACZ,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,cAAc;EACd,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,uBAAuB;AACzB;;;AAGA;EACE,yBAAyB;AAC3B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form{\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n} \n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n} \n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3386,37 +3406,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   activateAddProjectButton: () => (/* binding */ activateAddProjectButton)
 /* harmony export */ });
+/* harmony import */ var _iconpack__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./iconpack */ "./src/iconpack.js");
+/* harmony import */ var _projectmanager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectmanager */ "./src/projectmanager.js");
+
+
 
 function activateAddProjectButton() {
   const button = document.querySelector('button.add-project');
 
-  console.log('activating button');
   button.addEventListener('click', showAddProjectField);
-
 }
 
 function showAddProjectField() {
-  console.log('button clicked');
   const button = document.querySelector('button.add-project');
   const container = document.createElement('div');
 
   const form = document.createElement('form');
   const label = document.createElement('label');
   const input = document.createElement('input');
-  label.setAttribute('for', "new-project-name");
+  label.setAttribute('for', "projectname");
   label.textContent = "Projects name:";
   input.setAttribute('type', 'text');
-  input.setAttribute('id', "new-projects-name");
+  input.setAttribute('id', "projectname");
   input.setAttribute('name', 'new-projects-name');
   form.appendChild(label);
   form.appendChild(input);
-  
+
+  const iconContainer = document.createElement('div');
+  iconContainer.classList.add('icon-container');
+  iconContainer.classList.add('0');
+
+  for (let i = 0; i < _iconpack__WEBPACK_IMPORTED_MODULE_0__.IconPack.length; i++) {
+    const iconButton = document.createElement('button');
+    const icon = document.createElement('img');
+    icon.src = _iconpack__WEBPACK_IMPORTED_MODULE_0__.IconPack[i];
+    iconButton.appendChild(icon);
+    iconContainer.appendChild(iconButton);
+    iconButton.addEventListener('click', () => {
+      const allIconButtons = document.querySelectorAll('.project-add-prompt .icon-container button');
+      allIconButtons.forEach((button) => { button.classList.remove('active') });
+      iconButton.classList.add('active');
+      iconContainer.className = "";
+      iconContainer.classList.add('icon-container');
+      iconContainer.classList.add(`${i}`);
+    })
+  }
+
   const submitPromptButton = document.createElement('button');
   submitPromptButton.textContent = "✔";
 
   container.classList.add('project-add-prompt');
   container.appendChild(form);
   container.appendChild(submitPromptButton);
+  container.appendChild(iconContainer);
 
   button.style.marginTop = "0px";
   button.classList.add('active');
@@ -3425,6 +3467,23 @@ function showAddProjectField() {
 
   button.addEventListener('click', removeAddProjectField);
 
+  activateSubmitPromptButton(submitPromptButton);
+}
+
+function activateSubmitPromptButton(submitPromptButton) {
+  submitPromptButton.addEventListener('click', submitForm);
+}
+
+function submitForm() {
+  const input = document.querySelector('.project-add-prompt input');
+  let name = input.value
+  let icon = document.querySelector('.project-add-prompt .icon-container').className;
+
+  if (name != "" && icon) {
+    icon = icon.split(' ')[1];
+    _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject(name, icon);
+    removeAddProjectField();
+  }
 }
 
 function removeEventListener(button) {
@@ -4275,7 +4334,6 @@ window.app = function() {
 
   // taskManager.deleteTask(0,0);
 
-  console.log('trying to activate button');
   (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
 
 

@@ -104,10 +104,12 @@ header button.new-task:hover {
 
 div.project-add-prompt {
   margin-top: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: auto 50px;
   align-items: center;
-  gap: 15px;
-  justify-content: space-between;
+  row-gap: 5px;
+  column-gap: 15px;
   padding: 20px 0px;
 }
 
@@ -128,6 +130,7 @@ div.project-add-prompt {
   font-size: 28px;
   color: #2B2B2B;
   padding: 0px 15px;
+  border: solid 2px #ECECEC;
 }
 
 .project-add-prompt input:focus {
@@ -143,6 +146,22 @@ div.project-add-prompt {
   font-size: 35px;
 } 
 
+.project-add-prompt .icon-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  grid-column: 1 / -1;
+}
+
+.project-add-prompt .icon-container button {
+  width: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+
 button.active {
   background-color: #ECECEC;
 }
+
+

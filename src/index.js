@@ -20,7 +20,6 @@ window.app = function() {
 
   // taskManager.deleteTask(0,0);
 
-  console.log('trying to activate button');
   activateAddProjectButton();
 
 
