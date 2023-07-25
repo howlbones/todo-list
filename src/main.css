@@ -159,6 +159,10 @@ div.project-add-prompt {
   justify-content: center;
 }
 
+.project-add-prompt .icon-container button.active {
+  background-color: #c3c3c3;
+}
+
 
 button.active {
   background-color: #ECECEC;

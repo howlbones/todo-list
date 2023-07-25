@@ -54,10 +54,11 @@ function showAddProjectField() {
   button.classList.add('active');
   button.parentNode.insertBefore(container, button);
   removeEventListener(button);
-
+  
   button.addEventListener('click', removeAddProjectField);
 
   activateSubmitPromptButton(submitPromptButton);
+  window.scrollBy(0, 500);
 }
 
 function activateSubmitPromptButton(submitPromptButton) {
