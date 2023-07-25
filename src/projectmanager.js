@@ -26,10 +26,10 @@ export let projectManager = function() {
     renderProjects();
 
     // Console debug
-    console.log('New Project added. ID - ', newProject.id);
-    console.log('Updated Project list:');
-    console.table(ProjectCollection.projects);
-    console.log('\n');
+    // console.log('New Project added. ID - ', newProject.id);
+    // console.log('Updated Project list:');
+    // console.table(ProjectCollection.projects);
+    // console.log('\n');
   }
   
 
@@ -43,10 +43,10 @@ export let projectManager = function() {
     }
 
     // Console debug
-    console.log("Project", id, "deleted");
-    console.log("Updated project list:");
-    console.table(ProjectCollection.projects);
-    console.log('\n');
+    // console.log("Project", id, "deleted");
+    // console.log("Updated project list:");
+    // console.table(ProjectCollection.projects);
+    // console.log('\n');
   }
 
 

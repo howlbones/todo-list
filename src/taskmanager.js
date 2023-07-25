@@ -37,11 +37,11 @@ export let taskManager = function () {
     ProjectCollection.projects[projectId].tasks.push(newTask);
 
     // Console debug
-    console.log(`New task added to ${project.name}`);
-    console.log(`New task ID - ${newTask.id}`);
-    console.log(`${project.name} updated task list:`)
-    console.table(project.tasks);
-    console.log('\n');
+    // console.log(`New task added to ${project.name}`);
+    // console.log(`New task ID - ${newTask.id}`);
+    // console.log(`${project.name} updated task list:`)
+    // console.table(project.tasks);
+    // console.log('\n');
   }
 
   let deleteTask = function (projectId, taskId) {
@@ -73,10 +73,10 @@ export let taskManager = function () {
     }
 
     // Console debug
-    console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
-    console.log(`Updated task list:`)
-    console.table(project.tasks);
-    console.log('\n');
+    // console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
+    // console.log(`Updated task list:`)
+    // console.table(project.tasks);
+    // console.log('\n');
   }
 
 

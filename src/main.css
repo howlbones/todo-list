@@ -101,3 +101,48 @@ header button.new-task:hover {
   display: flex;
   flex-direction: column;
 }
+
+div.project-add-prompt {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.project-add-prompt form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #2B2B2B;
+}
+
+.project-add-prompt input {
+  border: none;
+  border-radius: 15px;;
+  height: 45px;
+  width: 100%;
+  font-size: 28px;
+  color: #2B2B2B;
+  padding: 0px 15px;
+}
+
+.project-add-prompt input:focus {
+  outline: none;
+  color: #2B2B2B;
+  border: solid 2px #ECECEC;
+} 
+
+.project-add-prompt button {
+  height: 45px;
+  margin-top: auto;
+  color: #7E7E7E;
+  font-size: 35px;
+} 
+
+button.active {
+  background-color: #ECECEC;
+}
