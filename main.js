@@ -122,7 +122,52 @@ header button.new-task:hover {
 .projects-container {
   display: flex;
   flex-direction: column;
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}"],"sourceRoot":""}]);
+}
+
+div.project-add-prompt {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+.project-add-prompt form{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  color: #2B2B2B;
+}
+
+.project-add-prompt input {
+  border: none;
+  border-radius: 15px;;
+  height: 45px;
+  width: 100%;
+  font-size: 28px;
+  color: #2B2B2B;
+  padding: 0px 15px;
+}
+
+.project-add-prompt input:focus {
+  outline: none;
+  color: #2B2B2B;
+  border: solid 2px #ECECEC;
+} 
+
+.project-add-prompt button {
+  height: 45px;
+  margin-top: auto;
+  color: #7E7E7E;
+  font-size: 35px;
+} 
+
+button.active {
+  background-color: #ECECEC;
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;AACnB;;AAEA;EACE,aAAa;EACb,cAAc;EACd,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,yBAAyB;AAC3B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: flex;\n  align-items: center;\n  gap: 15px;\n  justify-content: space-between;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form{\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n} \n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n} \n\nbutton.active {\n  background-color: #ECECEC;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3331,6 +3376,76 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/addprojectbutton.js":
+/*!*********************************!*\
+  !*** ./src/addprojectbutton.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activateAddProjectButton: () => (/* binding */ activateAddProjectButton)
+/* harmony export */ });
+
+function activateAddProjectButton() {
+  const button = document.querySelector('button.add-project');
+
+  console.log('activating button');
+  button.addEventListener('click', showAddProjectField);
+
+}
+
+function showAddProjectField() {
+  console.log('button clicked');
+  const button = document.querySelector('button.add-project');
+  const container = document.createElement('div');
+
+  const form = document.createElement('form');
+  const label = document.createElement('label');
+  const input = document.createElement('input');
+  label.setAttribute('for', "new-project-name");
+  label.textContent = "Projects name:";
+  input.setAttribute('type', 'text');
+  input.setAttribute('id', "new-projects-name");
+  input.setAttribute('name', 'new-projects-name');
+  form.appendChild(label);
+  form.appendChild(input);
+  
+  const submitPromptButton = document.createElement('button');
+  submitPromptButton.textContent = "✔";
+
+  container.classList.add('project-add-prompt');
+  container.appendChild(form);
+  container.appendChild(submitPromptButton);
+
+  button.style.marginTop = "0px";
+  button.classList.add('active');
+  button.parentNode.insertBefore(container, button);
+  removeEventListener(button);
+
+  button.addEventListener('click', removeAddProjectField);
+
+}
+
+function removeEventListener(button) {
+  button.removeEventListener('click', showAddProjectField);
+  button.removeEventListener('click', removeAddProjectField);
+}
+
+function removeAddProjectField() {
+  const prompt = document.querySelector('div.project-add-prompt');
+  const button = document.querySelector('button.add-project');
+
+  button.classList.remove('active');
+  button.style.marginTop = 'auto';
+  prompt.remove();
+
+  removeEventListener(button);
+  button.addEventListener('click', showAddProjectField);
+}
+
+/***/ }),
+
 /***/ "./src/domcache.js":
 /*!*************************!*\
   !*** ./src/domcache.js ***!
@@ -3549,10 +3664,10 @@ let projectManager = function() {
     (0,_projectrender__WEBPACK_IMPORTED_MODULE_4__.renderProjects)();
 
     // Console debug
-    console.log('New Project added. ID - ', newProject.id);
-    console.log('Updated Project list:');
-    console.table(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
-    console.log('\n');
+    // console.log('New Project added. ID - ', newProject.id);
+    // console.log('Updated Project list:');
+    // console.table(ProjectCollection.projects);
+    // console.log('\n');
   }
   
 
@@ -3566,10 +3681,10 @@ let projectManager = function() {
     }
 
     // Console debug
-    console.log("Project", id, "deleted");
-    console.log("Updated project list:");
-    console.table(_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects);
-    console.log('\n');
+    // console.log("Project", id, "deleted");
+    // console.log("Updated project list:");
+    // console.table(ProjectCollection.projects);
+    // console.log('\n');
   }
 
 
@@ -3831,11 +3946,11 @@ let taskManager = function () {
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.push(newTask);
 
     // Console debug
-    console.log(`New task added to ${project.name}`);
-    console.log(`New task ID - ${newTask.id}`);
-    console.log(`${project.name} updated task list:`)
-    console.table(project.tasks);
-    console.log('\n');
+    // console.log(`New task added to ${project.name}`);
+    // console.log(`New task ID - ${newTask.id}`);
+    // console.log(`${project.name} updated task list:`)
+    // console.table(project.tasks);
+    // console.log('\n');
   }
 
   let deleteTask = function (projectId, taskId) {
@@ -3867,10 +3982,10 @@ let taskManager = function () {
     }
 
     // Console debug
-    console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
-    console.log(`Updated task list:`)
-    console.table(project.tasks);
-    console.log('\n');
+    // console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
+    // console.log(`Updated task list:`)
+    // console.table(project.tasks);
+    // console.log('\n');
   }
 
 
@@ -4137,6 +4252,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _taskmanager__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskmanager */ "./src/taskmanager.js");
 /* harmony import */ var _projectrender__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectrender */ "./src/projectrender.js");
 /* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
+/* harmony import */ var _addprojectbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addprojectbutton */ "./src/addprojectbutton.js");
+
 
 
 
@@ -4157,6 +4274,11 @@ window.app = function() {
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
 
   // taskManager.deleteTask(0,0);
+
+  console.log('trying to activate button');
+  (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
+
+
 
 
   return {projectManager: _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager, taskManager: _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager, ProjectCollection: _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection};
