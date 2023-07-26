@@ -99,7 +99,8 @@ header button.new-task:hover {
 .side-bar p {
   justify-self: start;
   font-size: 24px;
-  font-weight: 400;;
+  font-weight: 400;
+  ;
   color: #2B2B2B;
 }
 
@@ -115,10 +116,10 @@ header button.new-task:hover {
   margin-top: auto;
 }
 
-.side-bar .add-project p{
+.side-bar .add-project p {
   color: #7E7E7E;
 }
- 
+
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -135,7 +136,7 @@ div.project-add-prompt {
   padding: 20px 0px;
 }
 
-.project-add-prompt form{
+.project-add-prompt form {
   width: 100%;
   display: flex;
   align-items: center;
@@ -146,7 +147,8 @@ div.project-add-prompt {
 
 .project-add-prompt input {
   border: none;
-  border-radius: 15px;;
+  border-radius: 15px;
+  ;
   height: 45px;
   width: 100%;
   font-size: 28px;
@@ -159,14 +161,14 @@ div.project-add-prompt {
   outline: none;
   color: #2B2B2B;
   border: solid 2px #ECECEC;
-} 
+}
 
 .project-add-prompt button {
   height: 45px;
   margin-top: auto;
   color: #7E7E7E;
   font-size: 35px;
-} 
+}
 
 .project-add-prompt .icon-container {
   display: flex;
@@ -190,8 +192,137 @@ button.active {
   background-color: #ECECEC;
 }
 
+/* New task form */
 
-`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,+BAA+B;EAC/B,6BAA6B;EAC7B,mBAAmB;EACnB,YAAY;EACZ,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,cAAc;EACd,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,yBAAyB;AAC3B;;;AAGA;EACE,yBAAyB;AAC3B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p{\n  color: #7E7E7E;\n}\n \n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form{\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n} \n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n} \n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n\n"],"sourceRoot":""}]);
+div.dark-screen {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+form.task-form {
+  background-color: #FFF;
+  height: 700px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project tasks view */
+
+.display-project-container {
+  width: 100%;
+  height: 100%;
+  padding: 60px 133px;
+  color: #2B2B2B;
+}
+
+.workspace .project-name {
+  margin-bottom: 60px;
+}
+
+.workspace .tasks-container {
+  display: flex;
+  flex-direction: column;
+  ;
+}
+
+.tasks-container button {
+  display: grid;
+  grid-template-columns: 30px 1fr 60px;
+  grid-template-rows: 1fr 35px;
+  column-gap: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #FFF;
+  border: none;
+}
+
+.tasks-container button:hover {
+  background-color: #F5F5F5;
+}
+
+.tasks-container button.task {
+  min-height: 80px;
+}
+
+.tasks-container button.view-button {
+  background-color: inherit;
+  align-self: center;
+  justify-self: center;
+  height: 35px;
+  width: 100%;
+  border-radius: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  cursor: pointer;
+  border: none;
+}
+
+.tasks-container button.view-button:hover {
+  background-color: #eaeaea;
+}
+
+.tasks-container button.view-button img {
+  width: 20px;
+}
+
+.tasks-container .task-date {
+  grid-column: 2 / 3;
+  font-size: 16px;
+}
+
+.tasks-container .task-title {
+  font-size: 24px;
+  min-width: 200px;
+  text-align: start;
+}
+
+
+.tasks-container button .task-title,
+.tasks-container button .task-date {
+  justify-self: start;
+}
+
+.tasks-container .task-priority {
+  padding: 3px;
+  color: white;
+  border-radius: 3px;
+}
+
+.tasks-container .task-priority.high {
+  background-color: #CC5546;
+}
+
+.tasks-container .task-priority.medium {
+  background-color: #6477c4;
+}
+
+.tasks-container .task-priority.low {
+  background-color: #4e915c;
+}
+
+.tasks-container button.add-task-button{
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+  justify-content: start;
+}
+
+.tasks-container button.add-task-button p{
+  font-size: 24px;
+  text-align: start;
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 150px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n}\n\n/* Project tasks view */\n\n.display-project-container {\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 60px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  ;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 16px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button{\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p{\n  font-size: 24px;\n  text-align: start;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3412,12 +3543,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _iconpack__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./iconpack */ "./src/iconpack.js");
 /* harmony import */ var _projectmanager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectmanager */ "./src/projectmanager.js");
+/* harmony import */ var _projectbuttons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectbuttons */ "./src/projectbuttons.js");
+
 
 
 
 function activateAddProjectButton() {
   const button = document.querySelector('button.add-project');
-
+  
   button.addEventListener('click', showAddProjectField);
 }
 
@@ -3435,7 +3568,7 @@ function showAddProjectField() {
   input.setAttribute('name', 'new-projects-name');
   form.appendChild(label);
   form.appendChild(input);
-
+  
   const iconContainer = document.createElement('div');
   iconContainer.classList.add('icon-container');
   iconContainer.classList.add('0');
@@ -3455,7 +3588,7 @@ function showAddProjectField() {
       iconContainer.classList.add(`${i}`);
     })
   }
-
+  
   const submitPromptButton = document.createElement('button');
   submitPromptButton.textContent = "✔";
 
@@ -3470,8 +3603,9 @@ function showAddProjectField() {
   removeEventListener(button);
   
   button.addEventListener('click', removeAddProjectField);
-
+  
   activateSubmitPromptButton(submitPromptButton);
+  
   window.scrollBy(0, 500);
 }
 
@@ -3483,11 +3617,13 @@ function submitForm() {
   const input = document.querySelector('.project-add-prompt input');
   let name = input.value
   let icon = document.querySelector('.project-add-prompt .icon-container').className;
-
+  
   if (name != "" && icon) {
     icon = icon.split(' ')[1];
     _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject(name, icon);
     removeAddProjectField();
+    (0,_projectbuttons__WEBPACK_IMPORTED_MODULE_2__.removeProjectButtonListeners)();
+    (0,_projectbuttons__WEBPACK_IMPORTED_MODULE_2__.activateProjectButtons)();
   }
 }
 
@@ -3507,6 +3643,119 @@ function removeAddProjectField() {
   removeEventListener(button);
   button.addEventListener('click', showAddProjectField);
 }
+
+/***/ }),
+
+/***/ "./src/displayproject.js":
+/*!*******************************!*\
+  !*** ./src/displayproject.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   displayContent: () => (/* binding */ displayContent)
+/* harmony export */ });
+/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./project */ "./src/project.js");
+/* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
+/* harmony import */ var _src_img_plus_gray_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/img/plus-gray.png */ "./src/img/plus-gray.png");
+/* harmony import */ var _src_img_view_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/img/view.png */ "./src/img/view.png");
+/* harmony import */ var _src_img_check_circle_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/img/check-circle.png */ "./src/img/check-circle.png");
+/* harmony import */ var _newtaskbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./newtaskbutton */ "./src/newtaskbutton.js");
+
+
+
+
+
+
+
+let displayContent = function () {
+
+  let project = function (projectId) {
+    if (document.querySelector('.display-project-container')) {
+      clear();
+    }
+    
+    const workspace = document.querySelector('div.workspace');
+    const displayContainer = document.createElement('div');
+    displayContainer.classList.add('display-project-container');
+    displayContainer.classList.add(`${projectId}`);
+
+    const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
+    const project = projects[projectId];
+    const projectName = project.name;
+
+    const header = document.createElement('h1');
+    header.classList.add('project-name');
+    header.textContent = projectName;
+
+    displayContainer.appendChild(header);
+
+    const tasksContainer = document.createElement('div');
+    tasksContainer.classList.add('tasks-container');
+
+    let tasks = project.tasks;
+
+    if (tasks) {
+      for (let i = 0; i < tasks.length; i++) {
+        let task = tasks[i];
+        const button = document.createElement('button');
+        button.classList.add('task');
+        button.classList.add(`${task.id}`);
+        const title = document.createElement('p');
+        title.classList.add('task-title')
+        title.textContent = task.title;
+        const priority = document.createElement('p');
+        priority.classList.add('task-priority');
+        priority.classList.add(`${task.priority}`);
+        priority.textContent = task.priority;
+        const date = document.createElement('p');
+        date.classList.add('task-date');
+        date.textContent = task.dueDate;
+        const view = document.createElement('button');
+        view.classList.add('view-button');
+        const viewImg = document.createElement('img');
+        viewImg.src = _src_img_view_png__WEBPACK_IMPORTED_MODULE_3__;
+        view.append(viewImg);
+        const circleIcon = document.createElement('img');
+        circleIcon.classList.add('circle-icon');
+        circleIcon.src = _src_img_check_circle_png__WEBPACK_IMPORTED_MODULE_4__;
+        button.appendChild(circleIcon);
+        button.appendChild(title);
+        button.appendChild(priority);
+        button.appendChild(date);
+        button.appendChild(view);
+        
+        tasksContainer.appendChild(button);
+      }
+    }
+
+    const addTaskButton = document.createElement('button') ;
+    addTaskButton.classList.add('add-task-button');
+    const addTaskIcon = document.createElement('img');
+    addTaskIcon.src = _src_img_plus_gray_png__WEBPACK_IMPORTED_MODULE_2__;
+    const buttonText = document.createElement('p');
+    buttonText.textContent = "New task";
+
+    addTaskButton.appendChild(addTaskIcon);
+    addTaskButton.appendChild(buttonText);
+    tasksContainer.appendChild(addTaskButton);
+
+    (0,_newtaskbutton__WEBPACK_IMPORTED_MODULE_5__.activateNewTaskButton)(addTaskButton);
+      
+
+    displayContainer.appendChild(tasksContainer);
+    workspace.appendChild(displayContainer);
+
+  }
+
+  let clear = function() {
+    const content = document.querySelector('.display-project-container');
+    content.remove();
+  } 
+
+  return { project, clear }
+}();
 
 /***/ }),
 
@@ -3592,6 +3841,175 @@ let IconPack = function () {
 
 /***/ }),
 
+/***/ "./src/newtaskbutton.js":
+/*!******************************!*\
+  !*** ./src/newtaskbutton.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activateNewTaskButton: () => (/* binding */ activateNewTaskButton)
+/* harmony export */ });
+/* harmony import */ var _newtaskform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newtaskform */ "./src/newtaskform.js");
+
+
+
+function activateNewTaskButton (button) {
+ console.log('button activated');
+ button.addEventListener('click', _newtaskform__WEBPACK_IMPORTED_MODULE_0__.taskForm.show);
+}
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/newtaskform.js":
+/*!****************************!*\
+  !*** ./src/newtaskform.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   taskForm: () => (/* binding */ taskForm)
+/* harmony export */ });
+/* harmony import */ var _taskmanager__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./taskmanager */ "./src/taskmanager.js");
+/* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
+
+
+
+let taskForm = function () {
+  let show = function (e) {
+    const body = document.querySelector('body');
+    const darkScreen = document.createElement('div');
+    darkScreen.classList.add('dark-screen');
+    const form = document.createElement('form');
+    form.classList.add('task-form');
+
+    const titleLabel = document.createElement('label');
+    titleLabel.setAttribute('for', 'tasktitle');
+    titleLabel.textContent = 'Title';
+    const titleInput = document.createElement('input');
+    titleInput.setAttribute('type', 'text');
+    titleInput.setAttribute('id', 'tasktitle');
+    titleInput.setAttribute('name', 'tasktitle');
+
+    const descriptionLabel = document.createElement('label');
+    descriptionLabel.setAttribute('for', 'taskdesc');
+    descriptionLabel.textContent = 'Description';
+    const descriptionInput = document.createElement('input');
+    descriptionInput.setAttribute('type', 'text');
+    descriptionInput.setAttribute('id', 'taskdesc');
+    descriptionInput.setAttribute('name', 'taskdesc');
+
+    const dateLabel = document.createElement('label');
+    dateLabel.setAttribute('for', 'taskdate');
+    dateLabel.textContent = 'Due date';
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('type', 'date');
+    dateInput.setAttribute('id', 'taskdate');
+    dateInput.setAttribute('name', 'taskdate');
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('priority-button-container');
+    const lowPriorityButton = document.createElement('button');
+    lowPriorityButton.classList.add('priority-button');
+    lowPriorityButton.classList.add('low');
+    lowPriorityButton.classList.add('selected');
+    lowPriorityButton.textContent = 'low';
+    lowPriorityButton.setAttribute('type', 'button');
+    const mediumPriorityButton = document.createElement('button');
+    mediumPriorityButton.classList.add('priority-button');
+    mediumPriorityButton.classList.add('medium');
+    mediumPriorityButton.textContent = 'medium';
+    mediumPriorityButton.setAttribute('type', 'button');
+    const highPriorityButton = document.createElement('button');
+    highPriorityButton.classList.add('priority-button');
+    highPriorityButton.classList.add('high');
+    highPriorityButton.textContent = 'high';
+    highPriorityButton.setAttribute('type', 'button');
+
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Add task';
+    submitButton.classList.add('task-form-submit');
+    submitButton.setAttribute('type', 'button');
+
+    const exitButton = document.createElement('button');
+    exitButton.textContent = 'Cancel';
+    exitButton.classList.add('cancel-button');
+    exitButton.setAttribute('type', 'button');
+
+
+    form.appendChild(titleLabel);
+    form.appendChild(titleInput);
+    form.appendChild(descriptionLabel);
+    form.appendChild(descriptionInput);
+    form.appendChild(dateLabel);
+    form.appendChild(dateInput);
+    buttonContainer.appendChild(lowPriorityButton);
+    buttonContainer.appendChild(mediumPriorityButton);
+    buttonContainer.appendChild(highPriorityButton);
+    form.appendChild(buttonContainer);
+    form.appendChild(submitButton);
+    form.appendChild(exitButton);
+    darkScreen.appendChild(form);
+    body.appendChild(darkScreen);
+
+    lowPriorityButton.addEventListener('click', () => {
+      lowPriorityButton.classList.add('selected');
+      mediumPriorityButton.classList.remove('selected');
+      highPriorityButton.classList.remove('selected');
+    })
+
+    mediumPriorityButton.addEventListener('click', () => {
+      mediumPriorityButton.classList.add('selected');
+      lowPriorityButton.classList.remove('selected');
+      highPriorityButton.classList.remove('selected');
+    })
+
+    highPriorityButton.addEventListener('click', () => {
+      highPriorityButton.classList.add('selected');
+      lowPriorityButton.classList.remove('selected');
+      mediumPriorityButton.classList.remove('selected');
+    })
+
+
+    let projectId = e.target.closest('div.display-project-container');
+    projectId = parseInt(projectId.className.split(' ')[1]);
+
+    exitButton.addEventListener('click', () => {
+      darkScreen.remove();
+      console.log('removed');
+    })
+
+    submitButton.addEventListener('click', () => {
+      if (titleInput.value != "" && dateInput.value != "") {
+        let priority = document.querySelector('.priority-button.selected');
+        priority = priority.className.split(' ')[1];
+        _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
+        darkScreen.remove();
+        _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.project(projectId);
+      } else {
+        if (titleInput.value === "") {
+          titleInput.classList.add('invalid');
+        }
+        if (dateInput.value === "") {
+          dateInput.classList.add("invalid");
+        }
+      }
+    })
+
+
+
+  }
+  return { show };
+}();
+
+/***/ }),
+
 /***/ "./src/project.js":
 /*!************************!*\
   !*** ./src/project.js ***!
@@ -3617,6 +4035,50 @@ function Project() {
     _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.deleteTask(id);
   }
   return {name, tasks, icon, addTask, deleteTask};
+}
+
+/***/ }),
+
+/***/ "./src/projectbuttons.js":
+/*!*******************************!*\
+  !*** ./src/projectbuttons.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activateProjectButtons: () => (/* binding */ activateProjectButtons),
+/* harmony export */   removeProjectButtonListeners: () => (/* binding */ removeProjectButtonListeners)
+/* harmony export */ });
+/* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
+
+
+function activateProjectButtons() {
+  const buttons = document.querySelectorAll("button.project");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', requestProject); 
+  }
+}
+
+function removeProjectButtonListeners() {
+  const buttons = document.querySelectorAll("button .project");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].removeEventListener('click', requestProject);
+  }
+}
+
+function requestProject(e) {
+      let target = e.target;
+      if (target.tagName === 'BUTTON') {
+      } else {
+        target = target.closest('button');
+      }
+
+      let id = target.className.split(' ')[1];
+
+      _displayproject__WEBPACK_IMPORTED_MODULE_0__.displayContent.project(parseInt(id));
 }
 
 /***/ }),
@@ -4074,6 +4536,16 @@ let taskManager = function () {
 
 /***/ }),
 
+/***/ "./src/img/check-circle.png":
+/*!**********************************!*\
+  !*** ./src/img/check-circle.png ***!
+  \**********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "c55ac7a70bcc1c169c44.png";
+
+/***/ }),
+
 /***/ "./src/img/iconpack/blackcircle.png":
 /*!******************************************!*\
   !*** ./src/img/iconpack/blackcircle.png ***!
@@ -4171,6 +4643,26 @@ module.exports = __webpack_require__.p + "dc781a15de9e7679ecd8.png";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "d0f606119a2a66e025f7.png";
+
+/***/ }),
+
+/***/ "./src/img/plus-gray.png":
+/*!*******************************!*\
+  !*** ./src/img/plus-gray.png ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "86392e7bae21aecf36a2.png";
+
+/***/ }),
+
+/***/ "./src/img/view.png":
+/*!**************************!*\
+  !*** ./src/img/view.png ***!
+  \**************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "ef8d1830dfac65004c4b.png";
 
 /***/ }),
 
@@ -4317,6 +4809,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _projectrender__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projectrender */ "./src/projectrender.js");
 /* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
 /* harmony import */ var _addprojectbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addprojectbutton */ "./src/addprojectbutton.js");
+/* harmony import */ var _projectbuttons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectbuttons */ "./src/projectbuttons.js");
+
 
 
 
@@ -4335,11 +4829,12 @@ window.app = function() {
 
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Amy', 'Good luck', new Date(2023, 7, 21), 'high');
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Lena', 'Good luck', new Date(2023, 7, 21), 'high');
 
   // taskManager.deleteTask(0,0);
 
   (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
+  (0,_projectbuttons__WEBPACK_IMPORTED_MODULE_6__.activateProjectButtons)();
 
 
 
