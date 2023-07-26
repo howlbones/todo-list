@@ -1,9 +1,10 @@
 import { IconPack } from "./iconpack";
 import { projectManager } from "./projectmanager";
+import { activateProjectButtons, removeProjectButtonListeners } from "./projectbuttons";
 
 export function activateAddProjectButton() {
   const button = document.querySelector('button.add-project');
-
+  
   button.addEventListener('click', showAddProjectField);
 }
 
@@ -21,7 +22,7 @@ function showAddProjectField() {
   input.setAttribute('name', 'new-projects-name');
   form.appendChild(label);
   form.appendChild(input);
-
+  
   const iconContainer = document.createElement('div');
   iconContainer.classList.add('icon-container');
   iconContainer.classList.add('0');
@@ -41,7 +42,7 @@ function showAddProjectField() {
       iconContainer.classList.add(`${i}`);
     })
   }
-
+  
   const submitPromptButton = document.createElement('button');
   submitPromptButton.textContent = "✔";
 
@@ -56,8 +57,9 @@ function showAddProjectField() {
   removeEventListener(button);
   
   button.addEventListener('click', removeAddProjectField);
-
+  
   activateSubmitPromptButton(submitPromptButton);
+  
   window.scrollBy(0, 500);
 }
 
@@ -69,11 +71,13 @@ function submitForm() {
   const input = document.querySelector('.project-add-prompt input');
   let name = input.value
   let icon = document.querySelector('.project-add-prompt .icon-container').className;
-
+  
   if (name != "" && icon) {
     icon = icon.split(' ')[1];
     projectManager.addProject(name, icon);
     removeAddProjectField();
+    removeProjectButtonListeners();
+    activateProjectButtons();
   }
 }
 

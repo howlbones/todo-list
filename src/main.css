@@ -77,7 +77,8 @@ header button.new-task:hover {
 .side-bar p {
   justify-self: start;
   font-size: 24px;
-  font-weight: 400;;
+  font-weight: 400;
+  ;
   color: #2B2B2B;
 }
 
@@ -93,10 +94,10 @@ header button.new-task:hover {
   margin-top: auto;
 }
 
-.side-bar .add-project p{
+.side-bar .add-project p {
   color: #7E7E7E;
 }
- 
+
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -113,7 +114,7 @@ div.project-add-prompt {
   padding: 20px 0px;
 }
 
-.project-add-prompt form{
+.project-add-prompt form {
   width: 100%;
   display: flex;
   align-items: center;
@@ -124,7 +125,8 @@ div.project-add-prompt {
 
 .project-add-prompt input {
   border: none;
-  border-radius: 15px;;
+  border-radius: 15px;
+  ;
   height: 45px;
   width: 100%;
   font-size: 28px;
@@ -137,14 +139,14 @@ div.project-add-prompt {
   outline: none;
   color: #2B2B2B;
   border: solid 2px #ECECEC;
-} 
+}
 
 .project-add-prompt button {
   height: 45px;
   margin-top: auto;
   color: #7E7E7E;
   font-size: 35px;
-} 
+}
 
 .project-add-prompt .icon-container {
   display: flex;
@@ -168,4 +170,134 @@ button.active {
   background-color: #ECECEC;
 }
 
+/* New task form */
 
+div.dark-screen {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+form.task-form {
+  background-color: #FFF;
+  height: 700px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Project tasks view */
+
+.display-project-container {
+  width: 100%;
+  height: 100%;
+  padding: 60px 133px;
+  color: #2B2B2B;
+}
+
+.workspace .project-name {
+  margin-bottom: 60px;
+}
+
+.workspace .tasks-container {
+  display: flex;
+  flex-direction: column;
+  ;
+}
+
+.tasks-container button {
+  display: grid;
+  grid-template-columns: 30px 1fr 60px;
+  grid-template-rows: 1fr 35px;
+  column-gap: 18px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #FFF;
+  border: none;
+}
+
+.tasks-container button:hover {
+  background-color: #F5F5F5;
+}
+
+.tasks-container button.task {
+  min-height: 80px;
+}
+
+.tasks-container button.view-button {
+  background-color: inherit;
+  align-self: center;
+  justify-self: center;
+  height: 35px;
+  width: 100%;
+  border-radius: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  cursor: pointer;
+  border: none;
+}
+
+.tasks-container button.view-button:hover {
+  background-color: #eaeaea;
+}
+
+.tasks-container button.view-button img {
+  width: 20px;
+}
+
+.tasks-container .task-date {
+  grid-column: 2 / 3;
+  font-size: 16px;
+}
+
+.tasks-container .task-title {
+  font-size: 24px;
+  min-width: 200px;
+  text-align: start;
+}
+
+
+.tasks-container button .task-title,
+.tasks-container button .task-date {
+  justify-self: start;
+}
+
+.tasks-container .task-priority {
+  padding: 3px;
+  color: white;
+  border-radius: 3px;
+}
+
+.tasks-container .task-priority.high {
+  background-color: #CC5546;
+}
+
+.tasks-container .task-priority.medium {
+  background-color: #6477c4;
+}
+
+.tasks-container .task-priority.low {
+  background-color: #4e915c;
+}
+
+.tasks-container button.add-task-button{
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-content: center;
+  justify-content: start;
+}
+
+.tasks-container button.add-task-button p{
+  font-size: 24px;
+  text-align: start;
+}
