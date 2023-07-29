@@ -4,12 +4,12 @@ export function activateProjectButtons() {
   const buttons = document.querySelectorAll("button.project");
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', requestProject); 
+    buttons[i].addEventListener('click', requestProject);
   }
 }
 
 export function removeProjectButtonListeners() {
-  const buttons = document.querySelectorAll("button .project");
+  const buttons = document.querySelectorAll("button.project");
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].removeEventListener('click', requestProject);
@@ -17,13 +17,20 @@ export function removeProjectButtonListeners() {
 }
 
 function requestProject(e) {
-      let target = e.target;
-      if (target.tagName === 'BUTTON') {
-      } else {
-        target = target.closest('button');
-      }
+  let target = e.target;
+  if (target.tagName === 'BUTTON') {
+  } else {
+    target = target.closest('button');
+  }
 
-      let id = target.className.split(' ')[1];
+  const buttons = document.querySelectorAll("button.project");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
 
-      displayContent.project(parseInt(id));
+  target.classList.add('active');
+
+  let id = target.className.split(' ')[1];
+
+  displayContent.project(parseInt(id));
 }
