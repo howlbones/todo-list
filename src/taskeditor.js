@@ -91,7 +91,7 @@ export let editTask = function () {
     if (!task) { return };
 
     let oldPriority= task.priority;
-    task.pritority = newPriority;
+    task.priority = newPriority;
 
     // Console debug
 

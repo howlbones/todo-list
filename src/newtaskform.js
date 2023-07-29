@@ -20,9 +20,9 @@ export let taskForm = function () {
     const descriptionLabel = document.createElement('label');
     descriptionLabel.setAttribute('for', 'taskdesc');
     descriptionLabel.textContent = 'Description';
-    const descriptionInput = document.createElement('input');
-    descriptionInput.setAttribute('type', 'text');
-    descriptionInput.setAttribute('id', 'taskdesc');
+    const descriptionInput = document.createElement('textarea');
+    descriptionInput.setAttribute('cols', '40');
+    descriptionInput.setAttribute('rows', '3');
     descriptionInput.setAttribute('name', 'taskdesc');
 
     const dateLabel = document.createElement('label');

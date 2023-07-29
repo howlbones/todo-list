@@ -90,6 +90,7 @@ export let taskManager = function () {
   }
 
   let changeDate = function (projectId, taskId, newDate) {
+    newDate = format(newDate, 'dd MMMM yyyy');
     editTask.changeDueDate(projectId, taskId, newDate);
   }
 

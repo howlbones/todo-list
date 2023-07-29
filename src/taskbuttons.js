@@ -1,16 +1,19 @@
 import { ProjectCollection } from "./projectcollection";
+import { viewTask } from "./viewtask";
 
 export function activateTaskButtons() {
-
-
   const tasks = document.querySelectorAll("button.task");
   for (let i = 0; i < tasks.length; i++) {
     if (tasks[i].className !== 'view-button'){
-      console.log(tasks[i].className);
       tasks[i].addEventListener('click', crossOut);
+      const viewButton = tasks[i].querySelector('.view-button');
+      viewButton.addEventListener('click', viewTask);
     }
+
   }
+  
 }
+
 
 function crossOut(e) {
   let target = e.target;
