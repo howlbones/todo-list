@@ -4142,12 +4142,12 @@ function activateProjectButtons() {
   const buttons = document.querySelectorAll("button.project");
 
   for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', requestProject); 
+    buttons[i].addEventListener('click', requestProject);
   }
 }
 
 function removeProjectButtonListeners() {
-  const buttons = document.querySelectorAll("button .project");
+  const buttons = document.querySelectorAll("button.project");
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].removeEventListener('click', requestProject);
@@ -4155,15 +4155,22 @@ function removeProjectButtonListeners() {
 }
 
 function requestProject(e) {
-      let target = e.target;
-      if (target.tagName === 'BUTTON') {
-      } else {
-        target = target.closest('button');
-      }
+  let target = e.target;
+  if (target.tagName === 'BUTTON') {
+  } else {
+    target = target.closest('button');
+  }
 
-      let id = target.className.split(' ')[1];
+  const buttons = document.querySelectorAll("button.project");
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
 
-      _displayproject__WEBPACK_IMPORTED_MODULE_0__.displayContent.project(parseInt(id));
+  target.classList.add('active');
+
+  let id = target.className.split(' ')[1];
+
+  _displayproject__WEBPACK_IMPORTED_MODULE_0__.displayContent.project(parseInt(id));
 }
 
 /***/ }),
