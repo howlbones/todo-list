@@ -17,6 +17,10 @@ export function viewTask(e) {
   const form = document.createElement('form');
   form.classList.add('task-form');
 
+  const dateCreated = document.createElement('p');
+  dateCreated.textContent = `Date created: ${task.dateCreated}`;
+  dateCreated.classList.add('date-created');
+
   const titleLabel = document.createElement('label');
   titleLabel.setAttribute('for', 'tasktitle');
   titleLabel.textContent = 'Title';
@@ -81,6 +85,7 @@ export function viewTask(e) {
   exitButton.setAttribute('type', 'button');
 
 
+  form.appendChild(dateCreated);
   form.appendChild(titleLabel);
   form.appendChild(titleInput);
   form.appendChild(descriptionLabel);

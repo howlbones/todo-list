@@ -194,7 +194,7 @@ form.task-form {
 }
 
 form.task-form label {
-  color: #2B2B2B;
+  color: #7E7E7E;
   margin-bottom: 10px;
   font-size: 20px;
 }
@@ -235,6 +235,12 @@ form.task-form input:focus {
 
 form.task-form input.invalid {
   outline: solid 2px #cc6d61;
+}
+
+form.task-form .date-created {
+  color: #7E7E7E;
+  font-size: 14px;
+  text-align: end;
 }
 
 div.priority-button-container {

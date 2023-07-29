@@ -102,13 +102,14 @@ export let taskForm = function () {
 
     exitButton.addEventListener('click', () => {
       darkScreen.remove();
-      console.log('removed');
     })
 
     submitButton.addEventListener('click', () => {
       if (titleInput.value != "" && dateInput.value != "") {
         let priority = document.querySelector('.priority-button.selected');
         priority = priority.className.split(' ')[1];
+        let currentContent = document.querySelector('.display-project-container');
+        currentContent.remove();
         taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
         darkScreen.remove();
         displayContent.project(projectId);
