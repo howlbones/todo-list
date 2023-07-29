@@ -208,11 +208,95 @@ form.task-form {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
+  margin-top: 100px;
   padding: 50px;
   display: flex;
   flex-direction: column;
+  border-radius: 15px;
 }
+
+form.task-form label {
+  color: #2B2B2B;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+form.task-form input {
+  height: 40px;
+  margin-bottom: 35px;
+  font-size: 25px;
+  padding: 0px 15px;
+  border-radius: 5px;
+  background-color: #F5F5F5;
+  border: none;
+}
+
+form.task-form input[type="date"] {
+  color: #2B2B2B;
+  font-size: 15px;
+}
+
+form.task-form input:focus {
+  outline: solid 1px #cdcdcd;
+}
+
+form.task-form input.invalid {
+  outline: solid 2px #cc6d61;
+}
+
+div.priority-button-container {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+}
+
+div.priority-button-container button {
+  border-radius: 3px;
+  height: 40px !important;
+  font-size: 14px !important;
+  background-color: #F5F5F5;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
+  width: 100px;
+}
+
+div.priority-button-container button.low:hover,
+div.priority-button-container button.low.selected {
+  background-color: #4e915c;
+  color: white;
+}
+
+div.priority-button-container button.medium:hover,
+div.priority-button-container button.medium.selected {
+  background-color: #6477c4;
+  color: white;
+}
+
+div.priority-button-container button.high:hover,
+div.priority-button-container button.high.selected {
+  background-color: #CC5546;
+  color: white;
+}
+
+form.task-form button {
+  margin-top: 15px;
+  cursor: pointer;
+  border: none;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  height: 80px;
+  font-size: 20px;
+  color: #2B2B2B;
+}
+
+form.task-form button:hover {
+  outline: none;
+  background-color: #e2e2e2;
+}
+
 
 /* Project tasks view */
 
@@ -311,7 +395,7 @@ form.task-form {
   background-color: #4e915c;
 }
 
-.tasks-container button.add-task-button{
+.tasks-container button.add-task-button {
   height: 60px;
   cursor: pointer;
   display: flex;
@@ -319,10 +403,11 @@ form.task-form {
   justify-content: start;
 }
 
-.tasks-container button.add-task-button p{
+.tasks-container button.add-task-button p {
   font-size: 24px;
   text-align: start;
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 150px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n}\n\n/* Project tasks view */\n\n.display-project-container {\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 60px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  ;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 16px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button{\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p{\n  font-size: 24px;\n  text-align: start;\n}"],"sourceRoot":""}]);
+  color: #7E7E7E;
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #2B2B2B;\n  margin-bottom: 15px;\n  font-size: 20px;\n}\n\nform.task-form input {\n  height: 40px;\n  margin-bottom: 35px;\n  font-size: 25px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 30px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  background-color: #f5f5f5;\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n}\n\nform.task-form button:hover {\n  outline: none;\n  background-color: #e2e2e2;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 60px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  ;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 16px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 24px;\n  text-align: start;\n  color: #7E7E7E;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
