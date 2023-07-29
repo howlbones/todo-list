@@ -6,6 +6,7 @@ import "./main.css";
 import { activateAddProjectButton } from "./addprojectbutton";
 import { activateProjectButtons } from "./projectbuttons";
 
+
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser
 window.app = function() {

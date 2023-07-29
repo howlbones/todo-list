@@ -4,6 +4,7 @@ import PlusIcon from "../src/img/plus-gray.png";
 import ViewIcon from "../src/img/view.png";
 import CircleIcon from "../src/img/check-circle.png";
 import { activateNewTaskButton } from "./newtaskbutton";
+import { activateTaskButtons } from "./taskbuttons";
 
 export let displayContent = function () {
 
@@ -38,6 +39,9 @@ export let displayContent = function () {
         const button = document.createElement('button');
         button.classList.add('task');
         button.classList.add(`${task.id}`);
+        if (task.status === 'done') {
+          button.classList.add('done');
+        }
         const title = document.createElement('p');
         title.classList.add('task-title')
         title.textContent = task.title;
@@ -78,11 +82,12 @@ export let displayContent = function () {
     tasksContainer.appendChild(addTaskButton);
 
     activateNewTaskButton(addTaskButton);
-      
-
+    
+    
     displayContainer.appendChild(tasksContainer);
     workspace.appendChild(displayContainer);
 
+    activateTaskButtons();
   }
 
   let clear = function() {

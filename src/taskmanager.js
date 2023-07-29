@@ -34,6 +34,7 @@ export let taskManager = function () {
     newTask.dateCreated = format(Date.now(), 'HH:mm | dd MMMM yyyy');
     newTask.dueDate = format(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
+    newTask.status = 'active';
     ProjectCollection.projects[projectId].tasks.push(newTask);
 
     // Console debug

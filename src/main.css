@@ -386,3 +386,23 @@ form.task-form button:hover {
   text-align: start;
   color: #7E7E7E;
 }
+
+.tasks-container button.done {
+  background-color: #ededed;
+  position: relative;
+}
+
+.tasks-container button.done p.task-title {
+  text-decoration: line-through;
+  text-decoration-color: #CC5546;
+}
+
+.tasks-container button.done::before {
+  font-size: 45px;
+  content: "✔";
+  position: absolute;
+  top: -6px;
+  left: 15px;
+  color: #2B2B2B;
+  
+}

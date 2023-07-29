@@ -6,12 +6,14 @@ export function Task() {
     dueDate: "",
     dateCreated: "",
     priority: "",
+    status: "",
 
     info: function () {
       return [this.title,
       this.description,
       this.dueDate,
-      this.priority];
+      this.priority,
+      this.status];
     }
   }
 }
