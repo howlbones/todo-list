@@ -23,7 +23,7 @@ function requestProject(e) {
     target = target.closest('button');
   }
 
-  const buttons = document.querySelectorAll("button.project");
+  const buttons = document.querySelectorAll(".side-bar button");
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].classList.remove('active');
   }

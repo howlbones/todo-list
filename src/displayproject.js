@@ -12,8 +12,10 @@ export let displayContent = function () {
     if (document.querySelector('.display-project-container')) {
       clear();
     }
-    
+
     const workspace = document.querySelector('div.workspace');
+    workspace.className = "";
+    workspace.classList.add('workspace');
     const displayContainer = document.createElement('div');
     displayContainer.classList.add('display-project-container');
     displayContainer.classList.add(`${projectId}`);
@@ -65,12 +67,12 @@ export let displayContent = function () {
         button.appendChild(priority);
         button.appendChild(date);
         button.appendChild(view);
-        
+
         tasksContainer.appendChild(button);
       }
     }
 
-    const addTaskButton = document.createElement('button') ;
+    const addTaskButton = document.createElement('button');
     addTaskButton.classList.add('add-task-button');
     const addTaskIcon = document.createElement('img');
     addTaskIcon.src = PlusIcon;
@@ -82,18 +84,126 @@ export let displayContent = function () {
     tasksContainer.appendChild(addTaskButton);
 
     activateNewTaskButton(addTaskButton);
-    
-    
+
+
     displayContainer.appendChild(tasksContainer);
     workspace.appendChild(displayContainer);
 
     activateTaskButtons();
   }
 
-  let clear = function() {
-    const content = document.querySelector('.display-project-container');
-    content.remove();
-  } 
+  let today = function () {
+    if (document.querySelector('.display-project-container')) {
+      clear();
+    }
 
-  return { project, clear }
+    const projects = ProjectCollection.projects;
+    const workspace = document.querySelector('div.workspace');
+    workspace.classList.add('grid-layout');
+
+    const leftSide = document.createElement('div');
+    leftSide.classList.add('left-side');
+    const rightSide = document.createElement('div');
+    rightSide.classList.add('right-side');
+
+    for (let i = 0; i < projects.length; i++) {
+
+      let projectId = projects[i].id;
+
+      const displayContainer = document.createElement('div');
+      displayContainer.classList.add('display-project-container');
+      displayContainer.classList.add(`${projectId}`);
+
+      const project = projects[projectId];
+      const projectName = project.name;
+
+      const header = document.createElement('h1');
+      header.classList.add('project-name');
+      header.textContent = projectName;
+
+      displayContainer.appendChild(header);
+
+      const tasksContainer = document.createElement('div');
+      tasksContainer.classList.add('tasks-container');
+
+      let tasks = project.tasks;
+
+
+      if (tasks) {
+        for (let i = 0; i < tasks.length; i++) {
+          let task = tasks[i];
+          const button = document.createElement('button');
+          button.classList.add('task');
+          button.classList.add(`${task.id}`);
+          if (task.status === 'done') {
+            button.classList.add('done');
+          }
+          const title = document.createElement('p');
+          title.classList.add('task-title')
+          title.textContent = task.title;
+          const priority = document.createElement('p');
+          priority.classList.add('task-priority');
+          priority.classList.add(`${task.priority}`);
+          priority.textContent = task.priority;
+          const date = document.createElement('p');
+          date.classList.add('task-date');
+          date.textContent = task.dueDate;
+          const view = document.createElement('button');
+          view.classList.add('view-button');
+          const viewImg = document.createElement('img');
+          viewImg.src = ViewIcon;
+          view.append(viewImg);
+          const circleIcon = document.createElement('img');
+          circleIcon.classList.add('circle-icon');
+          circleIcon.src = CircleIcon;
+          button.appendChild(circleIcon);
+          button.appendChild(title);
+          button.appendChild(priority);
+          button.appendChild(date);
+          button.appendChild(view);
+
+          tasksContainer.appendChild(button);
+        }
+      }
+
+      const addTaskButton = document.createElement('button');
+      addTaskButton.classList.add('add-task-button');
+      const addTaskIcon = document.createElement('img');
+      addTaskIcon.src = PlusIcon;
+      const buttonText = document.createElement('p');
+      buttonText.textContent = "New task";
+
+      addTaskButton.appendChild(addTaskIcon);
+      addTaskButton.appendChild(buttonText);
+      tasksContainer.appendChild(addTaskButton);
+
+      activateNewTaskButton(addTaskButton);
+
+
+      displayContainer.appendChild(tasksContainer);
+
+      console.log(i);
+      if (i == 0 || i % 2 === 0) {
+        leftSide.appendChild(displayContainer);
+      } else {
+        rightSide.appendChild(displayContainer);
+      }
+      activateTaskButtons();
+
+    }
+
+    workspace.appendChild(leftSide);
+    workspace.appendChild(rightSide);
+  }
+
+  let clear = function () {
+    const content = document.querySelector('.display-project-container');
+    const leftSide = document.querySelector('.left-side');
+    const rightSide = document.querySelector('.right-side');
+    if (content) { content.remove() };
+    if (leftSide) { leftSide.remove() };
+    if (rightSide) { rightSide.remove() };
+  }
+
+  return { project, clear, today }
 }();

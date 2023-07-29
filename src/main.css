@@ -17,7 +17,7 @@ header {
   padding: 0px 50px;
 }
 
-header button.new-task {
+header button.about {
   background-color: #CC5546;
   color: #FFF;
   padding: 12px 14px;
@@ -26,16 +26,12 @@ header button.new-task {
   gap: 10px;
   border-style: none;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
 }
 
-header button.new-task img {
-  width: 20px;
-}
-
-header button.new-task:hover {
+header button.about:hover {
   background-color: #cc6d61;
 }
 
@@ -426,4 +422,20 @@ form.task-form button:hover {
   left: 15px;
   color: #2B2B2B;
   
+}
+
+
+/* Today tab grid-layout */
+
+.workspace.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 133px;
+}
+
+.workspace.grid-layout .left-side .display-project-container,
+.workspace.grid-layout .right-side .display-project-container {
+  height: auto;
+  padding-bottom: 0px;
+  padding-right: 0px;
 }

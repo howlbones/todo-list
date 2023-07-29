@@ -99,7 +99,7 @@ header {
   padding: 0px 50px;
 }
 
-header button.new-task {
+header button.about {
   background-color: #CC5546;
   color: #FFF;
   padding: 12px 14px;
@@ -108,16 +108,12 @@ header button.new-task {
   gap: 10px;
   border-style: none;
   border-radius: 8px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   cursor: pointer;
 }
 
-header button.new-task img {
-  width: 20px;
-}
-
-header button.new-task:hover {
+header button.about:hover {
   background-color: #cc6d61;
 }
 
@@ -508,7 +504,23 @@ form.task-form button:hover {
   left: 15px;
   color: #2B2B2B;
   
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.new-task {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 20px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.new-task img {\n  width: 20px;\n}\n\nheader button.new-task:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #7E7E7E;\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n\nform.task-form textarea {\n  margin-bottom: 35px;\n  font-size: 25px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n  padding: 12px;\n  resize: none;\n}\n\nform.task-form textarea:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input {\n  height: 40px;\n  margin-bottom: 15px;\n  font-size: 25px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\nform.task-form .date-created {\n  color: #7E7E7E;\n  font-size: 14px;\n  text-align: end;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  background-color: #f5f5f5;\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n}\n\nform.task-form button:hover {\n  outline: none;\n  background-color: #e2e2e2;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  max-width: 1100px;\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 60px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 16px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 24px;\n  text-align: start;\n  color: #7E7E7E;\n}\n\n.tasks-container button.done {\n  background-color: #ededed;\n  position: relative;\n}\n\n.tasks-container button.done p.task-title {\n  text-decoration: line-through;\n  text-decoration-color: #CC5546;\n}\n\n.tasks-container button.done::before {\n  font-size: 45px;\n  content: \"✔\";\n  position: absolute;\n  top: -6px;\n  left: 15px;\n  color: #2B2B2B;\n  \n}"],"sourceRoot":""}]);
+}
+
+
+/* Today tab grid-layout */
+
+.workspace.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-right: 133px;
+}
+
+.workspace.grid-layout .left-side .display-project-container,
+.workspace.grid-layout .right-side .display-project-container {
+  height: auto;
+  padding-bottom: 0px;
+  padding-right: 0px;
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"AAEA;EACE,sBAAsB;EACtB,WAAW;EACX,gCAAgC;EAChC,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,yBAAyB;EACzB,aAAa;EACb,mBAAmB;EACnB,8BAA8B;EAC9B,iBAAiB;AACnB;;AAEA;EACE,yBAAyB;EACzB,WAAW;EACX,kBAAkB;EAClB,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,kBAAkB;EAClB,kBAAkB;EAClB,eAAe;EACf,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,8BAA8B;EAC9B,aAAa;EACb,gCAAgC;EAChC,wBAAwB;AAC1B;;AAEA;EACE,YAAY;EACZ,yBAAyB;EACzB,kBAAkB;EAClB,aAAa;EACb,sBAAsB;EACtB,2BAA2B;AAC7B;;AAEA;EACE,YAAY;EACZ,aAAa;EACb,+BAA+B;EAC/B,mBAAmB;EACnB,mBAAmB;EACnB,yBAAyB;EACzB,eAAe;EACf,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,gBAAgB;;EAEhB,cAAc;AAChB;;AAEA;EACE,gBAAgB;EAChB,mBAAmB;EACnB,cAAc;EACd,eAAe;EACf,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,aAAa;EACb,+BAA+B;EAC/B,6BAA6B;EAC7B,mBAAmB;EACnB,YAAY;EACZ,gBAAgB;EAChB,iBAAiB;AACnB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,mBAAmB;EACnB,sBAAsB;EACtB,SAAS;EACT,cAAc;AAChB;;AAEA;EACE,YAAY;EACZ,mBAAmB;;EAEnB,YAAY;EACZ,WAAW;EACX,eAAe;EACf,cAAc;EACd,iBAAiB;EACjB,yBAAyB;AAC3B;;AAEA;EACE,aAAa;EACb,cAAc;EACd,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,gBAAgB;EAChB,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,YAAY;EACZ,mBAAmB;AACrB;;AAEA;EACE,WAAW;EACX,aAAa;EACb,uBAAuB;AACzB;;AAEA;EACE,yBAAyB;AAC3B;;;AAGA;EACE,yBAAyB;AAC3B;;AAEA,kBAAkB;;AAElB;EACE,kBAAkB;EAClB,QAAQ;EACR,WAAW;EACX,YAAY;EACZ,oCAAoC;AACtC;;AAEA;EACE,sBAAsB;EACtB,aAAa;EACb,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;EAClB,iBAAiB;EACjB,aAAa;EACb,aAAa;EACb,sBAAsB;EACtB,mBAAmB;AACrB;;AAEA;EACE,cAAc;EACd,mBAAmB;EACnB,eAAe;AACjB;;AAEA;EACE,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,yBAAyB;EACzB,YAAY;EACZ,aAAa;EACb,YAAY;AACd;;AAEA;EACE,0BAA0B;AAC5B;;AAEA;EACE,YAAY;EACZ,mBAAmB;EACnB,eAAe;EACf,iBAAiB;EACjB,kBAAkB;EAClB,yBAAyB;EACzB,YAAY;AACd;;AAEA;EACE,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,0BAA0B;AAC5B;;AAEA;EACE,0BAA0B;AAC5B;;AAEA;EACE,cAAc;EACd,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,mBAAmB;EACnB,aAAa;EACb,mBAAmB;EACnB,uBAAuB;EACvB,SAAS;AACX;;AAEA;EACE,kBAAkB;EAClB,uBAAuB;EACvB,0BAA0B;EAC1B,yBAAyB;EACzB,eAAe;EACf,YAAY;EACZ,YAAY;EACZ,YAAY;AACd;;AAEA;;EAEE,yBAAyB;EACzB,YAAY;AACd;;AAEA;;EAEE,yBAAyB;EACzB,YAAY;AACd;;AAEA;;EAEE,yBAAyB;EACzB,YAAY;AACd;;AAEA;EACE,gBAAgB;EAChB,eAAe;EACf,YAAY;EACZ,yBAAyB;EACzB,mBAAmB;EACnB,YAAY;EACZ,eAAe;EACf,cAAc;AAChB;;AAEA;EACE,aAAa;EACb,yBAAyB;AAC3B;;;AAGA,uBAAuB;;AAEvB;EACE,iBAAiB;EACjB,WAAW;EACX,YAAY;EACZ,mBAAmB;EACnB,cAAc;AAChB;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,oCAAoC;EACpC,4BAA4B;EAC5B,gBAAgB;EAChB,uBAAuB;EACvB,mBAAmB;EACnB,kBAAkB;EAClB,sBAAsB;EACtB,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,yBAAyB;EACzB,kBAAkB;EAClB,oBAAoB;EACpB,YAAY;EACZ,WAAW;EACX,mBAAmB;EACnB,aAAa;EACb,uBAAuB;EACvB,mBAAmB;EACnB,YAAY;EACZ,eAAe;EACf,YAAY;AACd;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,WAAW;AACb;;AAEA;EACE,kBAAkB;EAClB,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,gBAAgB;EAChB,iBAAiB;AACnB;;;AAGA;;EAEE,mBAAmB;AACrB;;AAEA;EACE,YAAY;EACZ,YAAY;EACZ,kBAAkB;AACpB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,YAAY;EACZ,eAAe;EACf,aAAa;EACb,qBAAqB;EACrB,sBAAsB;AACxB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,cAAc;AAChB;;AAEA;EACE,yBAAyB;EACzB,kBAAkB;AACpB;;AAEA;EACE,6BAA6B;EAC7B,8BAA8B;AAChC;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,kBAAkB;EAClB,SAAS;EACT,UAAU;EACV,cAAc;;AAEhB;;;AAGA,0BAA0B;;AAE1B;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;;EAEE,YAAY;EACZ,mBAAmB;EACnB,kBAAkB;AACpB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  font-family: 'Inter', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.about {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 16px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.about:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 24px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 24px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 28px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: absolute;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #7E7E7E;\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n\nform.task-form textarea {\n  margin-bottom: 35px;\n  font-size: 25px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n  padding: 12px;\n  resize: none;\n}\n\nform.task-form textarea:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input {\n  height: 40px;\n  margin-bottom: 15px;\n  font-size: 25px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\nform.task-form .date-created {\n  color: #7E7E7E;\n  font-size: 14px;\n  text-align: end;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  background-color: #f5f5f5;\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n}\n\nform.task-form button:hover {\n  outline: none;\n  background-color: #e2e2e2;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  max-width: 1100px;\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 60px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 16px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 24px;\n  text-align: start;\n  color: #7E7E7E;\n}\n\n.tasks-container button.done {\n  background-color: #ededed;\n  position: relative;\n}\n\n.tasks-container button.done p.task-title {\n  text-decoration: line-through;\n  text-decoration-color: #CC5546;\n}\n\n.tasks-container button.done::before {\n  font-size: 45px;\n  content: \"✔\";\n  position: absolute;\n  top: -6px;\n  left: 15px;\n  color: #2B2B2B;\n  \n}\n\n\n/* Today tab grid-layout */\n\n.workspace.grid-layout {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  margin-right: 133px;\n}\n\n.workspace.grid-layout .left-side .display-project-container,\n.workspace.grid-layout .right-side .display-project-container {\n  height: auto;\n  padding-bottom: 0px;\n  padding-right: 0px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -3863,8 +3875,10 @@ let displayContent = function () {
     if (document.querySelector('.display-project-container')) {
       clear();
     }
-    
+
     const workspace = document.querySelector('div.workspace');
+    workspace.className = "";
+    workspace.classList.add('workspace');
     const displayContainer = document.createElement('div');
     displayContainer.classList.add('display-project-container');
     displayContainer.classList.add(`${projectId}`);
@@ -3916,12 +3930,12 @@ let displayContent = function () {
         button.appendChild(priority);
         button.appendChild(date);
         button.appendChild(view);
-        
+
         tasksContainer.appendChild(button);
       }
     }
 
-    const addTaskButton = document.createElement('button') ;
+    const addTaskButton = document.createElement('button');
     addTaskButton.classList.add('add-task-button');
     const addTaskIcon = document.createElement('img');
     addTaskIcon.src = _src_img_plus_gray_png__WEBPACK_IMPORTED_MODULE_2__;
@@ -3933,21 +3947,164 @@ let displayContent = function () {
     tasksContainer.appendChild(addTaskButton);
 
     (0,_newtaskbutton__WEBPACK_IMPORTED_MODULE_5__.activateNewTaskButton)(addTaskButton);
-    
-    
+
+
     displayContainer.appendChild(tasksContainer);
     workspace.appendChild(displayContainer);
 
     (0,_taskbuttons__WEBPACK_IMPORTED_MODULE_6__.activateTaskButtons)();
   }
 
-  let clear = function() {
-    const content = document.querySelector('.display-project-container');
-    content.remove();
-  } 
+  let today = function () {
+    if (document.querySelector('.display-project-container')) {
+      clear();
+    }
 
-  return { project, clear }
+    const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
+    const workspace = document.querySelector('div.workspace');
+    workspace.classList.add('grid-layout');
+
+    const leftSide = document.createElement('div');
+    leftSide.classList.add('left-side');
+    const rightSide = document.createElement('div');
+    rightSide.classList.add('right-side');
+
+    for (let i = 0; i < projects.length; i++) {
+
+      let projectId = projects[i].id;
+
+      const displayContainer = document.createElement('div');
+      displayContainer.classList.add('display-project-container');
+      displayContainer.classList.add(`${projectId}`);
+
+      const project = projects[projectId];
+      const projectName = project.name;
+
+      const header = document.createElement('h1');
+      header.classList.add('project-name');
+      header.textContent = projectName;
+
+      displayContainer.appendChild(header);
+
+      const tasksContainer = document.createElement('div');
+      tasksContainer.classList.add('tasks-container');
+
+      let tasks = project.tasks;
+
+
+      if (tasks) {
+        for (let i = 0; i < tasks.length; i++) {
+          let task = tasks[i];
+          const button = document.createElement('button');
+          button.classList.add('task');
+          button.classList.add(`${task.id}`);
+          if (task.status === 'done') {
+            button.classList.add('done');
+          }
+          const title = document.createElement('p');
+          title.classList.add('task-title')
+          title.textContent = task.title;
+          const priority = document.createElement('p');
+          priority.classList.add('task-priority');
+          priority.classList.add(`${task.priority}`);
+          priority.textContent = task.priority;
+          const date = document.createElement('p');
+          date.classList.add('task-date');
+          date.textContent = task.dueDate;
+          const view = document.createElement('button');
+          view.classList.add('view-button');
+          const viewImg = document.createElement('img');
+          viewImg.src = _src_img_view_png__WEBPACK_IMPORTED_MODULE_3__;
+          view.append(viewImg);
+          const circleIcon = document.createElement('img');
+          circleIcon.classList.add('circle-icon');
+          circleIcon.src = _src_img_check_circle_png__WEBPACK_IMPORTED_MODULE_4__;
+          button.appendChild(circleIcon);
+          button.appendChild(title);
+          button.appendChild(priority);
+          button.appendChild(date);
+          button.appendChild(view);
+
+          tasksContainer.appendChild(button);
+        }
+      }
+
+      const addTaskButton = document.createElement('button');
+      addTaskButton.classList.add('add-task-button');
+      const addTaskIcon = document.createElement('img');
+      addTaskIcon.src = _src_img_plus_gray_png__WEBPACK_IMPORTED_MODULE_2__;
+      const buttonText = document.createElement('p');
+      buttonText.textContent = "New task";
+
+      addTaskButton.appendChild(addTaskIcon);
+      addTaskButton.appendChild(buttonText);
+      tasksContainer.appendChild(addTaskButton);
+
+      (0,_newtaskbutton__WEBPACK_IMPORTED_MODULE_5__.activateNewTaskButton)(addTaskButton);
+
+
+      displayContainer.appendChild(tasksContainer);
+
+      console.log(i);
+      if (i == 0 || i % 2 === 0) {
+        leftSide.appendChild(displayContainer);
+      } else {
+        rightSide.appendChild(displayContainer);
+      }
+      (0,_taskbuttons__WEBPACK_IMPORTED_MODULE_6__.activateTaskButtons)();
+
+    }
+
+    workspace.appendChild(leftSide);
+    workspace.appendChild(rightSide);
+  }
+
+  let clear = function () {
+    const content = document.querySelector('.display-project-container');
+    const leftSide = document.querySelector('.left-side');
+    const rightSide = document.querySelector('.right-side');
+    if (content) { content.remove() };
+    if (leftSide) { leftSide.remove() };
+    if (rightSide) { rightSide.remove() };
+  }
+
+  return { project, clear, today }
 }();
+
+/***/ }),
+
+/***/ "./src/displaytoday.js":
+/*!*****************************!*\
+  !*** ./src/displaytoday.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   displayToday: () => (/* binding */ displayToday)
+/* harmony export */ });
+/* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
+/* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
+
+
+
+function displayToday(e) {
+  const sidebarButtons = document.querySelectorAll('.side-bar button');
+  for (let i = 0; i < sidebarButtons.length; i++ ) {
+    sidebarButtons[i].classList.remove('active');
+  }
+
+  let target = e.target;
+  if (target.tagName !== 'BUTTON') {
+    target = target.closest('button');
+  }
+
+  target.classList.add('active');
+
+  _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.today();
+
+  
+}
 
 /***/ }),
 
@@ -4268,7 +4425,7 @@ function requestProject(e) {
     target = target.closest('button');
   }
 
-  const buttons = document.querySelectorAll("button.project");
+  const buttons = document.querySelectorAll(".side-bar button");
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].classList.remove('active');
   }
@@ -4796,6 +4953,28 @@ let taskManager = function () {
 
 /***/ }),
 
+/***/ "./src/todaybutton.js":
+/*!****************************!*\
+  !*** ./src/todaybutton.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   activateTodayButton: () => (/* binding */ activateTodayButton)
+/* harmony export */ });
+/* harmony import */ var _displaytoday__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displaytoday */ "./src/displaytoday.js");
+
+
+function activateTodayButton() {
+  const button = document.querySelector('button.today');
+  button.addEventListener('click', _displaytoday__WEBPACK_IMPORTED_MODULE_0__.displayToday);
+
+}
+
+
+/***/ }),
+
 /***/ "./src/viewtask.js":
 /*!*************************!*\
   !*** ./src/viewtask.js ***!
@@ -5239,6 +5418,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ "./src/main.css");
 /* harmony import */ var _addprojectbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addprojectbutton */ "./src/addprojectbutton.js");
 /* harmony import */ var _projectbuttons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./projectbuttons */ "./src/projectbuttons.js");
+/* harmony import */ var _todaybutton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./todaybutton */ "./src/todaybutton.js");
+
 
 
 
@@ -5261,10 +5442,10 @@ window.app = function() {
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
   _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Lena', 'Good luck', new Date(2023, 7, 21), 'high');
 
-  // taskManager.deleteTask(0,0);
 
   (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
   (0,_projectbuttons__WEBPACK_IMPORTED_MODULE_6__.activateProjectButtons)();
+  (0,_todaybutton__WEBPACK_IMPORTED_MODULE_7__.activateTodayButton)();
 
 
 
