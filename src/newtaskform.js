@@ -112,7 +112,16 @@ export let taskForm = function () {
         currentContent.remove();
         taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
         darkScreen.remove();
-        displayContent.project(projectId);
+
+        let selectedButton = document.querySelector('.side-bar button.active');
+        selectedButton = selectedButton.className.split(' ')[0];
+
+        if (selectedButton === 'today') {
+          displayContent.today();
+        } else {
+          displayContent.project(projectId)
+        }
+
       } else {
         if (titleInput.value === "") {
           titleInput.classList.add('invalid');

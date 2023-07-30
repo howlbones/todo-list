@@ -46,7 +46,7 @@ export function viewTask(e) {
   dateInput.setAttribute('type', 'date');
   dateInput.setAttribute('id', 'taskdate');
   dateInput.setAttribute('name', 'taskdate');
-  dateInput.value = convertDateToNumber(task.dueDate); 
+  dateInput.value = convertDateToNumber(task.dueDate);
 
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('priority-button-container');
@@ -132,12 +132,20 @@ export function viewTask(e) {
       taskManager.changeDescription(projectId, taskId, descriptionInput.value);
       taskManager.changeDate(projectId, taskId, dateInput.valueAsDate);
       taskManager.changePriority(projectId, taskId, priority);
-      
+
       darkScreen.remove();
       // let currentContent = document.querySelector('.display-project-container');
       // currentContent.remove();
 
-      displayContent.project(projectId);
+      let selectedButton = document.querySelector('.side-bar button.active');
+      selectedButton = selectedButton.className.split(' ')[0];
+
+      if (selectedButton === 'today') {
+        displayContent.today();
+      } else {
+        displayContent.project(projectId)
+      }
+
     } else {
       if (titleInput.value === "") {
         titleInput.classList.add('invalid');

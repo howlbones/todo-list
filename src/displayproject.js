@@ -178,22 +178,24 @@ export let displayContent = function () {
       tasksContainer.appendChild(addTaskButton);
 
       activateNewTaskButton(addTaskButton);
-
-
+      
+      
       displayContainer.appendChild(tasksContainer);
-
-      console.log(i);
+      
       if (i == 0 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-      activateTaskButtons();
-
+      
+      
     }
-
+    
+    console.log('activating task buttons');
+    
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
+    activateTaskButtons();
   }
 
   let clear = function () {
