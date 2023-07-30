@@ -4041,22 +4041,24 @@ let displayContent = function () {
       tasksContainer.appendChild(addTaskButton);
 
       (0,_newtaskbutton__WEBPACK_IMPORTED_MODULE_5__.activateNewTaskButton)(addTaskButton);
-
-
+      
+      
       displayContainer.appendChild(tasksContainer);
-
-      console.log(i);
+      
       if (i == 0 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-      (0,_taskbuttons__WEBPACK_IMPORTED_MODULE_6__.activateTaskButtons)();
-
+      
+      
     }
-
+    
+    console.log('activating task buttons');
+    
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
+    (0,_taskbuttons__WEBPACK_IMPORTED_MODULE_6__.activateTaskButtons)();
   }
 
   let clear = function () {
@@ -4340,7 +4342,16 @@ let taskForm = function () {
         currentContent.remove();
         _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
         darkScreen.remove();
-        _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.project(projectId);
+
+        let selectedButton = document.querySelector('.side-bar button.active');
+        selectedButton = selectedButton.className.split(' ')[0];
+
+        if (selectedButton === 'today') {
+          _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.today();
+        } else {
+          _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.project(projectId)
+        }
+
       } else {
         if (titleInput.value === "") {
           titleInput.classList.add('invalid');
@@ -5037,7 +5048,7 @@ function viewTask(e) {
   dateInput.setAttribute('type', 'date');
   dateInput.setAttribute('id', 'taskdate');
   dateInput.setAttribute('name', 'taskdate');
-  dateInput.value = (0,_dateconverter__WEBPACK_IMPORTED_MODULE_2__.convertDateToNumber)(task.dueDate); 
+  dateInput.value = (0,_dateconverter__WEBPACK_IMPORTED_MODULE_2__.convertDateToNumber)(task.dueDate);
 
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('priority-button-container');
@@ -5123,12 +5134,20 @@ function viewTask(e) {
       _taskmanager__WEBPACK_IMPORTED_MODULE_1__.taskManager.changeDescription(projectId, taskId, descriptionInput.value);
       _taskmanager__WEBPACK_IMPORTED_MODULE_1__.taskManager.changeDate(projectId, taskId, dateInput.valueAsDate);
       _taskmanager__WEBPACK_IMPORTED_MODULE_1__.taskManager.changePriority(projectId, taskId, priority);
-      
+
       darkScreen.remove();
       // let currentContent = document.querySelector('.display-project-container');
       // currentContent.remove();
 
-      _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.project(projectId);
+      let selectedButton = document.querySelector('.side-bar button.active');
+      selectedButton = selectedButton.className.split(' ')[0];
+
+      if (selectedButton === 'today') {
+        _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.today();
+      } else {
+        _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.project(projectId)
+      }
+
     } else {
       if (titleInput.value === "") {
         titleInput.classList.add('invalid');
