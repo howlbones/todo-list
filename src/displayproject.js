@@ -62,11 +62,16 @@ export let displayContent = function () {
         const circleIcon = document.createElement('img');
         circleIcon.classList.add('circle-icon');
         circleIcon.src = CircleIcon;
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-task');
+        deleteButton.textContent = "✕";
+
         button.appendChild(circleIcon);
         button.appendChild(title);
         button.appendChild(priority);
         button.appendChild(date);
         button.appendChild(view);
+        button.appendChild(deleteButton);
 
         tasksContainer.appendChild(button);
       }
@@ -99,7 +104,7 @@ export let displayContent = function () {
 
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
-    workspace.classList.add('grid-layout');
+    workspace.classList.add('today');
 
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
@@ -156,11 +161,16 @@ export let displayContent = function () {
           const circleIcon = document.createElement('img');
           circleIcon.classList.add('circle-icon');
           circleIcon.src = CircleIcon;
+          const deleteButton = document.createElement('button');
+          deleteButton.classList.add('delete-task');
+          deleteButton.textContent = "✕";
+
           button.appendChild(circleIcon);
           button.appendChild(title);
           button.appendChild(priority);
           button.appendChild(date);
           button.appendChild(view);
+          button.appendChild(deleteButton);
 
           tasksContainer.appendChild(button);
         }
@@ -178,21 +188,21 @@ export let displayContent = function () {
       tasksContainer.appendChild(addTaskButton);
 
       activateNewTaskButton(addTaskButton);
-      
-      
+
+
       displayContainer.appendChild(tasksContainer);
-      
+
       if (i == 0 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-      
-      
+
+
     }
-    
+
     console.log('activating task buttons');
-    
+
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
     activateTaskButtons();
