@@ -313,6 +313,7 @@ form.task-form button:hover {
 .workspace .tasks-container {
   display: flex;
   flex-direction: column;
+  border-top: solid 2px #e2e2e2;
 }
 
 .tasks-container button {
@@ -333,6 +334,7 @@ form.task-form button:hover {
 
 .tasks-container button.task {
   min-height: 80px;
+  border-bottom: solid 2px #e2e2e2;
 }
 
 .tasks-container button.view-button {
@@ -387,6 +389,13 @@ form.task-form button:hover {
   min-width: 200px;
   text-align: start;
 }
+
+/* .tasks-container .divider {
+  height: 1px;
+  width: 100%;
+  grid-column: 1/5;
+  margin-top: 5px
+} */
 
 
 .tasks-container button .task-title,
@@ -443,7 +452,7 @@ form.task-form button:hover {
   top: -6px;
   left: 15px;
   color: #2B2B2B;
-  
+
 }
 
 

@@ -47,6 +47,8 @@ export let displayContent = function () {
         const title = document.createElement('p');
         title.classList.add('task-title')
         title.textContent = task.title;
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
         const priority = document.createElement('p');
         priority.classList.add('task-priority');
         priority.classList.add(`${task.priority}`);
@@ -72,6 +74,7 @@ export let displayContent = function () {
         button.appendChild(date);
         button.appendChild(view);
         button.appendChild(deleteButton);
+        button.appendChild(divider);
 
         tasksContainer.appendChild(button);
       }
