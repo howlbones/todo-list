@@ -3978,6 +3978,15 @@ let displayContent = function () {
   let project = function (projectId) {
     clear();
 
+    const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
+    let project;
+    for (let i = 0; i < projects.length; i++) {
+      if (projectId == projects[i].id) {
+        project = projects[i];
+      }
+    }
+    const projectName = project.name;
+    
     const workspace = document.querySelector('div.workspace');
     workspace.className = "";
     workspace.classList.add('workspace');
@@ -3985,9 +3994,6 @@ let displayContent = function () {
     displayContainer.classList.add('display-project-container');
     displayContainer.classList.add(`${projectId}`);
 
-    const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
-    const project = projects[projectId];
-    const projectName = project.name;
 
     const header = document.createElement('h1');
     header.classList.add('project-name');
@@ -4829,14 +4835,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   removeProjectButtonListeners: () => (/* binding */ removeProjectButtonListeners)
 /* harmony export */ });
 /* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
+/* harmony import */ var _projectmanager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projectmanager */ "./src/projectmanager.js");
+/* harmony import */ var _projectrender__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./projectrender */ "./src/projectrender.js");
+
+
 
 
 function activateProjectButtons() {
   const buttons = document.querySelectorAll("button.project");
+  const deleteButtons = document.querySelectorAll('button.delete-project-button');
+  // console.log(deleteButtons);
+  // console.log('yes');
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', requestProject);
   }
+
+  for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click', deleteProject);
+  }
+}
+
+function deleteProject(e) {
+  e.stopPropagation();
+  let id = e.target.closest('button.project');
+  id = id.className.split(' ')[1];
+  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.deleteProject(parseInt(id));
+  console.log('removed' + parseInt(id));
+  removeProjectButtonListeners();
+  (0,_projectrender__WEBPACK_IMPORTED_MODULE_2__.renderProjects)();
+  activateProjectButtons();
 }
 
 function removeProjectButtonListeners() {

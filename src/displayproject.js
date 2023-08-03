@@ -12,6 +12,15 @@ export let displayContent = function () {
   let project = function (projectId) {
     clear();
 
+    const projects = ProjectCollection.projects;
+    let project;
+    for (let i = 0; i < projects.length; i++) {
+      if (projectId == projects[i].id) {
+        project = projects[i];
+      }
+    }
+    const projectName = project.name;
+    
     const workspace = document.querySelector('div.workspace');
     workspace.className = "";
     workspace.classList.add('workspace');
@@ -19,9 +28,6 @@ export let displayContent = function () {
     displayContainer.classList.add('display-project-container');
     displayContainer.classList.add(`${projectId}`);
 
-    const projects = ProjectCollection.projects;
-    const project = projects[projectId];
-    const projectName = project.name;
 
     const header = document.createElement('h1');
     header.classList.add('project-name');
