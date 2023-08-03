@@ -3936,6 +3936,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_img_check_circle_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../src/img/check-circle.png */ "./src/img/check-circle.png");
 /* harmony import */ var _newtaskbutton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./newtaskbutton */ "./src/newtaskbutton.js");
 /* harmony import */ var _taskbuttons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./taskbuttons */ "./src/taskbuttons.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+
 
 
 
@@ -3947,9 +3949,7 @@ __webpack_require__.r(__webpack_exports__);
 let displayContent = function () {
 
   let project = function (projectId) {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
 
     const workspace = document.querySelector('div.workspace');
     workspace.className = "";
@@ -4039,9 +4039,10 @@ let displayContent = function () {
   }
 
   let today = function () {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
+
+    let dateNow = (0,date_fns__WEBPACK_IMPORTED_MODULE_7__["default"])(Date.now(), 'dd MMMM yyyy');
+    console.log('Todays date: ', dateNow);
 
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
@@ -4056,12 +4057,26 @@ let displayContent = function () {
 
       let projectId = projects[i].id;
 
+      const project = projects[projectId];
+      const projectName = project.name;
+      let tasks = project.tasks;
+
+      let hasTodaysTask = false;
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].dueDate !== dateNow) {
+          console.log('not the due date');
+          console.log('date: ' + tasks[i].dueDate);
+          continue;
+        } else {
+          hasTodaysTask = true;
+        };
+      }
+      if (!hasTodaysTask) { continue };
+
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
       displayContainer.classList.add(`${projectId}`);
 
-      const project = projects[projectId];
-      const projectName = project.name;
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -4072,12 +4087,15 @@ let displayContent = function () {
       const tasksContainer = document.createElement('div');
       tasksContainer.classList.add('tasks-container');
 
-      let tasks = project.tasks;
-
-
       if (tasks) {
         for (let i = 0; i < tasks.length; i++) {
+
           let task = tasks[i];
+
+          if (task.dueDate !== dateNow) {
+            continue;
+          }
+
           const button = document.createElement('button');
           button.classList.add('task');
           button.classList.add(`${task.id}`);
@@ -4150,9 +4168,7 @@ let displayContent = function () {
   }
 
   let all = function () {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
 
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
@@ -4189,6 +4205,7 @@ let displayContent = function () {
       if (tasks) {
         for (let i = 0; i < tasks.length; i++) {
           let task = tasks[i];
+
           const button = document.createElement('button');
           button.classList.add('task');
           button.classList.add(`${task.id}`);
@@ -4375,6 +4392,10 @@ let displayContent = function () {
     const content = document.querySelector('.display-project-container');
     const leftSide = document.querySelector('.left-side');
     const rightSide = document.querySelector('.right-side');
+    const workspace = document.querySelector('.workspace');
+    workspace.classList.remove('all');
+    workspace.classList.remove('today');
+    workspace.classList.remove('important');
     if (content) { content.remove() };
     if (leftSide) { leftSide.remove() };
     if (rightSide) { rightSide.remove() };

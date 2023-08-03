@@ -5,13 +5,12 @@ import ViewIcon from "../src/img/view.png";
 import CircleIcon from "../src/img/check-circle.png";
 import { activateNewTaskButton } from "./newtaskbutton";
 import { activateTaskButtons } from "./taskbuttons";
+import { format } from "date-fns";
 
 export let displayContent = function () {
 
   let project = function (projectId) {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
 
     const workspace = document.querySelector('div.workspace');
     workspace.className = "";
@@ -101,9 +100,10 @@ export let displayContent = function () {
   }
 
   let today = function () {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
+
+    let dateNow = format(Date.now(), 'dd MMMM yyyy');
+    console.log('Todays date: ', dateNow);
 
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
@@ -118,12 +118,26 @@ export let displayContent = function () {
 
       let projectId = projects[i].id;
 
+      const project = projects[projectId];
+      const projectName = project.name;
+      let tasks = project.tasks;
+
+      let hasTodaysTask = false;
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].dueDate !== dateNow) {
+          console.log('not the due date');
+          console.log('date: ' + tasks[i].dueDate);
+          continue;
+        } else {
+          hasTodaysTask = true;
+        };
+      }
+      if (!hasTodaysTask) { continue };
+
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
       displayContainer.classList.add(`${projectId}`);
 
-      const project = projects[projectId];
-      const projectName = project.name;
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -134,12 +148,15 @@ export let displayContent = function () {
       const tasksContainer = document.createElement('div');
       tasksContainer.classList.add('tasks-container');
 
-      let tasks = project.tasks;
-
-
       if (tasks) {
         for (let i = 0; i < tasks.length; i++) {
+
           let task = tasks[i];
+
+          if (task.dueDate !== dateNow) {
+            continue;
+          }
+
           const button = document.createElement('button');
           button.classList.add('task');
           button.classList.add(`${task.id}`);
@@ -212,9 +229,7 @@ export let displayContent = function () {
   }
 
   let all = function () {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
 
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
@@ -251,6 +266,7 @@ export let displayContent = function () {
       if (tasks) {
         for (let i = 0; i < tasks.length; i++) {
           let task = tasks[i];
+
           const button = document.createElement('button');
           button.classList.add('task');
           button.classList.add(`${task.id}`);
@@ -437,6 +453,10 @@ export let displayContent = function () {
     const content = document.querySelector('.display-project-container');
     const leftSide = document.querySelector('.left-side');
     const rightSide = document.querySelector('.right-side');
+    const workspace = document.querySelector('.workspace');
+    workspace.classList.remove('all');
+    workspace.classList.remove('today');
+    workspace.classList.remove('important');
     if (content) { content.remove() };
     if (leftSide) { leftSide.remove() };
     if (rightSide) { rightSide.remove() };
