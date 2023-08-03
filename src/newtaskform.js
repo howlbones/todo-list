@@ -118,7 +118,9 @@ export let taskForm = function () {
 
         if (selectedButton === 'today') {
           displayContent.today();
-        } else {
+        } else if (selectedButton === 'important') {
+          displayContent.important();
+        }else {
           displayContent.project(projectId)
         }
 

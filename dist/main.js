@@ -4278,29 +4278,38 @@ let displayContent = function () {
   }
 
   let important = function () {
-    if (document.querySelector('.display-project-container')) {
-      clear();
-    }
+    clear();
 
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('important');
-
+    
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
     const rightSide = document.createElement('div');
     rightSide.classList.add('right-side');
-
+    
     for (let i = 0; i < projects.length; i++) {
-
+      
       let projectId = projects[i].id;
+      const project = projects[projectId];
+      const projectName = project.name;
+      let tasks = project.tasks;
+      
+      let hasImportant = false;
+      for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].priority !== 'high') {
+          continue;
+        } else {
+          hasImportant = true;
+        };
+      }
+      if (!hasImportant) { continue };
+
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
       displayContainer.classList.add(`${projectId}`);
-
-      const project = projects[projectId];
-      const projectName = project.name;
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -4311,12 +4320,13 @@ let displayContent = function () {
       const tasksContainer = document.createElement('div');
       tasksContainer.classList.add('tasks-container');
 
-      let tasks = project.tasks;
-
 
       if (tasks) {
         for (let i = 0; i < tasks.length; i++) {
           let task = tasks[i];
+
+          if (task.priority !== 'high') {continue};
+
           const button = document.createElement('button');
           button.classList.add('task');
           button.classList.add(`${task.id}`);
@@ -4719,7 +4729,9 @@ let taskForm = function () {
 
         if (selectedButton === 'today') {
           _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.today();
-        } else {
+        } else if (selectedButton === 'important') {
+          _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.important();
+        }else {
           _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.project(projectId)
         }
 
