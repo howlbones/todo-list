@@ -138,13 +138,24 @@ header button.about:hover {
 .side-bar button {
   height: 58px;
   display: grid;
-  grid-template-columns: 78px 1fr;
+  grid-template-columns: 78px 1fr 35px;
   align-items: center;
   border-radius: 10px;
   background-color: #F5F5F5;
   cursor: pointer;
   border-style: none;
   transition: 0.1s;
+}
+
+.side-bar button.delete-project-button {
+  display: block;
+  background: transparent;
+  font-size: 20px;
+  color: #c3c3c3;
+}
+.side-bar button.delete-project-button:hover {
+  background-color: #CC5546;
+  color: white;
 }
 
 .side-bar button:hover {
@@ -421,6 +432,7 @@ form.task-form button.cancel-button:hover {
   padding: 10px 15px;
   background-color: #FFF;
   border: none;
+  transition: 0.3s;
 }
 
 .tasks-container button:hover {
@@ -471,7 +483,8 @@ form.task-form button.cancel-button:hover {
 }
 
 .tasks-container button.delete-task:hover {
-  background-color: #ECECEC;
+  background-color: #CC5546;
+  color: white;
 }
 
 .tasks-container .task-date {
@@ -570,7 +583,7 @@ form.task-form button.cancel-button:hover {
   height: auto;
   padding-bottom: 0px;
   padding-right: 0px;
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\n\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  /* font-family: 'Inter', sans-serif; */\n  font-family: 'Inter Tight', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.about {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 16px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.about:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n  transition: 0.1s;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 20px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 20px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\nh1.project-name {\n  font-weight: 700;\n  font-size: 24px;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 24px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #7E7E7E;\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n\nform.task-form textarea {\n  margin-bottom: 35px;\n  font-size: 24px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n  padding: 12px;\n  resize: none;\n}\n\nform.task-form textarea:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input {\n  height: 24px;\n  margin-bottom: 15px;\n  font-size: 24px;\n  height: 35px;;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\nform.task-form .date-created {\n  color: #7E7E7E;\n  font-size: 14px;\n  text-align: end;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  /* background-color: #f5f5f5; */\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n  transition: 0.1s;\n}\n\nform.task-form button.task-form-submit:hover {\n  outline: none;\n  background-color: #cbe1b0;\n}\n\nform.task-form button.cancel-button:hover {\n  outline: none;\n  background-color: #CC5546;\n  color: white;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  max-width: 1100px;\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 40px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  border-top: solid 2px #e2e2e2;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px 40px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n  border-bottom: solid 2px #e2e2e2;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container button.delete-task {\n  display: block;\n  grid-column: 4 / 5;\n  grid-row: 1 / 3;\n  height: 40px;\n  width: auto;\n  background: transparent;\n  cursor: pointer;\n  color: #c3c3c3;\n  font-size: 30px;\n  display: flex;\n  justify-content: center;\n  border-radius: 8px;\n}\n\n.tasks-container button.delete-task:hover {\n  background-color: #ECECEC;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 14px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n/* .tasks-container .divider {\n  height: 1px;\n  width: 100%;\n  grid-column: 1/5;\n  margin-top: 5px\n} */\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 24px;\n  text-align: start;\n  color: #7E7E7E;\n}\n\n.tasks-container button.done {\n  background-color: #ededed;\n  position: relative;\n}\n\n.tasks-container button.done p.task-title {\n  text-decoration: line-through;\n  text-decoration-color: #CC5546;\n}\n\n.tasks-container button.done::before {\n  font-size: 45px;\n  content: \"✔\";\n  position: absolute;\n  top: -6px;\n  left: 15px;\n  color: #2B2B2B;\n\n}\n\n\n/* Today tab grid-layout */\n\n.workspace.today,\n.workspace.all,\n.workspace.important {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  margin-right: 133px;\n}\n\n.workspace.today .left-side .display-project-container,\n.workspace.today .right-side .display-project-container,\n.workspace.all .right-side .display-project-container,\n.workspace.all .left-side .display-project-container,\n.workspace.important .left-side .display-project-container,\n.workspace.important .right-side .display-project-container {\n  height: auto;\n  padding-bottom: 0px;\n  padding-right: 0px;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\n\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  /* font-family: 'Inter', sans-serif; */\n  font-family: 'Inter Tight', sans-serif;\n  padding: 0px;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.about {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 16px;\n  font-weight: 400;\n  cursor: pointer;\n}\n\nheader button.about:hover {\n  background-color: #cc6d61;\n}\n\n.content {\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr 35px;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n  transition: 0.1s;\n}\n\n.side-bar button.delete-project-button {\n  display: block;\n  background: transparent;\n  font-size: 20px;\n  color: #c3c3c3;\n}\n.side-bar button.delete-project-button:hover {\n  background-color: #CC5546;\n  color: white;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 20px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 20px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\nh1.project-name {\n  font-weight: 700;\n  font-size: 24px;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  ;\n  height: 45px;\n  width: 100%;\n  font-size: 24px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #7E7E7E;\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n\nform.task-form textarea {\n  margin-bottom: 35px;\n  font-size: 24px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n  padding: 12px;\n  resize: none;\n}\n\nform.task-form textarea:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input {\n  height: 24px;\n  margin-bottom: 15px;\n  font-size: 24px;\n  height: 35px;;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\nform.task-form .date-created {\n  color: #7E7E7E;\n  font-size: 14px;\n  text-align: end;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  /* background-color: #f5f5f5; */\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n  transition: 0.1s;\n}\n\nform.task-form button.task-form-submit:hover {\n  outline: none;\n  background-color: #cbe1b0;\n}\n\nform.task-form button.cancel-button:hover {\n  outline: none;\n  background-color: #CC5546;\n  color: white;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  max-width: 1100px;\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 40px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  border-top: solid 2px #e2e2e2;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px 40px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n  transition: 0.3s;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n  border-bottom: solid 2px #e2e2e2;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container button.delete-task {\n  display: block;\n  grid-column: 4 / 5;\n  grid-row: 1 / 3;\n  height: 40px;\n  width: auto;\n  background: transparent;\n  cursor: pointer;\n  color: #c3c3c3;\n  font-size: 30px;\n  display: flex;\n  justify-content: center;\n  border-radius: 8px;\n}\n\n.tasks-container button.delete-task:hover {\n  background-color: #CC5546;\n  color: white;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 14px;\n}\n\n.tasks-container .task-title {\n  font-size: 24px;\n  min-width: 200px;\n  text-align: start;\n}\n\n/* .tasks-container .divider {\n  height: 1px;\n  width: 100%;\n  grid-column: 1/5;\n  margin-top: 5px\n} */\n\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 24px;\n  text-align: start;\n  color: #7E7E7E;\n}\n\n.tasks-container button.done {\n  background-color: #ededed;\n  position: relative;\n}\n\n.tasks-container button.done p.task-title {\n  text-decoration: line-through;\n  text-decoration-color: #CC5546;\n}\n\n.tasks-container button.done::before {\n  font-size: 45px;\n  content: \"✔\";\n  position: absolute;\n  top: -6px;\n  left: 15px;\n  color: #2B2B2B;\n\n}\n\n\n/* Today tab grid-layout */\n\n.workspace.today,\n.workspace.all,\n.workspace.important {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  margin-right: 133px;\n}\n\n.workspace.today .left-side .display-project-container,\n.workspace.today .right-side .display-project-container,\n.workspace.all .right-side .display-project-container,\n.workspace.all .left-side .display-project-container,\n.workspace.important .left-side .display-project-container,\n.workspace.important .right-side .display-project-container {\n  height: auto;\n  padding-bottom: 0px;\n  padding-right: 0px;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4187,6 +4200,7 @@ let displayContent = function () {
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('all');
+    console.log('yes');
 
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
@@ -4196,13 +4210,17 @@ let displayContent = function () {
     for (let i = 0; i < projects.length; i++) {
 
       let projectId = projects[i].id;
+      const project = projects[projectId];
+      const projectName = project.name;
+
+      if (project.tasks.length === 0) {
+        continue;
+      }
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
       displayContainer.classList.add(`${projectId}`);
 
-      const project = projects[projectId];
-      const projectName = project.name;
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -4741,11 +4759,14 @@ let taskForm = function () {
         let selectedButton = document.querySelector('.side-bar button.active');
         selectedButton = selectedButton.className.split(' ')[0];
 
+
         if (selectedButton === 'today') {
           _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.today();
         } else if (selectedButton === 'important') {
           _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.important();
-        }else {
+        } else if (selectedButton === 'all-tasks') {
+          _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.all();
+        } else {
           _displayproject__WEBPACK_IMPORTED_MODULE_1__.displayContent.project(projectId)
         }
 
@@ -5017,6 +5038,9 @@ function renderProjects() {
     const button = document.createElement('button');
     const icon = document.createElement('img');
     const name = document.createElement('p');
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-project-button');
+    deleteButton.textContent = "✕";
     let id = String(projects[i].id);
     button.classList.add(`project`);
     button.classList.add(id);
@@ -5025,6 +5049,7 @@ function renderProjects() {
 
     button.appendChild(icon);
     button.appendChild(name);
+    button.appendChild(deleteButton);
     projectContainer.appendChild(button);
   }
 }
@@ -5104,16 +5129,21 @@ function deleteTask(e) {
   let target = e.target;
   let taskId = target.closest('.task').className.split(' ')[1];
   let projectId = target.closest('.display-project-container').className.split(' ')[1];
-
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.deleteTask(parseInt(projectId), parseInt(taskId));
-
   let displayType = document.querySelector('.workspace');
   displayType = displayType.className.split(' ')[1];
 
+  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.deleteTask(parseInt(projectId), parseInt(taskId));
+
+
   if (!displayType) {
+    console.log('displaying project')
     _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.project(projectId);
   } else if (displayType === 'today') {
     _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.today();
+  } else if (displayType === 'all') {
+    _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.all();
+  } else if (displayType === 'important') {
+    _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.important();
   }
 
 }
@@ -5277,10 +5307,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   taskManager: () => (/* binding */ taskManager)
 /* harmony export */ });
-/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _task__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./task */ "./src/task.js");
 /* harmony import */ var _taskeditor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./taskeditor */ "./src/taskeditor.js");
+/* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
+
 
 
 
@@ -5314,8 +5346,8 @@ let taskManager = function () {
 
     newTask.title = title;
     newTask.description = desc;
-    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
-    newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(dueDate, 'dd MMMM yyyy');
+    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
+    newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
     newTask.status = 'active';
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.push(newTask);
@@ -5356,6 +5388,8 @@ let taskManager = function () {
       return
     }
 
+    _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.clear();
+
     // Console debug
     // console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
     // console.log(`Updated task list:`)
@@ -5373,7 +5407,7 @@ let taskManager = function () {
   }
 
   let changeDate = function (projectId, taskId, newDate) {
-    newDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_3__["default"])(newDate, 'dd MMMM yyyy');
+    newDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(newDate, 'dd MMMM yyyy');
     _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changeDueDate(projectId, taskId, newDate);
   }
 
