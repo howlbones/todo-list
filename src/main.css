@@ -458,14 +458,20 @@ form.task-form button:hover {
 
 /* Today tab grid-layout */
 
-.workspace.today {
+.workspace.today,
+.workspace.all,
+.workspace.important {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-right: 133px;
 }
 
 .workspace.today .left-side .display-project-container,
-.workspace.today .right-side .display-project-container {
+.workspace.today .right-side .display-project-container,
+.workspace.all .right-side .display-project-container,
+.workspace.all .left-side .display-project-container,
+.workspace.important .left-side .display-project-container,
+.workspace.important .right-side .display-project-container {
   height: auto;
   padding-bottom: 0px;
   padding-right: 0px;
