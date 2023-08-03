@@ -116,11 +116,14 @@ export let taskForm = function () {
         let selectedButton = document.querySelector('.side-bar button.active');
         selectedButton = selectedButton.className.split(' ')[0];
 
+
         if (selectedButton === 'today') {
           displayContent.today();
         } else if (selectedButton === 'important') {
           displayContent.important();
-        }else {
+        } else if (selectedButton === 'all-tasks') {
+          displayContent.all();
+        } else {
           displayContent.project(projectId)
         }
 

@@ -23,16 +23,21 @@ function deleteTask(e) {
   let target = e.target;
   let taskId = target.closest('.task').className.split(' ')[1];
   let projectId = target.closest('.display-project-container').className.split(' ')[1];
-
-  taskManager.deleteTask(parseInt(projectId), parseInt(taskId));
-
   let displayType = document.querySelector('.workspace');
   displayType = displayType.className.split(' ')[1];
 
+  taskManager.deleteTask(parseInt(projectId), parseInt(taskId));
+
+
   if (!displayType) {
+    console.log('displaying project')
     displayContent.project(projectId);
   } else if (displayType === 'today') {
     displayContent.today();
+  } else if (displayType === 'all') {
+    displayContent.all();
+  } else if (displayType === 'important') {
+    displayContent.important();
   }
 
 }

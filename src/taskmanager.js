@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { ProjectCollection } from "./projectcollection";
 import { Task } from "./task";
 import { editTask } from "./taskeditor";
+import { displayContent } from "./displayproject";
 
 export let taskManager = function () {
 
@@ -72,6 +73,8 @@ export let taskManager = function () {
       console.log('No task with this ID found.')
       return
     }
+
+    displayContent.clear();
 
     // Console debug
     // console.log(`Task deleted from ${project.name}. ID - ${taskId}`);

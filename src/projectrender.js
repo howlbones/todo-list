@@ -16,6 +16,9 @@ export function renderProjects() {
     const button = document.createElement('button');
     const icon = document.createElement('img');
     const name = document.createElement('p');
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-project-button');
+    deleteButton.textContent = "✕";
     let id = String(projects[i].id);
     button.classList.add(`project`);
     button.classList.add(id);
@@ -24,6 +27,7 @@ export function renderProjects() {
 
     button.appendChild(icon);
     button.appendChild(name);
+    button.appendChild(deleteButton);
     projectContainer.appendChild(button);
   }
 }

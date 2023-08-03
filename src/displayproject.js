@@ -234,6 +234,7 @@ export let displayContent = function () {
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('all');
+    console.log('yes');
 
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
@@ -243,13 +244,17 @@ export let displayContent = function () {
     for (let i = 0; i < projects.length; i++) {
 
       let projectId = projects[i].id;
+      const project = projects[projectId];
+      const projectName = project.name;
+
+      if (project.tasks.length === 0) {
+        continue;
+      }
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
       displayContainer.classList.add(`${projectId}`);
 
-      const project = projects[projectId];
-      const projectName = project.name;
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
