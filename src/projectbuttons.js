@@ -22,7 +22,6 @@ function deleteProject(e) {
   let id = e.target.closest('button.project');
   id = id.className.split(' ')[1];
   projectManager.deleteProject(parseInt(id));
-  console.log('removed' + parseInt(id));
   removeProjectButtonListeners();
   renderProjects();
   activateProjectButtons();

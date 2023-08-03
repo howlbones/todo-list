@@ -32,11 +32,39 @@ header button.about {
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 header button.about:hover {
   background-color: #cc6d61;
 }
+
+.about-popup {
+  position: absolute;
+  right: 0px;
+  height: auto;
+  width: 300px;
+  top: 80px;
+  background-color: #F5F5F5;
+  padding: 25px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 5px;
+}
+
+.about-popup strong {
+  color: #CC5546;
+}
+
+.about-popup a {
+  text-decoration: none;
+}
+
+.about-popup a:hover {
+  text-decoration: underline;
+}
+
 
 .content {
   min-height: calc(100vh - 66px);
@@ -71,7 +99,9 @@ header button.about:hover {
   background: transparent;
   font-size: 20px;
   color: #c3c3c3;
+  border-radius: 0px 10px 10px 0px;
 }
+
 .side-bar button.delete-project-button:hover {
   background-color: #CC5546;
   color: white;
@@ -234,7 +264,8 @@ form.task-form input {
   height: 24px;
   margin-bottom: 15px;
   font-size: 24px;
-  height: 35px;;
+  height: 35px;
+  ;
   padding: 0px 15px;
   border-radius: 5px;
   background-color: #F5F5F5;
