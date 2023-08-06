@@ -4147,11 +4147,14 @@ let displayContent = function () {
     const rightSide = document.createElement('div');
     rightSide.classList.add('right-side');
 
+    if (projects.length === 0) {
+      return;
+    }
+
     for (let i = 0; i < projects.length; i++) {
 
-      let projectId = projects[i].id;
 
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
       let tasks = project.tasks;
 
@@ -4169,7 +4172,7 @@ let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
 
       const header = document.createElement('h1');
@@ -4254,7 +4257,6 @@ let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
@@ -4267,7 +4269,6 @@ let displayContent = function () {
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_1__.ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('all');
-    console.log('yes');
 
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
@@ -4276,8 +4277,7 @@ let displayContent = function () {
 
     for (let i = 0; i < projects.length; i++) {
 
-      let projectId = projects[i].id;
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
 
       if (project.tasks.length === 0) {
@@ -4286,7 +4286,7 @@ let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
 
       const header = document.createElement('h1');
@@ -4369,7 +4369,6 @@ let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
@@ -4387,11 +4386,14 @@ let displayContent = function () {
     leftSide.classList.add('left-side');
     const rightSide = document.createElement('div');
     rightSide.classList.add('right-side');
+
+    if (projects.length === 0) {
+      return;
+    }
     
     for (let i = 0; i < projects.length; i++) {
       
-      let projectId = projects[i].id;
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
       let tasks = project.tasks;
       
@@ -4408,7 +4410,7 @@ let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -4490,7 +4492,6 @@ let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
@@ -4820,7 +4821,7 @@ let taskForm = function () {
         priority = priority.className.split(' ')[1];
         let currentContent = document.querySelector('.display-project-container');
         currentContent.remove();
-        _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
+        _taskmanager__WEBPACK_IMPORTED_MODULE_0__.taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, Date.now(), priority);
         darkScreen.remove();
 
         let selectedButton = document.querySelector('.side-bar button.active');
@@ -5047,15 +5048,16 @@ let projectManager = function() {
     let newProject = (0,_project__WEBPACK_IMPORTED_MODULE_1__.Project)();
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
 
-    // Finding a unique index for a project
-    if (projects.length === 0) {
-      newProject.id = 0;
-    }
-    else {
-      let lastID = Number(projects[projects.length - 1].id);
-      newProject.id = lastID + 1;
+    // Finding a unique id for a project
+    let id = Math.floor(Math.random() * 10000);
+    for (let i = 0; i < projects.length; i++) {
+      while (projects[i].id == id) {
+        id = Math.floor(Math.random() * 10000);
+      }
     }
 
+
+    newProject.id = id;
     newProject.name = name;
     newProject.icon = _iconpack__WEBPACK_IMPORTED_MODULE_3__.IconPack[iconId];
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.push(newProject);
@@ -5251,13 +5253,27 @@ function crossOut(e) {
   projectId = projectId.className.split(" ")[1];
   let taskId = target.className.split(" ")[1];
 
+  let project, task;
+  for (let i = 0; i < _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.length; i++) {
+    if (_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i].id == projectId) {
+      project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i];
+      console.log(project);
+      for (let j = 0; j < project.tasks.length; j++) {
+        console.log('Checking task:', j, project.tasks[j].id, '===', taskId);
+        if (project.tasks[j].id == taskId){
+          task = project.tasks[j];
+          console.log(task);
+        }
+      }
+    }
+  }
 
   if (!target.className.split(" ")[2]) {
     target.classList.add('done');
-    _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks[taskId].status = "done";
+    task.status = "done";
   } else {
     target.classList.remove('done');
-    _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks[taskId].status = "active";
+    task.status = "active";
   }
 
 
@@ -5408,14 +5424,16 @@ __webpack_require__.r(__webpack_exports__);
 
 let taskManager = function () {
 
-  let addTask = function (projectId, title, desc, dueDate, priority) {
+  let addTask = function (projectId, title, desc, dueDate, creationDate, priority, status) {
     let newTask = (0,_task__WEBPACK_IMPORTED_MODULE_1__.Task)();
     let project;
+
+    console.log(projectId);
 
     // Find the correct project object that the task will reside in
     for (let i = 0; i < _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.length; i++) {
       if (_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i].id == projectId) {
-        project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId];
+        project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i];
       }
     }
     if (!project) {
@@ -5424,21 +5442,22 @@ let taskManager = function () {
     }
 
     // Making the new task id unique
-    if (project.tasks.length === 0) {
-      newTask.id = 0;
-    }
-    else {
-      let lastID = Number(project.tasks[project.tasks.length - 1].id);
-      newTask.id = lastID + 1;
+    let id = Math.floor(Math.random() * 10000);
+    for (let i = 0; i < project.tasks; i++) {
+      while (project.tasks[i].id == id) {
+        id = Math.floor(Math.random() * 10000);
+      }
     }
 
+    newTask.id = id;
+    newTask.projectId = projectId;
     newTask.title = title;
     newTask.description = desc;
-    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(Date.now(), 'HH:mm | dd MMMM yyyy');
+    newTask.dateCreated = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(creationDate, 'HH:mm | dd MMMM yyyy');
     newTask.dueDate = (0,date_fns__WEBPACK_IMPORTED_MODULE_4__["default"])(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
-    newTask.status = 'active';
-    _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks.push(newTask);
+    (status) ? newTask.status = status : newTask.status = 'active';
+    project.tasks.push(newTask);
 
     // Console debug
     // console.log(`New task added to ${project.name}`);
@@ -5503,7 +5522,7 @@ let taskManager = function () {
     _taskeditor__WEBPACK_IMPORTED_MODULE_2__.editTask.changePriority(projectId, taskId, newPriority);
   }
 
-  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription};
+  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription };
 }();
 
 /***/ }),
@@ -5554,7 +5573,19 @@ function viewTask(e) {
   let taskId = parseInt(e.target.closest('.task').className.split(' ')[1]);
   let projectId = e.target.closest('div.display-project-container');
   projectId = parseInt(projectId.className.split(" ")[1]);
-  let task = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[projectId].tasks[taskId];
+  let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+
+  let project, task;
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].id == projectId) {
+      project = projects[i];
+      for (let j = 0; j < project.tasks.length; j++) {
+        if (project.tasks[j].id == taskId) {
+          task = project.tasks[j];
+        }
+      }
+    }
+  }
 
 
   const body = document.querySelector('body');
@@ -6006,10 +6037,6 @@ window.app = function() {
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Second Project', 2);
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project', 1);
   _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project', 3);
-
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
-  _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(1, 'Go out with Lena', 'Good luck', new Date(2023, 7, 21), 'high');
 
   (0,_aboutbutton__WEBPACK_IMPORTED_MODULE_10__.activateAboutButton)();
   (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
