@@ -57,28 +57,45 @@ function crossOut(e) {
   projectId = projectId.className.split(" ")[1];
   let taskId = target.className.split(" ")[1];
 
+  let projects = ProjectCollection.projects;
   let project, task;
-  for (let i = 0; i < ProjectCollection.projects.length; i++) {
-    if (ProjectCollection.projects[i].id == projectId) {
-      project = ProjectCollection.projects[i];
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].id == projectId) {
+      project = projects[i];
       console.log(project);
       for (let j = 0; j < project.tasks.length; j++) {
         console.log('Checking task:', j, project.tasks[j].id, '===', taskId);
         if (project.tasks[j].id == taskId){
           task = project.tasks[j];
-          console.log(task);
         }
       }
     }
   }
 
+  
+  let newStatus;
   if (!target.className.split(" ")[2]) {
     target.classList.add('done');
     task.status = "done";
+    newStatus = "done";
   } else {
     target.classList.remove('done');
     task.status = "active";
+    newStatus = 'active';
   }
+  
 
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (key.split(' ')[0] === 'task') {
+      let value = JSON.parse(localStorage[key]);
+      if (value.id == taskId) {
+        localStorage.removeItem(key);
+        value.status = newStatus;
+        localStorage.setItem(key, JSON.stringify(value));
+        break;
+      }
+    }
+  }
 
 }

@@ -4673,6 +4673,45 @@ function displayImportant(e) {
 
 /***/ }),
 
+/***/ "./src/localStorageValidation.js":
+/*!***************************************!*\
+  !*** ./src/localStorageValidation.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   storageAvailable: () => (/* binding */ storageAvailable)
+/* harmony export */ });
+function storageAvailable(type) {
+  let storage;
+  try {
+    storage = window[type];
+    const x = "__storage_test__";
+    storage.setItem(x, x);
+    storage.removeItem(x);
+    return true;
+  } catch (e) {
+    return (
+      e instanceof DOMException &&
+      // everything except Firefox
+      (e.code === 22 ||
+        // Firefox
+        e.code === 1014 ||
+        // test name field too, because code might not be present
+        // everything except Firefox
+        e.name === "QuotaExceededError" ||
+        // Firefox
+        e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+      // acknowledge QuotaExceededError only if there's something already stored
+      storage &&
+      storage.length !== 0
+    );
+  }
+}
+
+/***/ }),
+
 /***/ "./src/newtaskbutton.js":
 /*!******************************!*\
   !*** ./src/newtaskbutton.js ***!
@@ -5042,25 +5081,34 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let projectManager = function() {
+let projectManager = function () {
 
-  function addProject(name, iconId) {
+  function addProject(name, iconId, id) {
     let newProject = (0,_project__WEBPACK_IMPORTED_MODULE_1__.Project)();
     const projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
 
     // Finding a unique id for a project
-    let id = Math.floor(Math.random() * 10000);
-    for (let i = 0; i < projects.length; i++) {
-      while (projects[i].id == id) {
-        id = Math.floor(Math.random() * 10000);
+    if (!id) {
+      console.log('no id found');
+      id = Math.floor(Math.random() * 10000);
+      for (let i = 0; i < projects.length; i++) {
+        while (projects[i].id == id) {
+          id = Math.floor(Math.random() * 10000);
+        }
       }
     }
-
 
     newProject.id = id;
     newProject.name = name;
     newProject.icon = _iconpack__WEBPACK_IMPORTED_MODULE_3__.IconPack[iconId];
     _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.push(newProject);
+
+    localStorage.setItem(`project ${id}`, JSON.stringify({
+      "id": id,
+      "name": name,
+      "icon": iconId
+    }));
+
 
     (0,_projectrender__WEBPACK_IMPORTED_MODULE_4__.renderProjects)();
 
@@ -5070,14 +5118,30 @@ let projectManager = function() {
     // console.table(ProjectCollection.projects);
     // console.log('\n');
   }
-  
+
 
   function deleteProject(id) {
     let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
-    
+
     for (let i = 0; i < projects.length; i++) {
       if (projects[i].id === id) {
         projects.splice(i, 1);
+      }
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      let value = JSON.parse(localStorage[key]);
+      if (key.split(' ')[0] === 'project') {
+        if (value.id == id) {
+          localStorage.removeItem(key);
+          i--;
+        }
+      } else {
+        if (value.projectId == id) {
+          localStorage.removeItem(key);
+          i--;
+        }
       }
     }
 
@@ -5093,7 +5157,7 @@ let projectManager = function() {
     _projecteditor__WEBPACK_IMPORTED_MODULE_2__.editProject.changeName(projectId, newName);
   }
 
-  return {addProject, deleteProject, renameProject}
+  return { addProject, deleteProject, renameProject }
 }();
 
 /***/ }),
@@ -5253,29 +5317,46 @@ function crossOut(e) {
   projectId = projectId.className.split(" ")[1];
   let taskId = target.className.split(" ")[1];
 
+  let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
   let project, task;
-  for (let i = 0; i < _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects.length; i++) {
-    if (_projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i].id == projectId) {
-      project = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects[i];
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].id == projectId) {
+      project = projects[i];
       console.log(project);
       for (let j = 0; j < project.tasks.length; j++) {
         console.log('Checking task:', j, project.tasks[j].id, '===', taskId);
         if (project.tasks[j].id == taskId){
           task = project.tasks[j];
-          console.log(task);
         }
       }
     }
   }
 
+  
+  let newStatus;
   if (!target.className.split(" ")[2]) {
     target.classList.add('done');
     task.status = "done";
+    newStatus = "done";
   } else {
     target.classList.remove('done');
     task.status = "active";
+    newStatus = 'active';
   }
+  
 
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    if (key.split(' ')[0] === 'task') {
+      let value = JSON.parse(localStorage[key]);
+      if (value.id == taskId) {
+        localStorage.removeItem(key);
+        value.status = newStatus;
+        localStorage.setItem(key, JSON.stringify(value));
+        break;
+      }
+    }
+  }
 
 }
 
@@ -5459,6 +5540,18 @@ let taskManager = function () {
     (status) ? newTask.status = status : newTask.status = 'active';
     project.tasks.push(newTask);
 
+
+    localStorage.setItem(`task ${projectId} ${id}`, JSON.stringify({
+      "id": id,
+      "projectId": projectId,
+      "title": title,
+      "description": desc,
+      "dateCreated": creationDate,
+      "dueDate": dueDate,
+      "priority": priority,
+      "status": newTask.status
+    }));
+
     // Console debug
     // console.log(`New task added to ${project.name}`);
     // console.log(`New task ID - ${newTask.id}`);
@@ -5493,6 +5586,18 @@ let taskManager = function () {
     if (!found) {
       console.log('No task with this ID found.')
       return
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      if (key.split(' ')[0] === 'task') {
+        let value = JSON.parse(localStorage[key]);
+        console.log('found task:', localStorage[key]);
+        if (value.id == taskId && value.projectId == projectId) {
+          localStorage.removeItem(key);
+          break;
+        }
+      }
     }
 
     _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.clear();
@@ -6016,6 +6121,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _alltasksbutton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./alltasksbutton */ "./src/alltasksbutton.js");
 /* harmony import */ var _importantbutton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./importantbutton */ "./src/importantbutton.js");
 /* harmony import */ var _aboutbutton__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./aboutbutton */ "./src/aboutbutton.js");
+/* harmony import */ var _localStorageValidation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./localStorageValidation */ "./src/localStorageValidation.js");
+
 
 
 
@@ -6031,12 +6138,27 @@ __webpack_require__.r(__webpack_exports__);
 
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser
-window.app = function() {
+window.app = function () {
 
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My First Project', 1);
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Second Project', 2);
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Third Project', 1);
-  _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('My Fourth Project', 3);
+  if (localStorage.length === 0) {
+    _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Personal', 9, 1);
+    _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Fitness', 3, 2);
+    _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Shopping', 1, 3);
+    _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Meeting', 2, 4);
+    let projects = _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection.projects;
+
+    _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(
+      1,
+      "Plan a camping trip",
+      "Write down what we will need for the trip to the Whiterun trail",
+      new Date(2023, 9, 12),
+      Date.now(),
+      "medium",
+      'active'
+    )
+
+  }
+
 
   (0,_aboutbutton__WEBPACK_IMPORTED_MODULE_10__.activateAboutButton)();
   (0,_addprojectbutton__WEBPACK_IMPORTED_MODULE_5__.activateAddProjectButton)();
@@ -6045,7 +6167,7 @@ window.app = function() {
   (0,_alltasksbutton__WEBPACK_IMPORTED_MODULE_8__.activateAllTaskButton)();
   (0,_importantbutton__WEBPACK_IMPORTED_MODULE_9__.activateImportantButton)();
 
-  return {projectManager: _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager, taskManager: _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager, ProjectCollection: _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection};
+  return { projectManager: _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager, taskManager: _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager, ProjectCollection: _projectcollection__WEBPACK_IMPORTED_MODULE_0__.ProjectCollection };
 }();
 
 

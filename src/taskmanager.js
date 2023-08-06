@@ -41,6 +41,18 @@ export let taskManager = function () {
     (status) ? newTask.status = status : newTask.status = 'active';
     project.tasks.push(newTask);
 
+
+    localStorage.setItem(`task ${projectId} ${id}`, JSON.stringify({
+      "id": id,
+      "projectId": projectId,
+      "title": title,
+      "description": desc,
+      "dateCreated": creationDate,
+      "dueDate": dueDate,
+      "priority": priority,
+      "status": newTask.status
+    }));
+
     // Console debug
     // console.log(`New task added to ${project.name}`);
     // console.log(`New task ID - ${newTask.id}`);
@@ -75,6 +87,18 @@ export let taskManager = function () {
     if (!found) {
       console.log('No task with this ID found.')
       return
+    }
+
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      if (key.split(' ')[0] === 'task') {
+        let value = JSON.parse(localStorage[key]);
+        console.log('found task:', localStorage[key]);
+        if (value.id == taskId && value.projectId == projectId) {
+          localStorage.removeItem(key);
+          break;
+        }
+      }
     }
 
     displayContent.clear();
