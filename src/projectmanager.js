@@ -10,15 +10,16 @@ export let projectManager = function() {
     let newProject = Project();
     const projects = ProjectCollection.projects;
 
-    // Finding a unique index for a project
-    if (projects.length === 0) {
-      newProject.id = 0;
-    }
-    else {
-      let lastID = Number(projects[projects.length - 1].id);
-      newProject.id = lastID + 1;
+    // Finding a unique id for a project
+    let id = Math.floor(Math.random() * 10000);
+    for (let i = 0; i < projects.length; i++) {
+      while (projects[i].id == id) {
+        id = Math.floor(Math.random() * 10000);
+      }
     }
 
+
+    newProject.id = id;
     newProject.name = name;
     newProject.icon = IconPack[iconId];
     ProjectCollection.projects.push(newProject);

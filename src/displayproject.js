@@ -120,11 +120,14 @@ export let displayContent = function () {
     const rightSide = document.createElement('div');
     rightSide.classList.add('right-side');
 
+    if (projects.length === 0) {
+      return;
+    }
+
     for (let i = 0; i < projects.length; i++) {
 
-      let projectId = projects[i].id;
 
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
       let tasks = project.tasks;
 
@@ -142,7 +145,7 @@ export let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
 
       const header = document.createElement('h1');
@@ -227,7 +230,6 @@ export let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
@@ -240,7 +242,6 @@ export let displayContent = function () {
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('all');
-    console.log('yes');
 
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
@@ -249,8 +250,7 @@ export let displayContent = function () {
 
     for (let i = 0; i < projects.length; i++) {
 
-      let projectId = projects[i].id;
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
 
       if (project.tasks.length === 0) {
@@ -259,7 +259,7 @@ export let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
 
       const header = document.createElement('h1');
@@ -342,7 +342,6 @@ export let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);
@@ -360,11 +359,14 @@ export let displayContent = function () {
     leftSide.classList.add('left-side');
     const rightSide = document.createElement('div');
     rightSide.classList.add('right-side');
+
+    if (projects.length === 0) {
+      return;
+    }
     
     for (let i = 0; i < projects.length; i++) {
       
-      let projectId = projects[i].id;
-      const project = projects[projectId];
+      const project = projects[i];
       const projectName = project.name;
       let tasks = project.tasks;
       
@@ -381,7 +383,7 @@ export let displayContent = function () {
 
       const displayContainer = document.createElement('div');
       displayContainer.classList.add('display-project-container');
-      displayContainer.classList.add(`${projectId}`);
+      displayContainer.classList.add(`${project.id}`);
 
       const header = document.createElement('h1');
       header.classList.add('project-name');
@@ -463,7 +465,6 @@ export let displayContent = function () {
 
     }
 
-    console.log('activating task buttons');
 
     workspace.appendChild(leftSide);
     workspace.appendChild(rightSide);

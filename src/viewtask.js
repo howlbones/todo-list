@@ -8,7 +8,19 @@ export function viewTask(e) {
   let taskId = parseInt(e.target.closest('.task').className.split(' ')[1]);
   let projectId = e.target.closest('div.display-project-container');
   projectId = parseInt(projectId.className.split(" ")[1]);
-  let task = ProjectCollection.projects[projectId].tasks[taskId];
+  let projects = ProjectCollection.projects;
+
+  let project, task;
+  for (let i = 0; i < projects.length; i++) {
+    if (projects[i].id == projectId) {
+      project = projects[i];
+      for (let j = 0; j < project.tasks.length; j++) {
+        if (project.tasks[j].id == taskId) {
+          task = project.tasks[j];
+        }
+      }
+    }
+  }
 
 
   const body = document.querySelector('body');

@@ -57,13 +57,27 @@ function crossOut(e) {
   projectId = projectId.className.split(" ")[1];
   let taskId = target.className.split(" ")[1];
 
+  let project, task;
+  for (let i = 0; i < ProjectCollection.projects.length; i++) {
+    if (ProjectCollection.projects[i].id == projectId) {
+      project = ProjectCollection.projects[i];
+      console.log(project);
+      for (let j = 0; j < project.tasks.length; j++) {
+        console.log('Checking task:', j, project.tasks[j].id, '===', taskId);
+        if (project.tasks[j].id == taskId){
+          task = project.tasks[j];
+          console.log(task);
+        }
+      }
+    }
+  }
 
   if (!target.className.split(" ")[2]) {
     target.classList.add('done');
-    ProjectCollection.projects[projectId].tasks[taskId].status = "done";
+    task.status = "done";
   } else {
     target.classList.remove('done');
-    ProjectCollection.projects[projectId].tasks[taskId].status = "active";
+    task.status = "active";
   }
 
 

@@ -110,7 +110,7 @@ export let taskForm = function () {
         priority = priority.className.split(' ')[1];
         let currentContent = document.querySelector('.display-project-container');
         currentContent.remove();
-        taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, priority);
+        taskManager.addTask(projectId, titleInput.value, descriptionInput.value, dateInput.valueAsDate, Date.now(), priority);
         darkScreen.remove();
 
         let selectedButton = document.querySelector('.side-bar button.active');

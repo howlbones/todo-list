@@ -20,10 +20,6 @@ window.app = function() {
   projectManager.addProject('My Third Project', 1);
   projectManager.addProject('My Fourth Project', 3);
 
-  taskManager.addTask(0, 'Run', 'Go for a 5 mile run', new Date(2023, 10, 23), 'high');
-  taskManager.addTask(0, 'Feed my dog', 'Donst forget to feed Mason', new Date(2023, 8, 1), 'medium');
-  taskManager.addTask(1, 'Go out with Lena', 'Good luck', new Date(2023, 7, 21), 'high');
-
   activateAboutButton();
   activateAddProjectButton();
   activateProjectButtons();

@@ -6,14 +6,16 @@ import { displayContent } from "./displayproject";
 
 export let taskManager = function () {
 
-  let addTask = function (projectId, title, desc, dueDate, priority) {
+  let addTask = function (projectId, title, desc, dueDate, creationDate, priority, status) {
     let newTask = Task();
     let project;
+
+    console.log(projectId);
 
     // Find the correct project object that the task will reside in
     for (let i = 0; i < ProjectCollection.projects.length; i++) {
       if (ProjectCollection.projects[i].id == projectId) {
-        project = ProjectCollection.projects[projectId];
+        project = ProjectCollection.projects[i];
       }
     }
     if (!project) {
@@ -22,21 +24,22 @@ export let taskManager = function () {
     }
 
     // Making the new task id unique
-    if (project.tasks.length === 0) {
-      newTask.id = 0;
-    }
-    else {
-      let lastID = Number(project.tasks[project.tasks.length - 1].id);
-      newTask.id = lastID + 1;
+    let id = Math.floor(Math.random() * 10000);
+    for (let i = 0; i < project.tasks; i++) {
+      while (project.tasks[i].id == id) {
+        id = Math.floor(Math.random() * 10000);
+      }
     }
 
+    newTask.id = id;
+    newTask.projectId = projectId;
     newTask.title = title;
     newTask.description = desc;
-    newTask.dateCreated = format(Date.now(), 'HH:mm | dd MMMM yyyy');
+    newTask.dateCreated = format(creationDate, 'HH:mm | dd MMMM yyyy');
     newTask.dueDate = format(dueDate, 'dd MMMM yyyy');
     newTask.priority = priority;
-    newTask.status = 'active';
-    ProjectCollection.projects[projectId].tasks.push(newTask);
+    (status) ? newTask.status = status : newTask.status = 'active';
+    project.tasks.push(newTask);
 
     // Console debug
     // console.log(`New task added to ${project.name}`);
@@ -101,5 +104,5 @@ export let taskManager = function () {
     editTask.changePriority(projectId, taskId, newPriority);
   }
 
-  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription};
+  return { addTask, deleteTask, changeTitle, changeDate, changePriority, changeDescription };
 }();
