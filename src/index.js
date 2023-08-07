@@ -144,7 +144,7 @@ window.app = function () {
           "type": "task",
           "projectId": value.projectId,
           "title": value.title,
-          "description": value.desription,
+          "description": value.description,
           "dueDate": value.dueDate,
           "dateCreated": value.dateCreated,
           "priority": value.priority,
@@ -169,7 +169,7 @@ window.app = function () {
       taskManager.addTask(
         value.projectId,
         value.title,
-        value.desription,
+        value.description,
         value.dueDate,
         value.dateCreated,
         value.priority,

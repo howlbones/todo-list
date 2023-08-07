@@ -217,7 +217,7 @@ export let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
@@ -329,7 +329,7 @@ export let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 ||i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
@@ -452,12 +452,11 @@ export let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-
 
     }
 

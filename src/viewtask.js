@@ -160,6 +160,25 @@ export function viewTask(e) {
         displayContent.project(projectId);
       }
 
+      let storageObject;
+      for (let i = 0; i < localStorage.length; i++){
+        let key = localStorage.key(i);
+        let value = JSON.parse(localStorage[key]);
+        let type = key.split(' ')[0];
+        if (type === 'task') {
+          if (value.id == taskId) {
+            storageObject = value;
+            localStorage.removeItem(key);
+            storageObject.title = titleInput.value;
+            storageObject.description = descriptionInput.value;
+            storageObject.dueDate = dateInput.valueAsDate;
+            storageObject.priority = priority;
+            localStorage.setItem(key, JSON.stringify(storageObject));
+            break;
+          }
+        }
+      }
+
     } else {
       if (titleInput.value === "") {
         titleInput.classList.add('invalid');
