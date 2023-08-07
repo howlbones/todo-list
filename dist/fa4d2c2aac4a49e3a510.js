@@ -4749,12 +4749,11 @@ __webpack_require__.r(__webpack_exports__);
 
 function initIcons() {
   document.querySelector('header img').src = _img_home_png__WEBPACK_IMPORTED_MODULE_1__;
-console.log(document.querySelector('header img'))
   console.log(_img_home_png__WEBPACK_IMPORTED_MODULE_1__);
-  document.querySelector('.side-bar .today img').src = _img_today_png__WEBPACK_IMPORTED_MODULE_4__;
-  document.querySelector('.side-bar .all-tasks img').src = _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__;
-  document.querySelector('.side-bar .important img').src = _img_important_png__WEBPACK_IMPORTED_MODULE_2__;
-  document.querySelector('.side-bar .add-project img').src = _img_plus_gray_png__WEBPACK_IMPORTED_MODULE_3__;
+  document.querySelector('.sidebar .today img').src = _img_today_png__WEBPACK_IMPORTED_MODULE_4__;
+  document.querySelector('.sidebar .all-tasks img').src = _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__;
+  document.querySelector('.sidebar .important img').src = _img_important_png__WEBPACK_IMPORTED_MODULE_2__;
+  document.querySelector('.sidebar .add-project img').src = _img_plus_gray_png__WEBPACK_IMPORTED_MODULE_3__;
 
 }
 
@@ -5851,7 +5850,7 @@ function viewTask(e) {
   \**********************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "2e7b1748ef560d87e4e7.js";
+module.exports = __webpack_require__.p + "6481e6562a29a47094f8.js";
 
 /***/ }),
 

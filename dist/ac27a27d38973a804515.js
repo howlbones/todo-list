@@ -3468,10 +3468,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
 // Imports
 
-var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./main.js */ "./dist/main.js"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/home.png */ "./src/img/home.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/today.png */ "./src/img/today.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/alltasks.png */ "./src/img/alltasks.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_3___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/important.png */ "./src/img/important.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_4___ = new URL(/* asset import */ __webpack_require__(/*! ../src/img/plus-gray.png */ "./src/img/plus-gray.png"), __webpack_require__.b);
+var ___HTML_LOADER_IMPORT_5___ = new URL(/* asset import */ __webpack_require__(/*! ./main.js */ "./dist/main.js"), __webpack_require__.b);
 // Module
 var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
-var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Todo List</title>\n</head>\n<body>\n  <header>\n    <img src=\"\" alt=\"Home page icon\">\n    <button class=\"about\">\n      <p>About</p>\n    </button>\n  </header>\n  <div class=\"about-popup-container\">\n    <div class=\"about-popup\">\n      <p>This Todo-list app uses your local storage to store your projects data</p>\n      <p>Developed by <strong>SAIINSAE</strong></p>\n      <a href=\"https://github.com/SAIINSAE\" target=\"_blank\">Github</a>\n      <p>Task of the Odins Project curriculum</p>\n    </div>\n  </div>\n  <div class=\"content\">\n    <div class=\"side-bar\">\n      <button class=\"today\">\n        <img src=\"\" alt=\"calendar icon\">\n        <p>Today</p>\n      </button>\n      <button class=\"all-tasks\">\n        <img src=\"\" alt=\"calendar icon\">\n        <p>All Tasks</p>\n      </button>\n      <button class=\"important\">\n        <img src=\"\" alt=\"exclamation icon\">\n        <p>Important</p>\n      </button>\n      <h4>Projects</h4>\n      <div class=\"projects-container\">\n      </div>\n      <button class=\"add-project\">\n        <img src=\"\" alt=\"Plus icon\">\n        <p>Add Project</p>\n      </button>\n    </div>\n    <div class=\"workspace\">\n\n    </div>\n  </div>\n  <" + "script src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"><" + "/script>\n</body>\n</html>";
+var ___HTML_LOADER_REPLACEMENT_1___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_1___);
+var ___HTML_LOADER_REPLACEMENT_2___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_2___);
+var ___HTML_LOADER_REPLACEMENT_3___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_3___);
+var ___HTML_LOADER_REPLACEMENT_4___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_4___);
+var ___HTML_LOADER_REPLACEMENT_5___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_5___);
+var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Todo List</title>\n</head>\n<body>\n  <header>\n    <img src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\" alt=\"Home page icon\">\n    <button class=\"about\">\n      <p>About</p>\n    </button>\n  </header>\n  <div class=\"about-popup-container\">\n    <div class=\"about-popup\">\n      <p>This Todo-list app uses your local storage to store your projects data</p>\n      <p>Developed by <strong>SAIINSAE</strong></p>\n      <a href=\"https://github.com/SAIINSAE\" target=\"_blank\">Github</a>\n      <p>Task of the Odins Project curriculum</p>\n    </div>\n  </div>\n  <div class=\"content\">\n    <div class=\"side-bar\">\n      <button class=\"today\">\n        <img src=\"" + ___HTML_LOADER_REPLACEMENT_1___ + "\" alt=\"calendar icon\">\n        <p>Today</p>\n      </button>\n      <button class=\"all-tasks\">\n        <img src=\"" + ___HTML_LOADER_REPLACEMENT_2___ + "\" alt=\"calendar icon\">\n        <p>All Tasks</p>\n      </button>\n      <button class=\"important\">\n        <img src=\"" + ___HTML_LOADER_REPLACEMENT_3___ + "\" alt=\"exclamation icon\">\n        <p>Important</p>\n      </button>\n      <h4>Projects</h4>\n      <div class=\"projects-container\">\n      </div>\n      <button class=\"add-project\">\n        <img src=\"" + ___HTML_LOADER_REPLACEMENT_4___ + "\" alt=\"Plus icon\">\n        <p>Add Project</p>\n      </button>\n    </div>\n    <div class=\"workspace\">\n\n    </div>\n  </div>\n  <" + "script src=\"" + ___HTML_LOADER_REPLACEMENT_5___ + "\"><" + "/script>\n</body>\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -4726,40 +4736,6 @@ function displayImportant(e) {
 
 /***/ }),
 
-/***/ "./src/initicons.js":
-/*!**************************!*\
-  !*** ./src/initicons.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   initIcons: () => (/* binding */ initIcons)
-/* harmony export */ });
-/* harmony import */ var _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./img/alltasks.png */ "./src/img/alltasks.png");
-/* harmony import */ var _img_home_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./img/home.png */ "./src/img/home.png");
-/* harmony import */ var _img_important_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/important.png */ "./src/img/important.png");
-/* harmony import */ var _img_plus_gray_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./img/plus-gray.png */ "./src/img/plus-gray.png");
-/* harmony import */ var _img_today_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./img/today.png */ "./src/img/today.png");
-
-
-
-
-
-
-function initIcons() {
-  document.querySelector('header img').src = _img_home_png__WEBPACK_IMPORTED_MODULE_1__;
-console.log(document.querySelector('header img'))
-  console.log(_img_home_png__WEBPACK_IMPORTED_MODULE_1__);
-  document.querySelector('.side-bar .today img').src = _img_today_png__WEBPACK_IMPORTED_MODULE_4__;
-  document.querySelector('.side-bar .all-tasks img').src = _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__;
-  document.querySelector('.side-bar .important img').src = _img_important_png__WEBPACK_IMPORTED_MODULE_2__;
-  document.querySelector('.side-bar .add-project img').src = _img_plus_gray_png__WEBPACK_IMPORTED_MODULE_3__;
-
-}
-
-/***/ }),
-
 /***/ "./src/newtaskbutton.js":
 /*!******************************!*\
   !*** ./src/newtaskbutton.js ***!
@@ -5851,7 +5827,7 @@ function viewTask(e) {
   \**********************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "2e7b1748ef560d87e4e7.js";
+module.exports = __webpack_require__.p + "0d4f29a714c9ce1cd931.js";
 
 /***/ }),
 
@@ -6202,9 +6178,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _importantbutton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./importantbutton */ "./src/importantbutton.js");
 /* harmony import */ var _aboutbutton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./aboutbutton */ "./src/aboutbutton.js");
 /* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
-/* harmony import */ var _initicons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./initicons */ "./src/initicons.js");
-/* harmony import */ var _dist_index_html__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../dist/index.html */ "./dist/index.html");
-
+/* harmony import */ var _dist_index_html__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../dist/index.html */ "./dist/index.html");
 
 
 
@@ -6221,8 +6195,6 @@ __webpack_require__.r(__webpack_exports__);
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser
 window.app = function () {
-
-  (0,_initicons__WEBPACK_IMPORTED_MODULE_11__.initIcons)();
 
   if (localStorage.length === 0) {
     _projectmanager__WEBPACK_IMPORTED_MODULE_1__.projectManager.addProject('Personal', 9, 1);
