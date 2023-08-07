@@ -19,7 +19,7 @@ export let displayContent = function () {
       }
     }
     const projectName = project.name;
-    
+
     const workspace = document.querySelector('div.workspace');
     workspace.className = "";
     workspace.classList.add('workspace');
@@ -214,16 +214,13 @@ export let displayContent = function () {
 
       activateNewTaskButton(addTaskButton);
 
-
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i == 1 || i % 2 === 0) {
+      if (i == 0 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-
-
     }
 
 
@@ -329,10 +326,12 @@ export let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i == 1 ||i % 2 === 0) {
+      if (leftSide.children.length === 0) {
         leftSide.appendChild(displayContainer);
-      } else {
+      } else if (leftSide.children.length > rightSide.children.length) {
         rightSide.appendChild(displayContainer);
+      } else {
+        leftSide.appendChild(displayContainer);
       }
 
 
@@ -350,7 +349,7 @@ export let displayContent = function () {
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
     workspace.classList.add('important');
-    
+
     const leftSide = document.createElement('div');
     leftSide.classList.add('left-side');
     const rightSide = document.createElement('div');
@@ -359,13 +358,13 @@ export let displayContent = function () {
     if (projects.length === 0) {
       return;
     }
-    
+
     for (let i = 0; i < projects.length; i++) {
-      
+
       const project = projects[i];
       const projectName = project.name;
       let tasks = project.tasks;
-      
+
       let hasImportant = false;
       for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].priority !== 'high') {
@@ -395,7 +394,7 @@ export let displayContent = function () {
         for (let i = 0; i < tasks.length; i++) {
           let task = tasks[i];
 
-          if (task.priority !== 'high') {continue};
+          if (task.priority !== 'high') { continue };
 
           const button = document.createElement('button');
           button.classList.add('task');
@@ -452,12 +451,14 @@ export let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i == 1 || i % 2 === 0) {
-        leftSide.appendChild(displayContainer);
-      } else {
-        rightSide.appendChild(displayContainer);
-      }
 
+      if (leftSide.children.length === 0) {
+        leftSide.appendChild(displayContainer);
+      } else if (leftSide.children.length > rightSide.children.length) {
+        rightSide.appendChild(displayContainer);
+      } else {
+        leftSide.appendChild(displayContainer);
+      }
     }
 
 
