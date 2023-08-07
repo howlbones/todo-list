@@ -1,6 +1,6 @@
 import { ProjectCollection } from "./projectcollection";
 import { taskManager } from "./taskmanager";
-import { convertDateToNumber } from "../dateconverter";
+import { convertDateToNumber } from "./dateconverter";
 import { displayContent } from "./displayproject";
 
 
