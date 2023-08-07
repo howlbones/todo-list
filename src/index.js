@@ -1,7 +1,6 @@
 import { ProjectCollection } from "./projectcollection";
 import { projectManager } from "./projectmanager";
 import { taskManager } from "./taskmanager";
-import { renderProjects } from "./projectrender";
 import "./main.css";
 import { activateAddProjectButton } from "./addprojectbutton";
 import { activateProjectButtons } from "./projectbuttons";
@@ -9,7 +8,6 @@ import { activateTodayButton } from "./todaybutton";
 import { activateAllTaskButton } from "./alltasksbutton";
 import { activateImportantButton } from "./importantbutton";
 import { activateAboutButton } from "./aboutbutton";
-import { storageAvailable } from "./localStorageValidation";
 import { displayContent } from "./displayproject";
 
 

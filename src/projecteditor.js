@@ -17,14 +17,8 @@ export let editProject = function () {
       }
     }
     if (!project) {
-      console.log('Project with this id isn\'t found');
-      console.log('\n');
       return
     }
-
-    // Console debug
-    console.log(`Changed projects name "${oldName}" to "${project.name}"`);
-    console.log('\n');
 
   }
 

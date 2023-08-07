@@ -30,7 +30,6 @@ function deleteTask(e) {
 
 
   if (!displayType) {
-    console.log('displaying project')
     displayContent.project(projectId);
   } else if (displayType === 'today') {
     displayContent.today();

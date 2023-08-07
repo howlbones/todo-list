@@ -146,8 +146,6 @@ export function viewTask(e) {
       taskManager.changePriority(projectId, taskId, priority);
 
       darkScreen.remove();
-      // let currentContent = document.querySelector('.display-project-container');
-      // currentContent.remove();
 
       let selectedButton = document.querySelector('.side-bar button.active');
       selectedButton = selectedButton.className.split(' ')[0];

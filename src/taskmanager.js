@@ -60,13 +60,6 @@ export let taskManager = function () {
       "priority": priority,
       "status": newTask.status
     }));
-
-    // Console debug
-    // console.log(`New task added to ${project.name}`);
-    // console.log(`New task ID - ${newTask.id}`);
-    // console.log(`${project.name} updated task list:`)
-    // console.table(project.tasks);
-    // console.log('\n');
   }
 
   let deleteTask = function (projectId, taskId) {
@@ -101,7 +94,6 @@ export let taskManager = function () {
       let key = localStorage.key(i);
       if (key.split(' ')[0] === 'task') {
         let value = JSON.parse(localStorage[key]);
-        console.log('found task:', localStorage[key]);
         if (value.id == taskId && value.projectId == projectId) {
           localStorage.removeItem(key);
           break;
@@ -110,12 +102,6 @@ export let taskManager = function () {
     }
 
     displayContent.clear();
-
-    // Console debug
-    // console.log(`Task deleted from ${project.name}. ID - ${taskId}`);
-    // console.log(`Updated task list:`)
-    // console.table(project.tasks);
-    // console.log('\n');
   }
 
 

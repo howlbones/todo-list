@@ -5,8 +5,6 @@ import { renderProjects } from "./projectrender";
 export function activateProjectButtons() {
   const buttons = document.querySelectorAll("button.project");
   const deleteButtons = document.querySelectorAll('button.delete-project-button');
-  // console.log(deleteButtons);
-  // console.log('yes');
 
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', requestProject);

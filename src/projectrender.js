@@ -1,5 +1,4 @@
 import { ProjectCollection } from "./projectcollection";
-import { dom } from "./domcache";
 
 export function renderProjects() {
   let projects = ProjectCollection.projects;

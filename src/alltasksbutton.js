@@ -16,7 +16,6 @@ function displayAll(e) {
 
   let target = e.target;
   if (target.tagName !== 'BUTTON') {
-    target = target.closest('button');
   }
 
   target.classList.add('active');

@@ -1,4 +1,3 @@
-import { Project } from "./project";
 import { ProjectCollection } from "./projectcollection";
 import PlusIcon from "../src/img/plus-gray.png";
 import ViewIcon from "../src/img/view.png";

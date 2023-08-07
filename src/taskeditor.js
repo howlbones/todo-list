@@ -36,16 +36,7 @@ export let editTask = function () {
 
     if (!task) { return };
 
-    let oldTitle = task.title;
     task.title = newTitle;
-
-    // Console debug
-
-    console.log(`Task ID - ${task.id}`);
-    console.log(`Title changed from "${oldTitle}" to "${task.title}"`);
-    console.log('Updated projects:');
-    console.table(projects);
-    console.log(`\n`);
   }
 
 
@@ -54,16 +45,7 @@ export let editTask = function () {
 
     if (!task) { return };
 
-    let oldDesc = task.description;
     task.description = newDesc;
-
-    // Console debug
-
-    console.log(`Task ID - ${task.id}`);
-    console.log(`Description changed from "${oldDesc}" to "${task.description}"`);
-    console.log('Updated projects:');
-    console.table(projects);
-    console.log(`\n`);
   }
 
 
@@ -72,16 +54,7 @@ export let editTask = function () {
 
     if (!task) { return };
 
-    let oldDate = task.dueDate;
     task.dueDate = newDate;
-
-    // Console debug
-
-    console.log(`Task ID - ${task.id}`);
-    console.log(`Date changed from "${oldDate}" to "${task.dueDate}"`);
-    console.log('Updated projects:');
-    console.table(projects);
-    console.log(`\n`);
   }
 
 
@@ -90,16 +63,7 @@ export let editTask = function () {
 
     if (!task) { return };
 
-    let oldPriority= task.priority;
     task.priority = newPriority;
-
-    // Console debug
-
-    console.log(`Task ID - ${task.id}`);
-    console.log(`Priority changed from "${oldPriority}" to "${task.priority}"`);
-    console.log('Updated projects:');
-    console.table(projects);
-    console.log(`\n`);
   }
 
   return { changeTitle, changeDescription, changeDueDate, changePriority }

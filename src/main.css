@@ -428,6 +428,10 @@ form.task-form button.cancel-button:hover {
   width: 20px;
 }
 
+.tasks-container img.circle-icon {
+  align-self: start;
+}
+
 .tasks-container button.delete-task {
   display: block;
   grid-column: 4 / 5;
@@ -458,14 +462,6 @@ form.task-form button.cancel-button:hover {
   min-width: 200px;
   text-align: start;
 }
-
-/* .tasks-container .divider {
-  height: 1px;
-  width: 100%;
-  grid-column: 1/5;
-  margin-top: 5px
-} */
-
 
 .tasks-container button .task-title,
 .tasks-container button .task-date {

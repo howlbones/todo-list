@@ -1,4 +1,3 @@
-import { ProjectCollection } from "./projectcollection";
 import { displayContent } from "./displayproject";
 
 export function displayToday(e) {
