@@ -24,6 +24,8 @@ function deleteProject(e) {
   projectManager.deleteProject(parseInt(id));
   removeProjectButtonListeners();
   renderProjects();
+  document.querySelector('button.all-tasks').classList.add('active');
+  displayContent.all();
   activateProjectButtons();
 }
 

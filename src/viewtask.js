@@ -154,8 +154,12 @@ export function viewTask(e) {
 
       if (selectedButton === 'today') {
         displayContent.today();
+      } else if (selectedButton === 'all-tasks') {
+        displayContent.all();
+      } else if (selectedButton === 'important') {
+        displayContent.important();
       } else {
-        displayContent.project(projectId)
+        displayContent.project(projectId);
       }
 
     } else {
