@@ -5,7 +5,7 @@ import plusGrayPng from "./img/plus-gray.png"
 import todayPng from "./img/today.png"
 
 export function initIcons() {
-  console.log(homePng);
+  // console.log(homePng);
   document.querySelector('header img').src = homePng;
   document.querySelector('.side-bar .today img').src = todayPng;
   document.querySelector('.side-bar .all-tasks img').src = allTasksPng;

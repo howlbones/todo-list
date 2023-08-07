@@ -31,7 +31,7 @@ function showAddProjectField() {
     const iconButton = document.createElement('button');
     const icon = document.createElement('img');
     icon.src = IconPack[i];
-    console.log(IconPack[i]);
+    // console.log(IconPack[i]);
     iconButton.appendChild(icon);
     iconContainer.appendChild(iconButton);
     iconButton.addEventListener('click', () => {
