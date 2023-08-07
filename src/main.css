@@ -157,7 +157,7 @@ header button.about.active {
 
 h1.project-name {
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 div.project-add-prompt {
@@ -183,7 +183,6 @@ div.project-add-prompt {
 .project-add-prompt input {
   border: none;
   border-radius: 15px;
-  ;
   height: 45px;
   width: 100%;
   font-size: 24px;
@@ -430,6 +429,8 @@ form.task-form button.cancel-button:hover {
 
 .tasks-container img.circle-icon {
   align-self: start;
+  width: 20px;
+  margin-top: 2px;
 }
 
 .tasks-container button.delete-task {
@@ -454,11 +455,11 @@ form.task-form button.cancel-button:hover {
 
 .tasks-container .task-date {
   grid-column: 2 / 3;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .tasks-container .task-title {
-  font-size: 24px;
+  font-size: 20px;
   min-width: 200px;
   text-align: start;
 }
@@ -495,9 +496,13 @@ form.task-form button.cancel-button:hover {
 }
 
 .tasks-container button.add-task-button p {
-  font-size: 24px;
+  font-size: 20px;
   text-align: start;
   color: #7E7E7E;
+}
+
+.tasks-container button.add-task-button img {
+  width: 25px;
 }
 
 .tasks-container button.done {
@@ -511,10 +516,10 @@ form.task-form button.cancel-button:hover {
 }
 
 .tasks-container button.done::before {
-  font-size: 45px;
+  font-size: 35px;
   content: "✔";
   position: absolute;
-  top: -6px;
+  top: -3px;
   left: 15px;
   color: #2B2B2B;
 
