@@ -3454,6 +3454,64 @@ function toDate(argument) {
 
 /***/ }),
 
+/***/ "./dist/index.html":
+/*!*************************!*\
+  !*** ./dist/index.html ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/html-loader/dist/runtime/getUrl.js */ "./node_modules/html-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./main.js */ "./dist/main.js"), __webpack_require__.b);
+// Module
+var ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);
+var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Todo List</title>\n</head>\n<body>\n  <header>\n    <img src=\"\" alt=\"Home page icon\">\n    <button class=\"about\">\n      <p>About</p>\n    </button>\n  </header>\n  <div class=\"about-popup-container\">\n    <div class=\"about-popup\">\n      <p>This Todo-list app uses your local storage to store your projects data</p>\n      <p>Developed by <strong>SAIINSAE</strong></p>\n      <a href=\"https://github.com/SAIINSAE\" target=\"_blank\">Github</a>\n      <p>Task of the Odins Project curriculum</p>\n    </div>\n  </div>\n  <div class=\"content\">\n    <div class=\"side-bar\">\n      <button class=\"today\">\n        <img src=\"\" alt=\"calendar icon\">\n        <p>Today</p>\n      </button>\n      <button class=\"all-tasks\">\n        <img src=\"\" alt=\"calendar icon\">\n        <p>All Tasks</p>\n      </button>\n      <button class=\"important\">\n        <img src=\"\" alt=\"exclamation icon\">\n        <p>Important</p>\n      </button>\n      <h4>Projects</h4>\n      <div class=\"projects-container\">\n      </div>\n      <button class=\"add-project\">\n        <img src=\"\" alt=\"Plus icon\">\n        <p>Add Project</p>\n      </button>\n    </div>\n    <div class=\"workspace\">\n\n    </div>\n  </div>\n  <" + "script src=\"" + ___HTML_LOADER_REPLACEMENT_0___ + "\"><" + "/script>\n</body>\n</html>";
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
+
+/***/ }),
+
+/***/ "./node_modules/html-loader/dist/runtime/getUrl.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/html-loader/dist/runtime/getUrl.js ***!
+  \*********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = String(url.__esModule ? url.default : url);
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  }
+
+  if (options.maybeNeedQuotes && /[\t\n\f\r "'=<>`]/.test(url)) {
+    return "\"".concat(url, "\"");
+  }
+
+  return url;
+};
+
+/***/ }),
+
 /***/ "./src/main.css":
 /*!**********************!*\
   !*** ./src/main.css ***!
@@ -4691,10 +4749,13 @@ __webpack_require__.r(__webpack_exports__);
 
 function initIcons() {
   document.querySelector('header img').src = _img_home_png__WEBPACK_IMPORTED_MODULE_1__;
+console.log(document.querySelector('header img'))
+  console.log(_img_home_png__WEBPACK_IMPORTED_MODULE_1__);
   document.querySelector('.side-bar .today img').src = _img_today_png__WEBPACK_IMPORTED_MODULE_4__;
   document.querySelector('.side-bar .all-tasks img').src = _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__;
   document.querySelector('.side-bar .important img').src = _img_important_png__WEBPACK_IMPORTED_MODULE_2__;
   document.querySelector('.side-bar .add-project img').src = _img_plus_gray_png__WEBPACK_IMPORTED_MODULE_3__;
+
 }
 
 /***/ }),
@@ -5784,6 +5845,16 @@ function viewTask(e) {
 
 /***/ }),
 
+/***/ "./dist/main.js":
+/*!**********************!*\
+  !*** ./dist/main.js ***!
+  \**********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "2e7b1748ef560d87e4e7.js";
+
+/***/ }),
+
 /***/ "./src/img/alltasks.png":
 /*!******************************!*\
   !*** ./src/img/alltasks.png ***!
@@ -6002,6 +6073,9 @@ function _typeof(obj) {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -6078,6 +6152,32 @@ function _typeof(obj) {
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -6103,6 +6203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _aboutbutton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./aboutbutton */ "./src/aboutbutton.js");
 /* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
 /* harmony import */ var _initicons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./initicons */ "./src/initicons.js");
+/* harmony import */ var _dist_index_html__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../dist/index.html */ "./dist/index.html");
 
 
 
@@ -6115,7 +6216,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// import html from "../dist/index.html";
+
 
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser
