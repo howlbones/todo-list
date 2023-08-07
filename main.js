@@ -4254,7 +4254,7 @@ let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
@@ -4366,7 +4366,7 @@ let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 ||i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
@@ -4489,12 +4489,11 @@ let displayContent = function () {
 
       displayContainer.appendChild(tasksContainer);
 
-      if (i == 0 || i % 2 === 0) {
+      if (i == 0 || i == 1 || i % 2 === 0) {
         leftSide.appendChild(displayContainer);
       } else {
         rightSide.appendChild(displayContainer);
       }
-
 
     }
 
@@ -5706,6 +5705,25 @@ function viewTask(e) {
         _displayproject__WEBPACK_IMPORTED_MODULE_3__.displayContent.project(projectId);
       }
 
+      let storageObject;
+      for (let i = 0; i < localStorage.length; i++){
+        let key = localStorage.key(i);
+        let value = JSON.parse(localStorage[key]);
+        let type = key.split(' ')[0];
+        if (type === 'task') {
+          if (value.id == taskId) {
+            storageObject = value;
+            localStorage.removeItem(key);
+            storageObject.title = titleInput.value;
+            storageObject.description = descriptionInput.value;
+            storageObject.dueDate = dateInput.valueAsDate;
+            storageObject.priority = priority;
+            localStorage.setItem(key, JSON.stringify(storageObject));
+            break;
+          }
+        }
+      }
+
     } else {
       if (titleInput.value === "") {
         titleInput.classList.add('invalid');
@@ -6145,7 +6163,7 @@ window.app = function () {
           "type": "task",
           "projectId": value.projectId,
           "title": value.title,
-          "description": value.desription,
+          "description": value.description,
           "dueDate": value.dueDate,
           "dateCreated": value.dateCreated,
           "priority": value.priority,
@@ -6170,7 +6188,7 @@ window.app = function () {
       _taskmanager__WEBPACK_IMPORTED_MODULE_2__.taskManager.addTask(
         value.projectId,
         value.title,
-        value.desription,
+        value.description,
         value.dueDate,
         value.dateCreated,
         value.priority,
