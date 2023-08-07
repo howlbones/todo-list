@@ -9,7 +9,7 @@ import { activateAllTaskButton } from "./alltasksbutton";
 import { activateImportantButton } from "./importantbutton";
 import { activateAboutButton } from "./aboutbutton";
 import { displayContent } from "./displayproject";
-
+import html from "../dist/index.html";
 
 // Main app function exports API functions to the window, so
 // API can be accessed in the browser

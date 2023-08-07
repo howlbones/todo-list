@@ -8,6 +8,14 @@ import ClockIconImport from "./img/iconpack/clock.png"
 import ImportantIconImport from "./img/iconpack/important.png"
 import PersonLogoImport from "./img/iconpack/person.png"
 import PersonCheckLogoImport from "./img/iconpack/personcheckmark.png"
+// import allTasksPng from "./img/alltasks.png"
+// import checkCircelPng from "./img/alltasks.png"
+// import homePng from "./img/home.png"
+// import importantPng from "./img/important.png"
+// import plusGrayPng from "./img/plus-gray.png"
+// import plusPng from "./img/plus.png"
+// import todayPng from "./img/today.png"
+// import viewPng from "./img/view.png"
 
 export let IconPack = function () {
   const BlackCircle = BlackCircleImport;
