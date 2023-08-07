@@ -3856,7 +3856,7 @@ function showAddProjectField() {
     const iconButton = document.createElement('button');
     const icon = document.createElement('img');
     icon.src = _iconpack__WEBPACK_IMPORTED_MODULE_0__.IconPack[i];
-    console.log(_iconpack__WEBPACK_IMPORTED_MODULE_0__.IconPack[i]);
+    // console.log(IconPack[i]);
     iconButton.appendChild(icon);
     iconContainer.appendChild(iconButton);
     iconButton.addEventListener('click', () => {
@@ -4691,7 +4691,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function initIcons() {
-  console.log(_img_home_png__WEBPACK_IMPORTED_MODULE_1__);
+  // console.log(homePng);
   document.querySelector('header img').src = _img_home_png__WEBPACK_IMPORTED_MODULE_1__;
   document.querySelector('.side-bar .today img').src = _img_today_png__WEBPACK_IMPORTED_MODULE_4__;
   document.querySelector('.side-bar .all-tasks img').src = _img_alltasks_png__WEBPACK_IMPORTED_MODULE_0__;
