@@ -109,7 +109,6 @@ export let displayContent = function () {
     clear();
 
     let dateNow = format(Date.now(), 'dd MMMM yyyy');
-    console.log('Todays date: ', dateNow);
 
     const projects = ProjectCollection.projects;
     const workspace = document.querySelector('div.workspace');
@@ -134,8 +133,6 @@ export let displayContent = function () {
       let hasTodaysTask = false;
       for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].dueDate !== dateNow) {
-          console.log('not the due date');
-          console.log('date: ' + tasks[i].dueDate);
           continue;
         } else {
           hasTodaysTask = true;

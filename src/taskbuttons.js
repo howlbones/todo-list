@@ -62,9 +62,7 @@ function crossOut(e) {
   for (let i = 0; i < projects.length; i++) {
     if (projects[i].id == projectId) {
       project = projects[i];
-      console.log(project);
       for (let j = 0; j < project.tasks.length; j++) {
-        console.log('Checking task:', j, project.tasks[j].id, '===', taskId);
         if (project.tasks[j].id == taskId){
           task = project.tasks[j];
         }

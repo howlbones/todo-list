@@ -79,15 +79,6 @@ window.app = function () {
       'active'
     )
     taskManager.addTask(
-      2,
-      "Compare local gym prices",
-      "The is one in the southside tunnel underground",
-      new Date(2023, 8, 19),
-      Date.now(),
-      "low",
-      'active'
-    )
-    taskManager.addTask(
       3,
       "Art supplies",
       "Watercolor and paper",
@@ -133,11 +124,65 @@ window.app = function () {
       'active'
     )
 
-    document.querySelector('button.all-tasks').classList.add('active');
-    displayContent.all();
+  } else {
+
+    // let currentLocalLenght = localStorage.length;
+    const projectsArray = [];
+    const taskArray = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
+      let value = JSON.parse(localStorage[key]);
+      let type = key.split(' ')[0];
+      if (type === 'project') {
+        projectsArray.push({
+          "type": "project",
+          "name": value.name,
+          "iconId": parseInt(value.icon),
+          "id": value.id
+        })
+      } else if (type === 'task') {
+        taskArray.push({
+          "type": "task",
+          "projectId": value.projectId,
+          "title": value.title,
+          "description": value.desription,
+          "dueDate": value.dueDate,
+          "dateCreated": value.dateCreated,
+          "priority": value.priority,
+          "status": value.status
+        })
+      }
+    }
+
+    projectsArray.sort((a, b) => a.id - b.id);
+
+    // very important to clear the storage before populating it again
+    localStorage.clear();
+
+    for (let i = 0; i < projectsArray.length; i++) {
+      let value = projectsArray[i];
+      let type = value.type;
+      projectManager.addProject(value.name, value.iconId, value.id);
+    }
+
+    for (let i = 0; i < taskArray.length; i++) {
+      let value = taskArray[i];
+      taskManager.addTask(
+        value.projectId,
+        value.title,
+        value.desription,
+        value.dueDate,
+        value.dateCreated,
+        value.priority,
+        value.status
+      )
+    }
   }
 
 
+  document.querySelector('button.all-tasks').classList.add('active');
+  displayContent.all();
   activateAboutButton();
   activateAddProjectButton();
   activateProjectButtons();

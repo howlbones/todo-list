@@ -10,8 +10,6 @@ export let taskManager = function () {
     let newTask = Task();
     let project;
 
-    console.log(projectId);
-
     // Find the correct project object that the task will reside in
     for (let i = 0; i < ProjectCollection.projects.length; i++) {
       if (ProjectCollection.projects[i].id == projectId) {
@@ -35,8 +33,18 @@ export let taskManager = function () {
     newTask.projectId = projectId;
     newTask.title = title;
     newTask.description = desc;
-    newTask.dateCreated = format(creationDate, 'HH:mm | dd MMMM yyyy');
-    newTask.dueDate = format(dueDate, 'dd MMMM yyyy');
+    let formated = format(new Date(creationDate), 'HH:mm | dd MMMM yyyy');
+    if (formated) {
+      newTask.dateCreated = formated;
+    } else {
+      newTask.dateCreated = creationDate;
+    }
+    formated = format(new Date(dueDate), 'dd MMMM yyyy');
+    if (formated) {
+      newTask.dueDate = formated;
+    } else {
+      newTask.dueDate = dueDate;
+    }
     newTask.priority = priority;
     (status) ? newTask.status = status : newTask.status = 'active';
     project.tasks.push(newTask);
