@@ -2,66 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./dateconverter.js":
-/*!**************************!*\
-  !*** ./dateconverter.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   convertDateToNumber: () => (/* binding */ convertDateToNumber)
-/* harmony export */ });
-function convertDateToNumber(text) {
-  let array = text.split(' ');
-  let day = array[0];
-  let month = array[1];
-  let year = array[2];
-  switch (month) {
-    case 'January':
-      month = '01';
-      break;
-    case 'February':
-      month = '02';
-      break;
-    case 'March':
-      month = '03';
-      break;
-    case 'April':
-      month = '04';
-      break;
-    case 'May':
-      month = '05';
-      break;
-    case 'June':
-      month = '06';
-      break;
-    case 'July':
-      month = '07';
-      break;
-    case 'August':
-      month = '08';
-      break;
-    case 'September':
-      month = '09';
-      break;
-    case 'October':
-      month = '10';
-      break;
-    case 'November':
-      month = '11';
-      break;
-    case 'December':
-      month = '12';
-      break;
-    default:
-      month = '01';
-  }
-  return `${year}-${month}-${day}`;
-}
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/main.css":
 /*!************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/main.css ***!
@@ -4023,6 +3963,66 @@ function displayAll(e) {
 
 /***/ }),
 
+/***/ "./src/dateconverter.js":
+/*!******************************!*\
+  !*** ./src/dateconverter.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   convertDateToNumber: () => (/* binding */ convertDateToNumber)
+/* harmony export */ });
+function convertDateToNumber(text) {
+  let array = text.split(' ');
+  let day = array[0];
+  let month = array[1];
+  let year = array[2];
+  switch (month) {
+    case 'January':
+      month = '01';
+      break;
+    case 'February':
+      month = '02';
+      break;
+    case 'March':
+      month = '03';
+      break;
+    case 'April':
+      month = '04';
+      break;
+    case 'May':
+      month = '05';
+      break;
+    case 'June':
+      month = '06';
+      break;
+    case 'July':
+      month = '07';
+      break;
+    case 'August':
+      month = '08';
+      break;
+    case 'September':
+      month = '09';
+      break;
+    case 'October':
+      month = '10';
+      break;
+    case 'November':
+      month = '11';
+      break;
+    case 'December':
+      month = '12';
+      break;
+    default:
+      month = '01';
+  }
+  return `${year}-${month}-${day}`;
+}
+
+/***/ }),
+
 /***/ "./src/displayproject.js":
 /*!*******************************!*\
   !*** ./src/displayproject.js ***!
@@ -5547,7 +5547,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _projectcollection__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projectcollection */ "./src/projectcollection.js");
 /* harmony import */ var _taskmanager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./taskmanager */ "./src/taskmanager.js");
-/* harmony import */ var _dateconverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../dateconverter */ "./dateconverter.js");
+/* harmony import */ var _dateconverter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dateconverter */ "./src/dateconverter.js");
 /* harmony import */ var _displayproject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./displayproject */ "./src/displayproject.js");
 
 
