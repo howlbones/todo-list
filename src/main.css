@@ -10,6 +10,12 @@
   padding: 0px;
 }
 
+
+.main-container {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 header {
   width: 100vw;
   height: 66px;
@@ -78,6 +84,7 @@ header button.about.active {
 
 
 .content {
+  max-width: 100vw;
   min-height: calc(100vh - 66px);
   display: grid;
   grid-template-columns: 465px 1fr;
