@@ -16,12 +16,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ./img/checkmark.svg */ "./src/img/checkmark.svg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap);"]);
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, `* {
   box-sizing: border-box;
@@ -545,10 +550,11 @@ form.task-form button.cancel-button:hover {
 
 .tasks-container button.done::before {
   font-size: 35px;
-  content: "✔";
+  content: url(${___CSS_LOADER_URL_REPLACEMENT_0___});
+  /* content: "✔"; */
   position: absolute;
-  top: -3px;
-  left: 15px;
+  top: 0px;
+  left: 13px;
   color: #2B2B2B;
 
 }
@@ -573,7 +579,7 @@ form.task-form button.cancel-button:hover {
   height: auto;
   padding-bottom: 0px;
   padding-right: 0px;
-}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\n@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\n\n\n* {\n  box-sizing: border-box;\n  margin: 0px;\n  /* font-family: 'Inter', sans-serif; */\n  font-family: 'Inter Tight', sans-serif;\n  padding: 0px;\n}\n\n\n.main-container {\n  max-width: 100vw;\n  overflow: hidden;\n}\n\nheader {\n  width: 100vw;\n  height: 66px;\n  background-color: #CC5546;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  padding: 0px 50px;\n}\n\nheader button.about {\n  background-color: #CC5546;\n  color: #FFF;\n  padding: 12px 14px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  border-style: none;\n  border-radius: 8px;\n  font-size: 16px;\n  font-weight: 400;\n  cursor: pointer;\n  transition: 0.2s;\n}\n\nheader button.about.active {\n  background-color: #cc6d61;\n}\n\n.about-popup-container {\n  z-index: 2;\n  background-color: rgba(0,0,0,0);\n  height: 200px;\n  position: absolute;\n  right: 15px;\n  display: flex;\n  align-items: end;\n  top: 0px;\n}\n\n.about-popup {\n  position: relative;\n  right: 0px;\n  height: auto;\n  width: 300px;\n  top: 80px;\n  background-color: #F5F5F5;\n  padding: 25px;\n  display: none;\n  flex-direction: column;\n  gap: 15px;\n  border-radius: 5px;\n}\n\n.about-popup strong {\n  color: #CC5546;\n}\n\n.about-popup a {\n  text-decoration: none;\n}\n\n.about-popup a:hover {\n  text-decoration: underline;\n}\n\n\n.content {\n  max-width: 100vw;\n  min-height: calc(100vh - 66px);\n  display: grid;\n  grid-template-columns: 465px 1fr;\n  grid-template-rows: auto;\n}\n\n.side-bar {\n  height: 100%;\n  background-color: #F5F5F5;\n  padding: 50px 23px;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n}\n\n.side-bar button {\n  height: 58px;\n  display: grid;\n  grid-template-columns: 78px 1fr 35px;\n  align-items: center;\n  border-radius: 10px;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border-style: none;\n  transition: 0.1s;\n}\n\n.side-bar button.delete-project-button {\n  display: block;\n  background: transparent;\n  font-size: 20px;\n  color: #c3c3c3;\n  border-radius: 0px 10px 10px 0px;\n}\n\n.side-bar button.delete-project-button:hover {\n  background-color: #CC5546;\n  color: white;\n}\n\n.side-bar button:hover {\n  background-color: #ECECEC;\n}\n\n.side-bar button img {\n  justify-self: center;\n}\n\n.side-bar p {\n  justify-self: start;\n  font-size: 20px;\n  font-weight: 400;\n  ;\n  color: #2B2B2B;\n}\n\n.side-bar h4 {\n  margin-top: 50px;\n  margin-bottom: 10px;\n  color: #2B2B2B;\n  font-size: 20px;\n  font-weight: 700;\n}\n\n.side-bar button.add-project {\n  margin-top: auto;\n}\n\n.side-bar .add-project p {\n  color: #7E7E7E;\n}\n\n.projects-container {\n  display: flex;\n  flex-direction: column;\n}\n\nh1.project-name {\n  font-weight: 700;\n  font-size: 20px;\n}\n\ndiv.project-add-prompt {\n  margin-top: auto;\n  display: grid;\n  grid-template-columns: 1fr 80px;\n  grid-template-rows: auto 50px;\n  align-items: center;\n  row-gap: 5px;\n  column-gap: 15px;\n  padding: 20px 0px;\n}\n\n.project-add-prompt form {\n  width: 100%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  gap: 10px;\n  color: #2B2B2B;\n}\n\n.project-add-prompt input {\n  border: none;\n  border-radius: 15px;\n  height: 45px;\n  width: 100%;\n  font-size: 24px;\n  color: #2B2B2B;\n  padding: 0px 15px;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt input:focus {\n  outline: none;\n  color: #2B2B2B;\n  border: solid 2px #ECECEC;\n}\n\n.project-add-prompt button {\n  height: 45px;\n  margin-top: auto;\n  color: #7E7E7E;\n  font-size: 35px;\n}\n\n.project-add-prompt .icon-container {\n  display: flex;\n  justify-content: space-between;\n  height: 100%;\n  grid-column: 1 / -1;\n}\n\n.project-add-prompt .icon-container button {\n  width: 40px;\n  display: flex;\n  justify-content: center;\n}\n\n.project-add-prompt .icon-container button.active {\n  background-color: #c3c3c3;\n}\n\n\nbutton.active {\n  background-color: #ECECEC;\n}\n\n/* New task form */\n\ndiv.dark-screen {\n  position: fixed;\n  top: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0, 0, 0, 0.3);\n}\n\nform.task-form {\n  background-color: #FFF;\n  height: 700px;\n  width: 600px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-top: 100px;\n  padding: 50px;\n  display: flex;\n  flex-direction: column;\n  border-radius: 15px;\n}\n\nform.task-form label {\n  color: #7E7E7E;\n  margin-bottom: 10px;\n  font-size: 20px;\n}\n\nform.task-form textarea {\n  margin-bottom: 35px;\n  font-size: 24px;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n  padding: 12px;\n  resize: none;\n}\n\nform.task-form textarea:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input {\n  height: 24px;\n  margin-bottom: 15px;\n  font-size: 24px;\n  height: 35px;\n  ;\n  padding: 0px 15px;\n  border-radius: 5px;\n  background-color: #F5F5F5;\n  border: none;\n}\n\nform.task-form input[type=\"date\"] {\n  color: #2B2B2B;\n  font-size: 15px;\n}\n\nform.task-form input:focus {\n  outline: solid 1px #cdcdcd;\n}\n\nform.task-form input.invalid {\n  outline: solid 2px #cc6d61;\n}\n\nform.task-form .date-created {\n  color: #7E7E7E;\n  font-size: 14px;\n  text-align: end;\n}\n\ndiv.priority-button-container {\n  margin-bottom: 15px;\n  display: flex;\n  flex-direction: row;\n  justify-content: center;\n  gap: 25px;\n}\n\ndiv.priority-button-container button {\n  border-radius: 3px;\n  height: 40px !important;\n  font-size: 14px !important;\n  background-color: #F5F5F5;\n  cursor: pointer;\n  border: none;\n  padding: 5px;\n  width: 100px;\n}\n\ndiv.priority-button-container button.low:hover,\ndiv.priority-button-container button.low.selected {\n  background-color: #4e915c;\n  color: white;\n}\n\ndiv.priority-button-container button.medium:hover,\ndiv.priority-button-container button.medium.selected {\n  background-color: #6477c4;\n  color: white;\n}\n\ndiv.priority-button-container button.high:hover,\ndiv.priority-button-container button.high.selected {\n  background-color: #CC5546;\n  color: white;\n}\n\nform.task-form button {\n  margin-top: 15px;\n  cursor: pointer;\n  border: none;\n  /* background-color: #f5f5f5; */\n  border-radius: 10px;\n  height: 80px;\n  font-size: 20px;\n  color: #2B2B2B;\n  transition: 0.1s;\n}\n\nform.task-form button.task-form-submit:hover {\n  outline: none;\n  background-color: #cbe1b0;\n}\n\nform.task-form button.cancel-button:hover {\n  outline: none;\n  background-color: #CC5546;\n  color: white;\n}\n\n\n/* Project tasks view */\n\n.display-project-container {\n  max-width: 1100px;\n  width: 100%;\n  height: 100%;\n  padding: 60px 133px;\n  color: #2B2B2B;\n}\n\n.workspace .project-name {\n  margin-bottom: 20px;\n}\n\n.workspace .tasks-container {\n  display: flex;\n  flex-direction: column;\n  border-top: solid 2px #e2e2e2;\n}\n\n.tasks-container button {\n  display: grid;\n  grid-template-columns: 30px 1fr 60px 40px;\n  grid-template-rows: 1fr 35px;\n  column-gap: 18px;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 15px;\n  background-color: #FFF;\n  border: none;\n  transition: 0.3s;\n}\n\n.tasks-container button:hover {\n  background-color: #F5F5F5;\n}\n\n.tasks-container button.task {\n  min-height: 80px;\n  border-bottom: solid 2px #e2e2e2;\n}\n\n.tasks-container button.view-button {\n  background-color: inherit;\n  align-self: center;\n  justify-self: center;\n  height: 35px;\n  width: 100%;\n  border-radius: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0px;\n  cursor: pointer;\n  border: none;\n}\n\n.tasks-container button.view-button:hover {\n  background-color: #eaeaea;\n}\n\n.tasks-container button.view-button img {\n  width: 20px;\n}\n\n.tasks-container img.circle-icon {\n  align-self: start;\n  width: 20px;\n  margin-top: 2px;\n}\n\n.tasks-container button.delete-task {\n  display: block;\n  grid-column: 4 / 5;\n  grid-row: 1 / 3;\n  height: 40px;\n  width: auto;\n  background: transparent;\n  cursor: pointer;\n  color: #c3c3c3;\n  font-size: 30px;\n  display: flex;\n  justify-content: center;\n  border-radius: 8px;\n}\n\n.tasks-container button.delete-task:hover {\n  background-color: #CC5546;\n  color: white;\n}\n\n.tasks-container .task-date {\n  grid-column: 2 / 3;\n  font-size: 12px;\n}\n\n.tasks-container .task-title {\n  font-size: 20px;\n  min-width: 200px;\n  text-align: start;\n}\n\n.tasks-container button .task-title,\n.tasks-container button .task-date {\n  justify-self: start;\n}\n\n.tasks-container .task-priority {\n  padding: 3px;\n  color: white;\n  border-radius: 3px;\n}\n\n.tasks-container .task-priority.high {\n  background-color: #CC5546;\n}\n\n.tasks-container .task-priority.medium {\n  background-color: #6477c4;\n}\n\n.tasks-container .task-priority.low {\n  background-color: #4e915c;\n}\n\n.tasks-container button.add-task-button {\n  height: 60px;\n  cursor: pointer;\n  display: flex;\n  align-content: center;\n  justify-content: start;\n}\n\n.tasks-container button.add-task-button p {\n  font-size: 20px;\n  text-align: start;\n  color: #7E7E7E;\n}\n\n.tasks-container button.add-task-button img {\n  width: 25px;\n}\n\n.tasks-container button.done {\n  background-color: #ededed;\n  position: relative;\n}\n\n.tasks-container button.done p.task-title {\n  text-decoration: line-through;\n  text-decoration-color: #CC5546;\n}\n\n.tasks-container button.done::before {\n  font-size: 35px;\n  content: \"✔\";\n  position: absolute;\n  top: -3px;\n  left: 15px;\n  color: #2B2B2B;\n\n}\n\n\n/* Today tab grid-layout */\n\n.workspace.today,\n.workspace.all,\n.workspace.important {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  margin-right: 133px;\n}\n\n.workspace.today .left-side .display-project-container,\n.workspace.today .right-side .display-project-container,\n.workspace.all .right-side .display-project-container,\n.workspace.all .left-side .display-project-container,\n.workspace.important .left-side .display-project-container,\n.workspace.important .right-side .display-project-container {\n  height: auto;\n  padding-bottom: 0px;\n  padding-right: 0px;\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/main.css"],"names":[],"mappings":"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","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');\r\n\r\n\r\n* {\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  /* font-family: 'Inter', sans-serif; */\r\n  font-family: 'Inter Tight', sans-serif;\r\n  padding: 0px;\r\n}\r\n\r\n\r\n.main-container {\r\n  max-width: 100vw;\r\n  overflow: hidden;\r\n}\r\n\r\nheader {\r\n  width: 100vw;\r\n  height: 66px;\r\n  background-color: #CC5546;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 0px 50px;\r\n}\r\n\r\nheader button.about {\r\n  background-color: #CC5546;\r\n  color: #FFF;\r\n  padding: 12px 14px;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  border-style: none;\r\n  border-radius: 8px;\r\n  font-size: 16px;\r\n  font-weight: 400;\r\n  cursor: pointer;\r\n  transition: 0.2s;\r\n}\r\n\r\nheader button.about.active {\r\n  background-color: #cc6d61;\r\n}\r\n\r\n.about-popup-container {\r\n  z-index: 2;\r\n  background-color: rgba(0,0,0,0);\r\n  height: 200px;\r\n  position: absolute;\r\n  right: 15px;\r\n  display: flex;\r\n  align-items: end;\r\n  top: 0px;\r\n}\r\n\r\n.about-popup {\r\n  position: relative;\r\n  right: 0px;\r\n  height: auto;\r\n  width: 300px;\r\n  top: 80px;\r\n  background-color: #F5F5F5;\r\n  padding: 25px;\r\n  display: none;\r\n  flex-direction: column;\r\n  gap: 15px;\r\n  border-radius: 5px;\r\n}\r\n\r\n.about-popup strong {\r\n  color: #CC5546;\r\n}\r\n\r\n.about-popup a {\r\n  text-decoration: none;\r\n}\r\n\r\n.about-popup a:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n\r\n.content {\r\n  max-width: 100vw;\r\n  min-height: calc(100vh - 66px);\r\n  display: grid;\r\n  grid-template-columns: 465px 1fr;\r\n  grid-template-rows: auto;\r\n}\r\n\r\n.side-bar {\r\n  height: 100%;\r\n  background-color: #F5F5F5;\r\n  padding: 50px 23px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: flex-start;\r\n}\r\n\r\n.side-bar button {\r\n  height: 58px;\r\n  display: grid;\r\n  grid-template-columns: 78px 1fr 35px;\r\n  align-items: center;\r\n  border-radius: 10px;\r\n  background-color: #F5F5F5;\r\n  cursor: pointer;\r\n  border-style: none;\r\n  transition: 0.1s;\r\n}\r\n\r\n.side-bar button.delete-project-button {\r\n  display: block;\r\n  background: transparent;\r\n  font-size: 20px;\r\n  color: #c3c3c3;\r\n  border-radius: 0px 10px 10px 0px;\r\n}\r\n\r\n.side-bar button.delete-project-button:hover {\r\n  background-color: #CC5546;\r\n  color: white;\r\n}\r\n\r\n.side-bar button:hover {\r\n  background-color: #ECECEC;\r\n}\r\n\r\n.side-bar button img {\r\n  justify-self: center;\r\n}\r\n\r\n.side-bar p {\r\n  justify-self: start;\r\n  font-size: 20px;\r\n  font-weight: 400;\r\n  ;\r\n  color: #2B2B2B;\r\n}\r\n\r\n.side-bar h4 {\r\n  margin-top: 50px;\r\n  margin-bottom: 10px;\r\n  color: #2B2B2B;\r\n  font-size: 20px;\r\n  font-weight: 700;\r\n}\r\n\r\n.side-bar button.add-project {\r\n  margin-top: auto;\r\n}\r\n\r\n.side-bar .add-project p {\r\n  color: #7E7E7E;\r\n}\r\n\r\n.projects-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\nh1.project-name {\r\n  font-weight: 700;\r\n  font-size: 20px;\r\n}\r\n\r\ndiv.project-add-prompt {\r\n  margin-top: auto;\r\n  display: grid;\r\n  grid-template-columns: 1fr 80px;\r\n  grid-template-rows: auto 50px;\r\n  align-items: center;\r\n  row-gap: 5px;\r\n  column-gap: 15px;\r\n  padding: 20px 0px;\r\n}\r\n\r\n.project-add-prompt form {\r\n  width: 100%;\r\n  display: flex;\r\n  align-items: center;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n  color: #2B2B2B;\r\n}\r\n\r\n.project-add-prompt input {\r\n  border: none;\r\n  border-radius: 15px;\r\n  height: 45px;\r\n  width: 100%;\r\n  font-size: 24px;\r\n  color: #2B2B2B;\r\n  padding: 0px 15px;\r\n  border: solid 2px #ECECEC;\r\n}\r\n\r\n.project-add-prompt input:focus {\r\n  outline: none;\r\n  color: #2B2B2B;\r\n  border: solid 2px #ECECEC;\r\n}\r\n\r\n.project-add-prompt button {\r\n  height: 45px;\r\n  margin-top: auto;\r\n  color: #7E7E7E;\r\n  font-size: 35px;\r\n}\r\n\r\n.project-add-prompt .icon-container {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  height: 100%;\r\n  grid-column: 1 / -1;\r\n}\r\n\r\n.project-add-prompt .icon-container button {\r\n  width: 40px;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.project-add-prompt .icon-container button.active {\r\n  background-color: #c3c3c3;\r\n}\r\n\r\n\r\nbutton.active {\r\n  background-color: #ECECEC;\r\n}\r\n\r\n/* New task form */\r\n\r\ndiv.dark-screen {\r\n  position: fixed;\r\n  top: 0px;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: rgba(0, 0, 0, 0.3);\r\n}\r\n\r\nform.task-form {\r\n  background-color: #FFF;\r\n  height: 700px;\r\n  width: 600px;\r\n  margin-left: auto;\r\n  margin-right: auto;\r\n  margin-top: 100px;\r\n  padding: 50px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  border-radius: 15px;\r\n}\r\n\r\nform.task-form label {\r\n  color: #7E7E7E;\r\n  margin-bottom: 10px;\r\n  font-size: 20px;\r\n}\r\n\r\nform.task-form textarea {\r\n  margin-bottom: 35px;\r\n  font-size: 24px;\r\n  padding: 0px 15px;\r\n  border-radius: 5px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n  padding: 12px;\r\n  resize: none;\r\n}\r\n\r\nform.task-form textarea:focus {\r\n  outline: solid 1px #cdcdcd;\r\n}\r\n\r\nform.task-form input {\r\n  height: 24px;\r\n  margin-bottom: 15px;\r\n  font-size: 24px;\r\n  height: 35px;\r\n  ;\r\n  padding: 0px 15px;\r\n  border-radius: 5px;\r\n  background-color: #F5F5F5;\r\n  border: none;\r\n}\r\n\r\nform.task-form input[type=\"date\"] {\r\n  color: #2B2B2B;\r\n  font-size: 15px;\r\n}\r\n\r\nform.task-form input:focus {\r\n  outline: solid 1px #cdcdcd;\r\n}\r\n\r\nform.task-form input.invalid {\r\n  outline: solid 2px #cc6d61;\r\n}\r\n\r\nform.task-form .date-created {\r\n  color: #7E7E7E;\r\n  font-size: 14px;\r\n  text-align: end;\r\n}\r\n\r\ndiv.priority-button-container {\r\n  margin-bottom: 15px;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  gap: 25px;\r\n}\r\n\r\ndiv.priority-button-container button {\r\n  border-radius: 3px;\r\n  height: 40px !important;\r\n  font-size: 14px !important;\r\n  background-color: #F5F5F5;\r\n  cursor: pointer;\r\n  border: none;\r\n  padding: 5px;\r\n  width: 100px;\r\n}\r\n\r\ndiv.priority-button-container button.low:hover,\r\ndiv.priority-button-container button.low.selected {\r\n  background-color: #4e915c;\r\n  color: white;\r\n}\r\n\r\ndiv.priority-button-container button.medium:hover,\r\ndiv.priority-button-container button.medium.selected {\r\n  background-color: #6477c4;\r\n  color: white;\r\n}\r\n\r\ndiv.priority-button-container button.high:hover,\r\ndiv.priority-button-container button.high.selected {\r\n  background-color: #CC5546;\r\n  color: white;\r\n}\r\n\r\nform.task-form button {\r\n  margin-top: 15px;\r\n  cursor: pointer;\r\n  border: none;\r\n  /* background-color: #f5f5f5; */\r\n  border-radius: 10px;\r\n  height: 80px;\r\n  font-size: 20px;\r\n  color: #2B2B2B;\r\n  transition: 0.1s;\r\n}\r\n\r\nform.task-form button.task-form-submit:hover {\r\n  outline: none;\r\n  background-color: #cbe1b0;\r\n}\r\n\r\nform.task-form button.cancel-button:hover {\r\n  outline: none;\r\n  background-color: #CC5546;\r\n  color: white;\r\n}\r\n\r\n\r\n/* Project tasks view */\r\n\r\n.display-project-container {\r\n  max-width: 1100px;\r\n  width: 100%;\r\n  height: 100%;\r\n  padding: 60px 133px;\r\n  color: #2B2B2B;\r\n}\r\n\r\n.workspace .project-name {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.workspace .tasks-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border-top: solid 2px #e2e2e2;\r\n}\r\n\r\n.tasks-container button {\r\n  display: grid;\r\n  grid-template-columns: 30px 1fr 60px 40px;\r\n  grid-template-rows: 1fr 35px;\r\n  column-gap: 18px;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 10px 15px;\r\n  background-color: #FFF;\r\n  border: none;\r\n  transition: 0.3s;\r\n}\r\n\r\n.tasks-container button:hover {\r\n  background-color: #F5F5F5;\r\n}\r\n\r\n.tasks-container button.task {\r\n  min-height: 80px;\r\n  border-bottom: solid 2px #e2e2e2;\r\n}\r\n\r\n.tasks-container button.view-button {\r\n  background-color: inherit;\r\n  align-self: center;\r\n  justify-self: center;\r\n  height: 35px;\r\n  width: 100%;\r\n  border-radius: 19px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 0px;\r\n  cursor: pointer;\r\n  border: none;\r\n}\r\n\r\n.tasks-container button.view-button:hover {\r\n  background-color: #eaeaea;\r\n}\r\n\r\n.tasks-container button.view-button img {\r\n  width: 20px;\r\n}\r\n\r\n.tasks-container img.circle-icon {\r\n  align-self: start;\r\n  width: 20px;\r\n  margin-top: 2px;\r\n}\r\n\r\n.tasks-container button.delete-task {\r\n  display: block;\r\n  grid-column: 4 / 5;\r\n  grid-row: 1 / 3;\r\n  height: 40px;\r\n  width: auto;\r\n  background: transparent;\r\n  cursor: pointer;\r\n  color: #c3c3c3;\r\n  font-size: 30px;\r\n  display: flex;\r\n  justify-content: center;\r\n  border-radius: 8px;\r\n}\r\n\r\n.tasks-container button.delete-task:hover {\r\n  background-color: #CC5546;\r\n  color: white;\r\n}\r\n\r\n.tasks-container .task-date {\r\n  grid-column: 2 / 3;\r\n  font-size: 12px;\r\n}\r\n\r\n.tasks-container .task-title {\r\n  font-size: 20px;\r\n  min-width: 200px;\r\n  text-align: start;\r\n}\r\n\r\n.tasks-container button .task-title,\r\n.tasks-container button .task-date {\r\n  justify-self: start;\r\n}\r\n\r\n.tasks-container .task-priority {\r\n  padding: 3px;\r\n  color: white;\r\n  border-radius: 3px;\r\n}\r\n\r\n.tasks-container .task-priority.high {\r\n  background-color: #CC5546;\r\n}\r\n\r\n.tasks-container .task-priority.medium {\r\n  background-color: #6477c4;\r\n}\r\n\r\n.tasks-container .task-priority.low {\r\n  background-color: #4e915c;\r\n}\r\n\r\n.tasks-container button.add-task-button {\r\n  height: 60px;\r\n  cursor: pointer;\r\n  display: flex;\r\n  align-content: center;\r\n  justify-content: start;\r\n}\r\n\r\n.tasks-container button.add-task-button p {\r\n  font-size: 20px;\r\n  text-align: start;\r\n  color: #7E7E7E;\r\n}\r\n\r\n.tasks-container button.add-task-button img {\r\n  width: 25px;\r\n}\r\n\r\n.tasks-container button.done {\r\n  background-color: #ededed;\r\n  position: relative;\r\n}\r\n\r\n.tasks-container button.done p.task-title {\r\n  text-decoration: line-through;\r\n  text-decoration-color: #CC5546;\r\n}\r\n\r\n.tasks-container button.done::before {\r\n  font-size: 35px;\r\n  content: url(\"./img/checkmark.svg\");\r\n  /* content: \"✔\"; */\r\n  position: absolute;\r\n  top: 0px;\r\n  left: 13px;\r\n  color: #2B2B2B;\r\n\r\n}\r\n\r\n\r\n/* Today tab grid-layout */\r\n\r\n.workspace.today,\r\n.workspace.all,\r\n.workspace.important {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  margin-right: 133px;\r\n}\r\n\r\n.workspace.today .left-side .display-project-container,\r\n.workspace.today .right-side .display-project-container,\r\n.workspace.all .right-side .display-project-container,\r\n.workspace.all .left-side .display-project-container,\r\n.workspace.important .left-side .display-project-container,\r\n.workspace.important .right-side .display-project-container {\r\n  height: auto;\r\n  padding-bottom: 0px;\r\n  padding-right: 0px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -670,6 +676,41 @@ module.exports = function (cssWithMappingToString) {
     }
   };
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+  if (!url) {
+    return url;
+  }
+  url = String(url.__esModule ? url.default : url);
+
+  // If url is already wrapped in quotes, remove them
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+  if (options.hash) {
+    url += options.hash;
+  }
+
+  // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+  return url;
 };
 
 /***/ }),
@@ -1793,38 +1834,6 @@ function getUTCDayOfYear(dirtyDate) {
 
 /***/ }),
 
-/***/ "./node_modules/date-fns/esm/_lib/getUTCISOWeek/index.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/date-fns/esm/_lib/getUTCISOWeek/index.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ getUTCISOWeek)
-/* harmony export */ });
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
-/* harmony import */ var _startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../startOfUTCISOWeek/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js");
-/* harmony import */ var _startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../startOfUTCISOWeekYear/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeekYear/index.js");
-/* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
-
-
-
-
-var MILLISECONDS_IN_WEEK = 604800000;
-function getUTCISOWeek(dirtyDate) {
-  (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var diff = (0,_startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date).getTime() - (0,_startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date).getTime();
-
-  // Round the number of days to the nearest integer
-  // because the number of milliseconds in a week is not constant
-  // (e.g. it's different in the week of the daylight saving time clock shift)
-  return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
-}
-
-/***/ }),
-
 /***/ "./node_modules/date-fns/esm/_lib/getUTCISOWeekYear/index.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/date-fns/esm/_lib/getUTCISOWeekYear/index.js ***!
@@ -1864,29 +1873,29 @@ function getUTCISOWeekYear(dirtyDate) {
 
 /***/ }),
 
-/***/ "./node_modules/date-fns/esm/_lib/getUTCWeek/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/date-fns/esm/_lib/getUTCWeek/index.js ***!
-  \************************************************************/
+/***/ "./node_modules/date-fns/esm/_lib/getUTCISOWeek/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/getUTCISOWeek/index.js ***!
+  \***************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ getUTCWeek)
+/* harmony export */   "default": () => (/* binding */ getUTCISOWeek)
 /* harmony export */ });
 /* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
-/* harmony import */ var _startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../startOfUTCWeek/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js");
-/* harmony import */ var _startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../startOfUTCWeekYear/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCWeekYear/index.js");
+/* harmony import */ var _startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../startOfUTCISOWeek/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js");
+/* harmony import */ var _startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../startOfUTCISOWeekYear/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeekYear/index.js");
 /* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
 
 
 
 
 var MILLISECONDS_IN_WEEK = 604800000;
-function getUTCWeek(dirtyDate, options) {
+function getUTCISOWeek(dirtyDate) {
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
   var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var diff = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date, options).getTime() - (0,_startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date, options).getTime();
+  var diff = (0,_startOfUTCISOWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date).getTime() - (0,_startOfUTCISOWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date).getTime();
 
   // Round the number of days to the nearest integer
   // because the number of milliseconds in a week is not constant
@@ -1947,6 +1956,38 @@ function getUTCWeekYear(dirtyDate, options) {
 
 /***/ }),
 
+/***/ "./node_modules/date-fns/esm/_lib/getUTCWeek/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/getUTCWeek/index.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getUTCWeek)
+/* harmony export */ });
+/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
+/* harmony import */ var _startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../startOfUTCWeek/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js");
+/* harmony import */ var _startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../startOfUTCWeekYear/index.js */ "./node_modules/date-fns/esm/_lib/startOfUTCWeekYear/index.js");
+/* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+
+
+
+
+var MILLISECONDS_IN_WEEK = 604800000;
+function getUTCWeek(dirtyDate, options) {
+  (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
+  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
+  var diff = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])(date, options).getTime() - (0,_startOfUTCWeekYear_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(date, options).getTime();
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK) + 1;
+}
+
+/***/ }),
+
 /***/ "./node_modules/date-fns/esm/_lib/protectedTokens/index.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/date-fns/esm/_lib/protectedTokens/index.js ***!
@@ -1999,33 +2040,6 @@ function requiredArgs(required, args) {
 
 /***/ }),
 
-/***/ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js ***!
-  \*******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ startOfUTCISOWeek)
-/* harmony export */ });
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
-/* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
-
-
-function startOfUTCISOWeek(dirtyDate) {
-  (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var weekStartsOn = 1;
-  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
-  var day = date.getUTCDay();
-  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
-  date.setUTCDate(date.getUTCDate() - diff);
-  date.setUTCHours(0, 0, 0, 0);
-  return date;
-}
-
-/***/ }),
-
 /***/ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeekYear/index.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/date-fns/esm/_lib/startOfUTCISOWeekYear/index.js ***!
@@ -2054,35 +2068,24 @@ function startOfUTCISOWeekYear(dirtyDate) {
 
 /***/ }),
 
-/***/ "./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js ***!
-  \****************************************************************/
+/***/ "./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/startOfUTCISOWeek/index.js ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ startOfUTCWeek)
+/* harmony export */   "default": () => (/* binding */ startOfUTCISOWeek)
 /* harmony export */ });
-/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
+/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
 /* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
-/* harmony import */ var _toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toInteger/index.js */ "./node_modules/date-fns/esm/_lib/toInteger/index.js");
-/* harmony import */ var _defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../defaultOptions/index.js */ "./node_modules/date-fns/esm/_lib/defaultOptions/index.js");
 
 
-
-
-function startOfUTCWeek(dirtyDate, options) {
-  var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+function startOfUTCISOWeek(dirtyDate) {
   (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
-  var defaultOptions = (0,_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__.getDefaultOptions)();
-  var weekStartsOn = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
-
-  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
-  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
-    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
-  }
-  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(dirtyDate);
+  var weekStartsOn = 1;
+  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_1__["default"])(dirtyDate);
   var day = date.getUTCDay();
   var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
   date.setUTCDate(date.getUTCDate() - diff);
@@ -2122,6 +2125,44 @@ function startOfUTCWeekYear(dirtyDate, options) {
   firstWeek.setUTCFullYear(year, 0, firstWeekContainsDate);
   firstWeek.setUTCHours(0, 0, 0, 0);
   var date = (0,_startOfUTCWeek_index_js__WEBPACK_IMPORTED_MODULE_4__["default"])(firstWeek, options);
+  return date;
+}
+
+/***/ }),
+
+/***/ "./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/date-fns/esm/_lib/startOfUTCWeek/index.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ startOfUTCWeek)
+/* harmony export */ });
+/* harmony import */ var _toDate_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../toDate/index.js */ "./node_modules/date-fns/esm/toDate/index.js");
+/* harmony import */ var _requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../requiredArgs/index.js */ "./node_modules/date-fns/esm/_lib/requiredArgs/index.js");
+/* harmony import */ var _toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../toInteger/index.js */ "./node_modules/date-fns/esm/_lib/toInteger/index.js");
+/* harmony import */ var _defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../defaultOptions/index.js */ "./node_modules/date-fns/esm/_lib/defaultOptions/index.js");
+
+
+
+
+function startOfUTCWeek(dirtyDate, options) {
+  var _ref, _ref2, _ref3, _options$weekStartsOn, _options$locale, _options$locale$optio, _defaultOptions$local, _defaultOptions$local2;
+  (0,_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__["default"])(1, arguments);
+  var defaultOptions = (0,_defaultOptions_index_js__WEBPACK_IMPORTED_MODULE_1__.getDefaultOptions)();
+  var weekStartsOn = (0,_toInteger_index_js__WEBPACK_IMPORTED_MODULE_2__["default"])((_ref = (_ref2 = (_ref3 = (_options$weekStartsOn = options === null || options === void 0 ? void 0 : options.weekStartsOn) !== null && _options$weekStartsOn !== void 0 ? _options$weekStartsOn : options === null || options === void 0 ? void 0 : (_options$locale = options.locale) === null || _options$locale === void 0 ? void 0 : (_options$locale$optio = _options$locale.options) === null || _options$locale$optio === void 0 ? void 0 : _options$locale$optio.weekStartsOn) !== null && _ref3 !== void 0 ? _ref3 : defaultOptions.weekStartsOn) !== null && _ref2 !== void 0 ? _ref2 : (_defaultOptions$local = defaultOptions.locale) === null || _defaultOptions$local === void 0 ? void 0 : (_defaultOptions$local2 = _defaultOptions$local.options) === null || _defaultOptions$local2 === void 0 ? void 0 : _defaultOptions$local2.weekStartsOn) !== null && _ref !== void 0 ? _ref : 0);
+
+  // Test if weekStartsOn is between 0 and 6 _and_ is not NaN
+  if (!(weekStartsOn >= 0 && weekStartsOn <= 6)) {
+    throw new RangeError('weekStartsOn must be between 0 and 6 inclusively');
+  }
+  var date = (0,_toDate_index_js__WEBPACK_IMPORTED_MODULE_3__["default"])(dirtyDate);
+  var day = date.getUTCDay();
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn;
+  date.setUTCDate(date.getUTCDate() - diff);
+  date.setUTCHours(0, 0, 0, 0);
   return date;
 }
 
@@ -5813,6 +5854,16 @@ module.exports = __webpack_require__.p + "c55ac7a70bcc1c169c44.png";
 
 /***/ }),
 
+/***/ "./src/img/checkmark.svg":
+/*!*******************************!*\
+  !*** ./src/img/checkmark.svg ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "78a270fbdf6f199f11f7.svg";
+
+/***/ }),
+
 /***/ "./src/img/home.png":
 /*!**************************!*\
   !*** ./src/img/home.png ***!
@@ -6011,6 +6062,9 @@ function _typeof(obj) {
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -6085,6 +6139,32 @@ function _typeof(obj) {
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
