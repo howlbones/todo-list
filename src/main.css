@@ -524,10 +524,11 @@ form.task-form button.cancel-button:hover {
 
 .tasks-container button.done::before {
   font-size: 35px;
-  content: "✔";
+  content: url("./img/checkmark.svg");
+  /* content: "✔"; */
   position: absolute;
-  top: -3px;
-  left: 15px;
+  top: 0px;
+  left: 13px;
   color: #2B2B2B;
 
 }
